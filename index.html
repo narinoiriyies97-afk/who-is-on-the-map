@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who is on the map? Water and sanitation in Kibera and Mathare</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b2a33;--card:#ffffff;--rule:#0072B2;--water:#0072B2;--toilet:#E69F00;--waste:#CC79A7;--muted:#4d5f69}
+@media (prefers-color-scheme:dark){:root{--ink:#e8eef0;--card:#1e2a31;--muted:#a9b8bf}}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);line-height:1.55}
+#map{position:fixed;inset:0;z-index:0}
+.col{position:relative;z-index:2;pointer-events:none}
+.step{min-height:100vh;display:flex;align-items:center;padding:24px}
+.card{pointer-events:auto;background:var(--card);max-width:410px;padding:22px 24px;border-left:6px solid var(--rule);border-radius:3px;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+.card h2{margin:0 0 10px;font-size:1.45rem;line-height:1.2;font-weight:800}
+.card p{margin:0 0 10px}.card p:last-child{margin:0}
+.card .small{font-size:.85rem;color:var(--muted)}
+.hero h1{margin:0 0 12px;font-size:2.4rem;line-height:1.05;font-weight:800}
+.num{font-weight:800;font-size:1.15rem}
+.w{color:var(--water)}.t{color:var(--toilet)}.g{color:var(--waste)}
+#legend{position:fixed;top:12px;right:12px;z-index:3;background:var(--card);padding:10px 12px;border-radius:3px;font-size:.85rem;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+#legend label{display:block;cursor:pointer}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+a{color:inherit}
+@media (max-width:760px){.step{align-items:flex-end;padding:12px}.card{max-width:none;width:100%}.hero h1{font-size:1.9rem}}
+</style>
+</head>
+<body>
+<div id="map" role="img" aria-label="Map of water points, toilets and waste points in Kibera and Mathare, Nairobi"></div>
+<div id="legend" aria-label="Map layers">
+  <label><input type="checkbox" data-layer="water" checked> <span class="dot" style="background:var(--water)"></span>Water points</label>
+  <label><input type="checkbox" data-layer="toilets" checked> <span class="dot" style="background:var(--toilet)"></span>Toilets</label>
+  <label><input type="checkbox" data-layer="waste" checked> <span class="dot" style="background:var(--waste)"></span>Waste points</label>
+</div>
+
+<main class="col">
+  <section class="step" data-view="start" data-layers="">
+    <div class="card hero">
+      <h1>Who is on the map?</h1>
+      <p>Water and sanitation in Kibera and Mathare, Nairobi.</p>
+      <p><strong>Being on the map is the first step to being planned for.</strong> Scroll to see what residents have mapped and what the map cannot tell us.</p>
+      <p class="small">A student project, KU Leuven. Built with open data from OpenStreetMap.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="kibera" data-layers="">
+    <div class="card">
+      <h2>A blank spot on the map</h2>
+      <p>Map Kibera describes Kibera as a blank spot on the map before it began mapping in 2009. A settlement missing from official records is easy to leave out of plans for water, toilets and waste collection.</p>
+      <p class="small">The map behind this text shows no facilities yet.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="kibera" data-layers="water,toilets,waste">
+    <div class="card">
+      <h2>Residents drew their own map</h2>
+      <p>In 2009, young residents worked with the founders of Map Kibera to make the first free, open digital map of the settlement. The approach later spread to Mathare and other neighbourhoods.</p>
+      <p>Mappers walked the settlements and recorded taps, toilets and waste points. The records are open data on OpenStreetMap, and every dot you see comes from them.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <h2>What the map shows today</h2>
+      <p><span class="num w" data-count="water">…</span> water points, <span class="num t" data-count="toilets">…</span> toilets and <span class="num g" data-count="waste">…</span> waste points are tagged in this snapshot, exported on <span id="exportDate">[date]</span>.</p>
+      <p>A 2020 mapping report, as I cite it, counted 840 water points, 879 toilets and 170 waste points. Today's snapshot has fewer water points and more toilets and waste points. The tags I queried, the area boundaries, imports and removals all change a count, so this map cannot say which of them explains the gap.</p>
+      <p class="small">Click any dot to see what was recorded. Toilets include those in schools, clinics and other buildings.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="kibera" data-layers="toilets,water">
+    <div class="card">
+      <h2>What Map Kibera says happened next</h2>
+      <p>In an interview for this project, Map Kibera Trust said the county government and NGOs asked for its water and sanitation maps to see where facilities were concentrated. It reports that the county then built toilets across Kibera, and used its health map to place clinics.</p>
+      <p>The same account describes schools: the map showed about 350 schools where government records listed about 70, and the state created a registration route for them.</p>
+      <p class="small">These are Map Kibera's own statements, not independently verified by this project. [Add an independent source here if you find one.]</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <h2>Visible does not mean protected</h2>
+      <p>Map Kibera told this project that the map does not protect residents from eviction, and that evictions happen often. Its use is evidence for advocacy, quick mapping of evictions as they happen, and pressure from outside bodies.</p>
+      <p>It also named the main obstacle to keeping the map current: no recent funding, and trained mappers who leave for other work. A map shows a moment. Keeping it true takes money and people.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <h2>What the map leaves out</h2>
+      <p>It shows facilities only, with no homes and no people. A dot shows that someone recorded a tap or a toilet. It does not show whether water flows today, what it costs or who can use it.</p>
+      <p>Some places may be missing, out of date or untagged, and the same facility may appear twice.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <h2>Who decides what is shown</h2>
+      <p>Being visible can bring services, and it can bring risk. A 2011 study of Map Kibera by Berdou warns that mapping informal facilities can expose them to closure or government action.</p>
+      <p>Residents and the organisations that know the community should decide what appears on a map and who can use it. This map shows public facilities only.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <h2>Sources and credits</h2>
+      <p class="small">Facility data: © OpenStreetMap contributors (ODbL), including Map Kibera and its 2020 water and sanitation mapping project. Base map: © OpenStreetMap contributors © CARTO.</p>
+      <p class="small">Built by Hilda Narinoi Ries, KU Leuven, for the Individual Portfolio in Sustainable Development. This is a student project and not an official Map Kibera Trust product. [Add after they have checked it: Reviewed by Map Kibera Trust on (date).]</p>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>
+var CONFIG={exportDate:"5 November 2026"};
+var FILES={
+  water:["data/water_kibera.geojson","data/water_mathare.geojson"],
+  toilets:["data/toilets_kibera.geojson","data/toilets_mathare.geojson"],
+  waste:["data/waste_kibera.geojson","data/waste_mathare.geojson"]
+};
+var COLORS={water:"#0072B2",toilets:"#E69F00",waste:"#CC79A7"};
+var NAMES={water:"Water point",toilets:"Toilet",waste:"Waste point"};
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.getElementById("exportDate").textContent=CONFIG.exportDate;
+
+var map=L.map("map",{zoomControl:false}).setView([-1.3135,36.7875],15);
+L.control.zoom({position:"bottomright"}).addTo(map);
+L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{maxZoom:19,
+  attribution:"&copy; OpenStreetMap contributors &copy; CARTO"}).addTo(map);
+
+var groups={water:L.layerGroup(),toilets:L.layerGroup(),waste:L.layerGroup()};
+var counts={water:0,toilets:0,waste:0};
+var bounds={kibera:L.latLngBounds([]),mathare:L.latLngBounds([]),both:L.latLngBounds([])};
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function popup(type,f){
+  var p=f.properties||{},h="<strong>"+NAMES[type]+"</strong>";
+  ["name","operator","fee","access","operational_status"].forEach(function(k){
+    if(p[k]){h+="<br>"+k.replace("_"," ")+": "+esc(p[k]);}});
+  var id=f.id||p["@id"];
+  if(id&&String(id).indexOf("/")>0){h+='<br><a target="_blank" rel="noopener" href="https://www.openstreetmap.org/'+esc(id)+'">View on OpenStreetMap</a>';}
+  return h;
+}
+function load(type,url,area){
+  return fetch(url).then(function(r){return r.json();}).then(function(data){
+    (data.features||[]).forEach(function(f){
+      if(!f.geometry){return;}
+      var ll=f.geometry.type==="Point"?L.latLng(f.geometry.coordinates[1],f.geometry.coordinates[0]):L.geoJSON(f).getBounds().getCenter();
+      L.circleMarker(ll,{radius:4,color:"#ffffff",weight:1,fillColor:COLORS[type],fillOpacity:.9})
+        .bindPopup(popup(type,f)).addTo(groups[type]);
+      counts[type]++;bounds[area].extend(ll);bounds.both.extend(ll);
+    });
+  }).catch(function(){console.warn("Could not load "+url);});
+}
+var jobs=[];
+Object.keys(FILES).forEach(function(t){
+  jobs.push(load(t,FILES[t][0],"kibera"));
+  jobs.push(load(t,FILES[t][1],"mathare"));
+});
+Promise.all(jobs).then(function(){
+  Object.keys(counts).forEach(function(t){
+    document.querySelectorAll('[data-count="'+t+'"]').forEach(function(el){el.textContent=counts[t].toLocaleString("en");});
+  });
+  if(current){go(current);}
+});
+
+var current=null,manual={};
+function go(el){
+  current=el;
+  var show=(el.dataset.layers||"").split(",");
+  Object.keys(groups).forEach(function(t){
+    var on=show.indexOf(t)>-1&&manual[t]!==false;
+    document.querySelector('[data-layer="'+t+'"]').checked=on;
+    if(on){groups[t].addTo(map);}else{map.removeLayer(groups[t]);}
+  });
+  var b=bounds[el.dataset.view];
+  var pad=window.innerWidth>760?[[460,40],[40,40]]:[[20,20],[20,260]];
+  if(b&&b.isValid()){map.fitBounds(b,{paddingTopLeft:pad[0],paddingBottomRight:pad[1],animate:!reduce});}
+}
+document.querySelectorAll("[data-layer]").forEach(function(box){
+  box.addEventListener("change",function(){
+    var t=box.dataset.layer;manual[t]=box.checked;
+    if(box.checked){groups[t].addTo(map);}else{map.removeLayer(groups[t]);}
+  });
+});
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){manual={};go(e.target);}});
+},{threshold:.6});
+document.querySelectorAll(".step").forEach(function(s){io.observe(s);});
+</script>
+</body>
+</html>

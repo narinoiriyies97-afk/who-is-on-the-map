@@ -1,0 +1,3139 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-11-05T10:28:54Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/1038064479",
+      "properties": {
+        "@id": "node/1038064479",
+        "amenity": "drinking_water",
+        "charge": "2",
+        "drinking_water": "yes",
+        "fee": "yes",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1616572119050.jpg",
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "operational_status": "operational",
+        "operational_status:availability": "always",
+        "operator:description": "private",
+        "operator:type": "private",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "150"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8568814,
+          -1.2636248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1038064488",
+      "properties": {
+        "@id": "node/1038064488",
+        "amenity": "drinking_water",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "non_operational",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "never",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8567575,
+          -1.2630661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1038103780",
+      "properties": {
+        "@id": "node/1038103780",
+        "amenity": "drinking_water",
+        "name": "Kwa hamisi",
+        "operational_status": "non operational",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8574577,
+          -1.2648207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1038103791",
+      "properties": {
+        "@id": "node/1038103791",
+        "access": "no",
+        "amenity": "drinking_water",
+        "man_made": "water_tower",
+        "name": "Agip",
+        "operational_status": "non operational",
+        "watsan:availability": "never",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8575901,
+          -1.265683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1038193537",
+      "properties": {
+        "@id": "node/1038193537",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "Ksh. 3 per 20 Litres",
+        "name": "NWSC Water Point A",
+        "operational_status": "operational",
+        "operator": "N.W.S.C",
+        "watsan:availability": "often",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8562156,
+          -1.2658119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1038193552",
+      "properties": {
+        "@id": "node/1038193552",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh.3 per 20 Litres",
+        "name": "NWC",
+        "opening_hours": "06:00-21:00",
+        "operational_status": "operational",
+        "operator": "N.W.S.C",
+        "operator:type": "private",
+        "watsan:availability": "often",
+        "watsan:connection": "other",
+        "watsan:connection_description": "piped tap",
+        "watsan:cost": "2ksh/20litres",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:users_per_day": "300",
+        "watsan:water_availability": "piped",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85504,
+          -1.2657731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1038202639",
+      "properties": {
+        "@id": "node/1038202639",
+        "amenity": "drinking_water",
+        "opening_hours": "24/7",
+        "operator:description": "individual",
+        "operator:type": "private",
+        "watsan:cost": "none",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "200",
+        "watsan:water_availability": "piped",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8556943,
+          -1.2614901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1100019091",
+      "properties": {
+        "@id": "node/1100019091",
+        "amenity": "drinking_water",
+        "contact:phone": "0710355667",
+        "name": "maji ya mzee",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:connection": "other",
+        "watsan:connection_description": "piped water",
+        "watsan:cost": "3 ksh per 20ltr",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "50",
+        "watsan:water_availability": "piped",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8507504,
+          -1.2637518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1110245202",
+      "properties": {
+        "@id": "node/1110245202",
+        "amenity": "drinking_water",
+        "description": "Water tap",
+        "man_made": "water_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8495724,
+          -1.2626478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1204137048",
+      "properties": {
+        "@id": "node/1204137048",
+        "amenity": "drinking_water",
+        "opening_hours": "24/7",
+        "operator:type": "latf",
+        "watsan:cost": "none",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "200",
+        "watsan:water_availability": "piped",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8567271,
+          -1.2620162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1204137050",
+      "properties": {
+        "@id": "node/1204137050",
+        "amenity": "drinking_water",
+        "opening_hours": "06:00-23:00",
+        "operator:type": "private",
+        "watsan:cost": "2ksh per20litres",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "100",
+        "watsan:water_availability": "piped",
+        "watsan:water_private": "yes",
+        "watsan:water_public": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8557878,
+          -1.2615335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1204137057",
+      "properties": {
+        "@id": "node/1204137057",
+        "amenity": "drinking_water",
+        "opening_hours": "5:30-8:30",
+        "operator:description": "individual",
+        "operator:type": "private",
+        "watsan:cost": "2 per 20litres",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "100",
+        "watsan:water_availability": "piped",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8576543,
+          -1.2623055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1204137097",
+      "properties": {
+        "@id": "node/1204137097",
+        "amenity": "drinking_water",
+        "opening_hours": "24/7",
+        "operator:type": "LATF",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "piped",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8576461,
+          -1.2617188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1204168038",
+      "properties": {
+        "@id": "node/1204168038",
+        "amenity": "drinking_water",
+        "name": "Watony",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:connection": "other",
+        "watsan:connection_description": "piped water",
+        "watsan:cost": "3 ksh per 20 ltr",
+        "watsan:location": "plot",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "200",
+        "watsan:water_availability": "piped",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8496298,
+          -1.2652417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1204168041",
+      "properties": {
+        "@id": "node/1204168041",
+        "amenity": "drinking_water",
+        "name": "MTM Njeri",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:connection": "other",
+        "watsan:connection_description": "piped water",
+        "watsan:cost": "3 ksh per 20 ltr",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "200",
+        "watsan:water_availability": "piped",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8510471,
+          -1.2643907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1205477311",
+      "properties": {
+        "@id": "node/1205477311",
+        "amenity": "drinking_water",
+        "name": "Mandera",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator:type": "other",
+        "operator:type_description": "community",
+        "watsan:cost": "free",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "500",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8557653,
+          -1.2614693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1207178821",
+      "properties": {
+        "@id": "node/1207178821",
+        "amenity": "drinking_water",
+        "name": "NWC",
+        "opening_hours": "07:00-12:00",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:connection": "other",
+        "watsan:connection_description": "piped tap",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "100",
+        "watsan:water_availability": "piped",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8536998,
+          -1.2657582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1207178837",
+      "properties": {
+        "@id": "node/1207178837",
+        "amenity": "drinking_water",
+        "name": "NWC",
+        "opening_hours": "05:00-23:00",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:connection": "other",
+        "watsan:connection_description": "piped tap",
+        "watsan:cost": "free",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "600",
+        "watsan:water_availability": "piped",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8571525,
+          -1.2662434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1215759451",
+      "properties": {
+        "@id": "node/1215759451",
+        "amenity": "drinking_water",
+        "opening_hours": "06:00-22:00",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:connection": "other",
+        "watsan:connection_description": "Piped",
+        "watsan:cost": "3ksh / 20ltr",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "70",
+        "watsan:water_availability": "piped",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8513607,
+          -1.2642936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1215759486",
+      "properties": {
+        "@id": "node/1215759486",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "opening_hours": "06:00-20:00",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:availability": "often",
+        "watsan:connection": "other",
+        "watsan:connection_description": "Piped",
+        "watsan:cost": "3ksh / 20ltr",
+        "watsan:type": "piped_tap",
+        "watsan:users_per_day": "50",
+        "watsan:water_availability": "piped",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8513651,
+          -1.264548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4452996074",
+      "properties": {
+        "@id": "node/4452996074",
+        "amenity": "drinking_water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8550174,
+          -1.2658382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4452996076",
+      "properties": {
+        "@id": "node/4452996076",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Mama Biko",
+        "watsan:availability": "often",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8549291,
+          -1.2643328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4452996085",
+      "properties": {
+        "@id": "node/4452996085",
+        "amenity": "drinking_water",
+        "indoor": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.855151,
+          -1.2658293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4452996086",
+      "properties": {
+        "@id": "node/4452996086",
+        "amenity": "drinking_water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8549352,
+          -1.2641697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4452996088",
+      "properties": {
+        "@id": "node/4452996088",
+        "amenity": "drinking_water",
+        "indoor": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8562762,
+          -1.2658391
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4453013958",
+      "properties": {
+        "@id": "node/4453013958",
+        "amenity": "drinking_water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8556258,
+          -1.264336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4453013959",
+      "properties": {
+        "@id": "node/4453013959",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 5 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Kinati",
+        "watsan:availability": "often",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8559762,
+          -1.2643261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4453020206",
+      "properties": {
+        "@id": "node/4453020206",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 5 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Titi la Mama",
+        "watsan:availability": "often",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8563543,
+          -1.264444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4453021699",
+      "properties": {
+        "@id": "node/4453021699",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "Ksh.5 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Manoki",
+        "watsan:availability": "always",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8563919,
+          -1.2646408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4453033654",
+      "properties": {
+        "@id": "node/4453033654",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh .5 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Visionary Youth Group",
+        "watsan:availability": "often",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8565923,
+          -1.2650638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494090543",
+      "properties": {
+        "@id": "node/4494090543",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "New Juja Road",
+        "watsan:availability": "often",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8529343,
+          -1.2643508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494090544",
+      "properties": {
+        "@id": "node/4494090544",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Empire",
+        "watsan:availability": "always",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8519786,
+          -1.2644485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494090545",
+      "properties": {
+        "@id": "node/4494090545",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "watsan:availability": "always",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8516179,
+          -1.2645429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494090547",
+      "properties": {
+        "@id": "node/4494090547",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Heshima youth group",
+        "watsan:availability": "always",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8525763,
+          -1.2646429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494090548",
+      "properties": {
+        "@id": "node/4494090548",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "CHE Mathare",
+        "watsan:availability": "always",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8524729,
+          -1.264916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494090549",
+      "properties": {
+        "@id": "node/4494090549",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Kwa kanyos",
+        "watsan:availability": "often",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8535586,
+          -1.2649516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494090550",
+      "properties": {
+        "@id": "node/4494090550",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Kwa Gitau",
+        "watsan:availability": "always",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8536723,
+          -1.2649813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494122926",
+      "properties": {
+        "@id": "node/4494122926",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "1996 Vietnam Family",
+        "watsan:availability": "often",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8534646,
+          -1.2643222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494122927",
+      "properties": {
+        "@id": "node/4494122927",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Kwa Masaai",
+        "watsan:availability": "often",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8550528,
+          -1.2654502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4494122928",
+      "properties": {
+        "@id": "node/4494122928",
+        "access": "yes",
+        "amenity": "drinking_water",
+        "charges": "ksh. 3 per 20 Litres",
+        "operational_status": "operational",
+        "operator": "Kambi Safi",
+        "watsan:availability": "often",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8549729,
+          -1.2657711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4501970696",
+      "properties": {
+        "@id": "node/4501970696",
+        "amenity": "drinking_water",
+        "name": "Kwa Kamau",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8546458,
+          -1.2634364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4501970697",
+      "properties": {
+        "@id": "node/4501970697",
+        "amenity": "drinking_water",
+        "name": "Kwa Kisii",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.853705,
+          -1.263415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4501970698",
+      "properties": {
+        "@id": "node/4501970698",
+        "amenity": "drinking_water",
+        "name": "Kwa Ndung'u",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8545461,
+          -1.2634208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4501970699",
+      "properties": {
+        "@id": "node/4501970699",
+        "amenity": "drinking_water",
+        "name": "Mama Shiro",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8545714,
+          -1.2634338
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070187",
+      "properties": {
+        "@id": "node/4502070187",
+        "amenity": "drinking_water",
+        "name": "Kwa Easther",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh.2 per 20litre",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8528424,
+          -1.2633971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070188",
+      "properties": {
+        "@id": "node/4502070188",
+        "amenity": "drinking_water",
+        "name": "Kwa Kisii",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:location": "public_community",
+        "watsan:toilet_private": "no",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8526618,
+          -1.2636752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070789",
+      "properties": {
+        "@id": "node/4502070789",
+        "amenity": "drinking_water",
+        "name": "Kwa Wa Keiro",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:toilet_private": "no",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8520307,
+          -1.2635906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070790",
+      "properties": {
+        "@id": "node/4502070790",
+        "amenity": "drinking_water",
+        "name": "Mama Shiro",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8507847,
+          -1.263291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070791",
+      "properties": {
+        "@id": "node/4502070791",
+        "amenity": "drinking_water",
+        "name": "Muungano Wa Wanavijiji(Kosovo)",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 2 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8495433,
+          -1.2626761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070792",
+      "properties": {
+        "@id": "node/4502070792",
+        "amenity": "drinking_water",
+        "name": "Nairobi Water Company",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8517296,
+          -1.2626664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070793",
+      "properties": {
+        "@id": "node/4502070793",
+        "amenity": "drinking_water",
+        "name": "Pamoja Trust",
+        "operational_status": "non operational",
+        "watsan:availability": "never",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.850819,
+          -1.262598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070794",
+      "properties": {
+        "@id": "node/4502070794",
+        "amenity": "drinking_water",
+        "name": "River Jump Youth Group",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:toilet_private": "no",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8522117,
+          -1.2628434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070795",
+      "properties": {
+        "@id": "node/4502070795",
+        "amenity": "drinking_water",
+        "name": "River Side Youth Group",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8515682,
+          -1.2637949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070796",
+      "properties": {
+        "@id": "node/4502070796",
+        "amenity": "drinking_water",
+        "name": "Wanjeri Bismillahi Shop",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh.2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8507908,
+          -1.2631886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502070797",
+      "properties": {
+        "@id": "node/4502070797",
+        "amenity": "drinking_water",
+        "name": "Washiro",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8507941,
+          -1.2631601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112950",
+      "properties": {
+        "@id": "node/4502112950",
+        "amenity": "drinking_water",
+        "name": "Jacob Mwangi",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh.2 per 20 Litres",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8569637,
+          -1.2644772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112951",
+      "properties": {
+        "@id": "node/4502112951",
+        "amenity": "drinking_water",
+        "name": "John Wanjohi",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh.2 per 20 Litres",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8565017,
+          -1.2649729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112952",
+      "properties": {
+        "@id": "node/4502112952",
+        "amenity": "drinking_water",
+        "name": "Kungengane Self Help Group",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh.5 per 20 Litres",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8558921,
+          -1.264273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112953",
+      "properties": {
+        "@id": "node/4502112953",
+        "amenity": "drinking_water",
+        "name": "Kwa Francis",
+        "operational_status": "operational",
+        "watsan:availability": "always",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8566926,
+          -1.2642904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112958",
+      "properties": {
+        "@id": "node/4502112958",
+        "amenity": "drinking_water",
+        "name": "Muungano Women Group",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8565084,
+          -1.2654234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112963",
+      "properties": {
+        "@id": "node/4502112963",
+        "amenity": "drinking_water",
+        "name": "Pamoja Trust Muungano Bondeni",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8564346,
+          -1.2646237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112966",
+      "properties": {
+        "@id": "node/4502112966",
+        "amenity": "drinking_water",
+        "name": "Single Mothers",
+        "operational_status": "operational",
+        "watsan:availability": "always",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.857509,
+          -1.2648259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112969",
+      "properties": {
+        "@id": "node/4502112969",
+        "amenity": "drinking_water",
+        "name": "Twaweza Group",
+        "operational_status": "operational",
+        "watsan:availability": "always",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8555304,
+          -1.2641848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112971",
+      "properties": {
+        "@id": "node/4502112971",
+        "amenity": "drinking_water",
+        "name": "Visionary Youth Group",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh.2 per 20 litre",
+        "watsan:type": "water_tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8566177,
+          -1.2649252
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112975",
+      "properties": {
+        "@id": "node/4502112975",
+        "amenity": "drinking_water",
+        "operational_status": "non operational",
+        "watsan:availability": "never",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8549048,
+          -1.2644104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112977",
+      "properties": {
+        "@id": "node/4502112977",
+        "amenity": "drinking_water",
+        "operational_status": "non operational",
+        "watsan:availability": "never",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.855445,
+          -1.264776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502112978",
+      "properties": {
+        "@id": "node/4502112978",
+        "amenity": "drinking_water",
+        "operational_status": "non operational",
+        "watsan:availability": "never",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.856601,
+          -1.265384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126564",
+      "properties": {
+        "@id": "node/4502126564",
+        "amenity": "drinking_water",
+        "name": "Ben",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "Often",
+        "watsan:water_private": "yes",
+        "watsan:water_public": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.855168,
+          -1.2623646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126567",
+      "properties": {
+        "@id": "node/4502126567",
+        "amenity": "drinking_water",
+        "name": "Jack",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8552861,
+          -1.2624705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126568",
+      "properties": {
+        "@id": "node/4502126568",
+        "amenity": "drinking_water",
+        "name": "Jack",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8553851,
+          -1.262527
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126569",
+      "properties": {
+        "@id": "node/4502126569",
+        "amenity": "drinking_water",
+        "name": "Jack",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.855519,
+          -1.2626637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126570",
+      "properties": {
+        "@id": "node/4502126570",
+        "amenity": "drinking_water",
+        "name": "Jalego",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.856603,
+          -1.2631263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126572",
+      "properties": {
+        "@id": "node/4502126572",
+        "amenity": "drinking_water",
+        "name": "Odhis",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "other",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8562618,
+          -1.2628569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126573",
+      "properties": {
+        "@id": "node/4502126573",
+        "amenity": "drinking_water",
+        "name": "Okal",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8561216,
+          -1.2624631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126574",
+      "properties": {
+        "@id": "node/4502126574",
+        "amenity": "drinking_water",
+        "name": "Okal",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8562268,
+          -1.2635811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126576",
+      "properties": {
+        "@id": "node/4502126576",
+        "amenity": "drinking_water",
+        "name": "Kisii",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8555162,
+          -1.2619167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126578",
+      "properties": {
+        "@id": "node/4502126578",
+        "amenity": "drinking_water",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "non_operationa",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:water_availability": "none",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8550577,
+          -1.2622631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126579",
+      "properties": {
+        "@id": "node/4502126579",
+        "amenity": "drinking_water",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "non_operationa",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "none",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8550664,
+          -1.2622978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502126582",
+      "properties": {
+        "@id": "node/4502126582",
+        "amenity": "drinking_water",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.856927,
+          -1.2628082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203203",
+      "properties": {
+        "@id": "node/4502203203",
+        "amenity": "drinking_water",
+        "name": "Bethsaida",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.849229,
+          -1.2638633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203204",
+      "properties": {
+        "@id": "node/4502203204",
+        "amenity": "drinking_water",
+        "name": "Bidii Youth Group",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.850059,
+          -1.2635466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203206",
+      "properties": {
+        "@id": "node/4502203206",
+        "amenity": "drinking_water",
+        "name": "Jehu Melchizedek",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8492289,
+          -1.263777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203207",
+      "properties": {
+        "@id": "node/4502203207",
+        "amenity": "drinking_water",
+        "name": "Kwa Maggy",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8497201,
+          -1.2636873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203208",
+      "properties": {
+        "@id": "node/4502203208",
+        "amenity": "drinking_water",
+        "name": "Kwa Mama Wambo",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8500681,
+          -1.2635821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203209",
+      "properties": {
+        "@id": "node/4502203209",
+        "amenity": "drinking_water",
+        "name": "Kwa Murata",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8492954,
+          -1.2635572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203210",
+      "properties": {
+        "@id": "node/4502203210",
+        "amenity": "drinking_water",
+        "name": "Kwa Shosho",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8494234,
+          -1.2636933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203211",
+      "properties": {
+        "@id": "node/4502203211",
+        "amenity": "drinking_water",
+        "name": "Mama Adesh",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8515891,
+          -1.2634817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203212",
+      "properties": {
+        "@id": "node/4502203212",
+        "amenity": "drinking_water",
+        "name": "Mama Delvin",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_private": "no",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8494926,
+          -1.263093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203213",
+      "properties": {
+        "@id": "node/4502203213",
+        "amenity": "drinking_water",
+        "name": "Mama Franco(Githushi Shop)",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8493759,
+          -1.2632417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203214",
+      "properties": {
+        "@id": "node/4502203214",
+        "amenity": "drinking_water",
+        "name": "Mama Njeri",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8492741,
+          -1.2639042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203215",
+      "properties": {
+        "@id": "node/4502203215",
+        "amenity": "drinking_water",
+        "name": "Mama Njeri",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8492372,
+          -1.2639297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4502203217",
+      "properties": {
+        "@id": "node/4502203217",
+        "amenity": "drinking_water",
+        "name": "Mucii Brixton",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.849233,
+          -1.264033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503746692",
+      "properties": {
+        "@id": "node/4503746692",
+        "amenity": "drinking_water",
+        "name": "Bonny",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8558428,
+          -1.2622275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503813195",
+      "properties": {
+        "@id": "node/4503813195",
+        "amenity": "drinking_water",
+        "name": "Kwa Mama Lorna",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "ksh 2 per 20litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8560694,
+          -1.2633173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503816692",
+      "properties": {
+        "@id": "node/4503816692",
+        "amenity": "drinking_water",
+        "name": "Karanja",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8548403,
+          -1.2614052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503836190",
+      "properties": {
+        "@id": "node/4503836190",
+        "amenity": "drinking_water",
+        "name": "Kwa Mama Christine",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8558189,
+          -1.2630368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503852989",
+      "properties": {
+        "@id": "node/4503852989",
+        "amenity": "drinking_water",
+        "name": "Anaweza Education Centre",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "school",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8561698,
+          -1.2628169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503852992",
+      "properties": {
+        "@id": "node/4503852992",
+        "amenity": "drinking_water",
+        "name": "Kwa Nancy",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8555264,
+          -1.2627606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503852994",
+      "properties": {
+        "@id": "node/4503852994",
+        "amenity": "drinking_water",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8543362,
+          -1.2609697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503853089",
+      "properties": {
+        "@id": "node/4503853089",
+        "amenity": "drinking_water",
+        "name": "Carol",
+        "opening_hours": "05:00-06:00;19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:water_availability": "often"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8561588,
+          -1.2634089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503854089",
+      "properties": {
+        "@id": "node/4503854089",
+        "amenity": "drinking_water",
+        "name": "Nairobi Water Company",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "water_tank",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8536562,
+          -1.2608818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503854189",
+      "properties": {
+        "@id": "node/4503854189",
+        "amenity": "drinking_water",
+        "name": "Samson",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8548924,
+          -1.2616082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503854190",
+      "properties": {
+        "@id": "node/4503854190",
+        "amenity": "drinking_water",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8540182,
+          -1.2612393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503854192",
+      "properties": {
+        "@id": "node/4503854192",
+        "charge": "3",
+        "fee": "yes",
+        "image": "https://mapkibera.github.io/watsan/data/images/cache/node/4503854192/httpskchumanitarianresponseinfoattachmentoriginalmediafilemapkiberaattachments1616664499708jpg/orig.jpg",
+        "man_made": "water_tap",
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "operator:description": "Private",
+        "operator:type": "private",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8559183,
+          -1.2626267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503854289",
+      "properties": {
+        "@id": "node/4503854289",
+        "amenity": "drinking_water",
+        "name": "Kwa John",
+        "opening_hours": "05:00-06:00,19:00-22:00",
+        "operational_status": "operational",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:type": "piped_tap",
+        "watsan:water_availability": "often",
+        "watsan:water_private": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8562855,
+          -1.2635621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503896059",
+      "properties": {
+        "@id": "node/4503896059",
+        "amenity": "drinking_water",
+        "name": "Kwa Benta",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.856977,
+          -1.2638069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503896061",
+      "properties": {
+        "@id": "node/4503896061",
+        "amenity": "drinking_water",
+        "name": "Kwa Eunice",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8574659,
+          -1.2636756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503896064",
+      "properties": {
+        "@id": "node/4503896064",
+        "amenity": "drinking_water",
+        "name": "Kwa Osele",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.856973,
+          -1.263807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503896067",
+      "properties": {
+        "@id": "node/4503896067",
+        "amenity": "drinking_water",
+        "name": "Kwa Wanjiko",
+        "operational_status": "non operational",
+        "watsan:availability": "never",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8573194,
+          -1.2640024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503896069",
+      "properties": {
+        "@id": "node/4503896069",
+        "amenity": "drinking_water",
+        "name": "Mcedo Community Toilet",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8568327,
+          -1.263724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503959139",
+      "properties": {
+        "@id": "node/4503959139",
+        "amenity": "drinking_water",
+        "name": "Amani",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "ksh 2 per 20litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8566979,
+          -1.263078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503959140",
+      "properties": {
+        "@id": "node/4503959140",
+        "amenity": "drinking_water",
+        "name": "Imara Self Help Group",
+        "operational_status": "non operational",
+        "watsan:availability": "never",
+        "watsan:location": "public_community",
+        "watsan:type": "water_tank",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.856887,
+          -1.2632078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503959141",
+      "properties": {
+        "@id": "node/4503959141",
+        "amenity": "drinking_water",
+        "name": "Kwa Dorothy",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8569213,
+          -1.263501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503959142",
+      "properties": {
+        "@id": "node/4503959142",
+        "amenity": "drinking_water",
+        "name": "Kwa Edward Otieno",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8576807,
+          -1.262975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503959143",
+      "properties": {
+        "@id": "node/4503959143",
+        "amenity": "drinking_water",
+        "name": "Kwa Jackline",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.85694,
+          -1.2631169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4503959149",
+      "properties": {
+        "@id": "node/4503959149",
+        "amenity": "drinking_water",
+        "name": "Young Women Self Help Group",
+        "operational_status": "operational",
+        "watsan:availability": "often",
+        "watsan:cost": "Ksh. 2 per 20 Litres",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap",
+        "watsan:water_public": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.856918,
+          -1.2634328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8738624592",
+      "properties": {
+        "@id": "node/8738624592",
+        "charge": "3",
+        "fee": "yes",
+        "image": "https://mapkibera.github.io/watsan/data/images/cache/node/8738624592/httpskchumanitarianresponseinfoattachmentoriginalmediafilemapkiberaattachments1616664499708jpg/orig.jpg",
+        "man_made": "water_tap",
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "operator:description": "Private",
+        "operator:type": "private",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8559584,
+          -1.262655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8738649414",
+      "properties": {
+        "@id": "node/8738649414",
+        "charge": "3",
+        "fee": "yes",
+        "image": "https://mapkibera.github.io/watsan/data/images/cache/node/8738649414/httpskchumanitarianresponseinfoattachmentoriginalmediafilemapkiberaattachments1616664264629jpg/orig.jpg",
+        "man_made": "water_tap",
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "operator:type": "private",
+        "watsan:location": "public_community",
+        "watsan:type": "piped_tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8561217,
+          -1.262715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/11801700580",
+      "properties": {
+        "@id": "node/11801700580",
+        "altitude": "1623.04",
+        "amenity": "drinking_water",
+        "content": "water",
+        "fee": "yes",
+        "lit": "no",
+        "man_made": "storage_tank",
+        "operational_status": "operational",
+        "precision": "3.9",
+        "pump": "no",
+        "source": "KRCS2024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8547995,
+          -1.2640611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/11801700581",
+      "properties": {
+        "@id": "node/11801700581",
+        "altitude": "1652.618",
+        "amenity": "drinking_water",
+        "content": "water",
+        "fee": "yes",
+        "lit": "no",
+        "man_made": "storage_tank",
+        "operational_status": "operational",
+        "precision": "4.313",
+        "pump": "no",
+        "source": "KRCS2024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8523894,
+          -1.2648319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/11801700584",
+      "properties": {
+        "@id": "node/11801700584",
+        "altitude": "1626.713",
+        "amenity": "drinking_water",
+        "content": "water",
+        "fee": "yes",
+        "lit": "yes",
+        "man_made": "storage_tank",
+        "precision": "3.9",
+        "pump": "powered",
+        "source": "KRCS2024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8537562,
+          -1.2660205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/11802168105",
+      "properties": {
+        "@id": "node/11802168105",
+        "altitude": "1664.763",
+        "amenity": "water_point",
+        "fee": "yes",
+        "lit": "yes",
+        "man_made": "water_tap",
+        "operational_status": "operational",
+        "precision": "3.9",
+        "pump": "manual",
+        "source": "KRCS2024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8553617,
+          -1.2656615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/11802168106",
+      "properties": {
+        "@id": "node/11802168106",
+        "altitude": "1638.8",
+        "amenity": "water_point",
+        "fee": "yes",
+        "lit": "no",
+        "man_made": "water_tap",
+        "operational_status": "non-operational",
+        "precision": "4.86",
+        "pump": "powered",
+        "source": "KRCS2024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8502016,
+          -1.2655539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/11802168108",
+      "properties": {
+        "@id": "node/11802168108",
+        "altitude": "1628.4",
+        "amenity": "water_point",
+        "fee": "yes",
+        "lit": "no",
+        "man_made": "water_tap",
+        "operational_status": "operational",
+        "precision": "4.3",
+        "pump": "manual",
+        "source": "KRCS2024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.849111,
+          -1.2659358
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/11802168115",
+      "properties": {
+        "@id": "node/11802168115",
+        "altitude": "1638.8",
+        "amenity": "water_point",
+        "fee": "yes",
+        "lit": "no",
+        "man_made": "water_tap",
+        "operational_status": "operational",
+        "precision": "11.2",
+        "pump": "powered",
+        "source": "KRCS2024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8502448,
+          -1.265206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542123",
+      "properties": {
+        "@id": "node/12391542123",
+        "amenity": "drinking_water",
+        "man_made": "Nairobi water and sewerage company",
+        "name": "Gitathuru Gor Water Kiosk",
+        "operational_status": "operational",
+        "operator:type": "public",
+        "payment:cash": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8538981,
+          -1.2613076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542124",
+      "properties": {
+        "@id": "node/12391542124",
+        "amenity": "drinking_water",
+        "man_made": "Nairobi water and sewerage company",
+        "operational_status": "non-operational",
+        "operator:type": "public",
+        "payment:cash": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.854554,
+          -1.2617598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542125",
+      "properties": {
+        "@id": "node/12391542125",
+        "amenity": "drinking_water",
+        "man_made": "Nairobi water and sewerage company",
+        "name": "Gitathuru-4B Water Kiosk",
+        "operational_status": "non-operational",
+        "operator:type": "public",
+        "payment:cash": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8551307,
+          -1.2622785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542126",
+      "properties": {
+        "@id": "node/12391542126",
+        "amenity": "drinking_water",
+        "man_made": "Nairobi water and sewerage company",
+        "operational_status": "operational",
+        "operator:type": "ngo",
+        "payment:cash": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8567566,
+          -1.2630712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542127",
+      "properties": {
+        "@id": "node/12391542127",
+        "amenity": "drinking_water",
+        "man_made": "Nairobi water and sewerage company",
+        "operational_status": "needs maintenance",
+        "operator:type": "ngo",
+        "payment:cash": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.856853,
+          -1.2631719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542130",
+      "properties": {
+        "@id": "node/12391542130",
+        "amenity": "drinking_water",
+        "man_made": "Nairobi water and sewerage company",
+        "name": "Mathare Reticulation Work Water Point",
+        "operational_status": "needs maintenance",
+        "operator:type": "public",
+        "payment:cash": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8535088,
+          -1.2628247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542131",
+      "properties": {
+        "@id": "node/12391542131",
+        "amenity": "drinking_water",
+        "man_made": "borehole",
+        "name": "Athi Water Chief'S Camp Water Point",
+        "operational_status": "non-operational",
+        "operator:type": "public",
+        "payment:cash": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8530506,
+          -1.2626559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542132",
+      "properties": {
+        "@id": "node/12391542132",
+        "amenity": "drinking_water",
+        "man_made": "Nairobi water and sewerage company",
+        "operational_status": "non-operational",
+        "operator:type": "private",
+        "payment:cash": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8508844,
+          -1.2625756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12391542133",
+      "properties": {
+        "@id": "node/12391542133",
+        "amenity": "drinking_water",
+        "man_made": "NWSC",
+        "operational_status": "needs maintenance",
+        "operator:type": "private",
+        "payment:cash": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8494361,
+          -1.2624667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557924",
+      "properties": {
+        "@id": "node/12393557924",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "operational_status": "operational",
+        "operator:type": "community",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8537533,
+          -1.2658663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557925",
+      "properties": {
+        "@id": "node/12393557925",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "name": "Kiboro Water Kiosk",
+        "operational_status": "operational",
+        "operator:type": "public",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8539697,
+          -1.2658127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557926",
+      "properties": {
+        "@id": "node/12393557926",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8530532,
+          -1.26597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557927",
+      "properties": {
+        "@id": "node/12393557927",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "operational_status": "operational",
+        "operator:type": "community",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8513702,
+          -1.2658961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557928",
+      "properties": {
+        "@id": "node/12393557928",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "operational_status": "operational",
+        "operator:type": "community",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8509275,
+          -1.2659429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557932",
+      "properties": {
+        "@id": "node/12393557932",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "name": "community water project",
+        "operational_status": "non-operational",
+        "operator:type": "community",
+        "payment:cash": "no",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8482007,
+          -1.2642027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557933",
+      "properties": {
+        "@id": "node/12393557933",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "operational_status": "operational",
+        "operator:type": "community",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8509324,
+          -1.2647035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557934",
+      "properties": {
+        "@id": "node/12393557934",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "operational_status": "non-operational",
+        "operator:type": "community",
+        "payment:cash": "no",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8519417,
+          -1.2644676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557935",
+      "properties": {
+        "@id": "node/12393557935",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "operational_status": "operational",
+        "operator:type": "community",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8530619,
+          -1.2643458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557936",
+      "properties": {
+        "@id": "node/12393557936",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "name": "Area 3 Water Point Mlango Kubwa",
+        "operational_status": "non-operational",
+        "operator:type": "public",
+        "payment:cash": "no",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8534381,
+          -1.2642737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557937",
+      "properties": {
+        "@id": "node/12393557937",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "operational_status": "operational",
+        "operator:type": "community",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8548393,
+          -1.2641805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393557938",
+      "properties": {
+        "@id": "node/12393557938",
+        "amenity": "drinking_water",
+        "description": "Nairobi water and sewerage company",
+        "name": "Kambi Safi Community Water Project",
+        "operational_status": "operational",
+        "operator:type": "public",
+        "payment:cash": "yes",
+        "water_source": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8550414,
+          -1.2656649
+        ]
+      }
+    }
+  ]
+}

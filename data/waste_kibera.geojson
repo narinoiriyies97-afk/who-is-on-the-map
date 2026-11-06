@@ -1,0 +1,4290 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-11-05T10:17:47Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/612007889",
+      "properties": {
+        "@id": "node/612007889",
+        "amenity": "recycling",
+        "notes": "Gabbage collection"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7785834,
+          -1.3154543
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/612008386",
+      "properties": {
+        "@id": "node/612008386",
+        "amenity": "recycling",
+        "note": "Recycling Centre"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.794074,
+          -1.3175502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/612008490",
+      "properties": {
+        "@id": "node/612008490",
+        "amenity": "recycling",
+        "note": "collection point of recycling objects",
+        "recycling:batteries": "yes",
+        "recycling:cans": "yes",
+        "recycling:glass": "yes",
+        "recycling:scrap_metal": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7970425,
+          -1.3113527
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/612009055",
+      "properties": {
+        "@id": "node/612009055",
+        "amenity": "recycling",
+        "name": "Recycling",
+        "opening_hours": "Mo-Su 06:00-21:00",
+        "operator:description": "Silanga Youth Group",
+        "operator:type": "self_help",
+        "recycling:paper": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8008214,
+          -1.3174967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769069108",
+      "properties": {
+        "@id": "node/769069108",
+        "amenity": "waste_disposal",
+        "operational_status": "bad",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7779784,
+          -1.3155309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769097859",
+      "properties": {
+        "@id": "node/769097859",
+        "amenity": "waste_disposal",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7889758,
+          -1.3119559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769097864",
+      "properties": {
+        "@id": "node/769097864",
+        "amenity": "waste_disposal",
+        "media:video_device_number": "10",
+        "media:video_number": "4",
+        "operational_status": "operational",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7866474,
+          -1.3117905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769112772",
+      "properties": {
+        "@id": "node/769112772",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator:type": "public",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.774351,
+          -1.3135884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769145326",
+      "properties": {
+        "@id": "node/769145326",
+        "amenity": "waste_disposal",
+        "opening_hours": "07:00-18:00",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7793616,
+          -1.3153138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769158957",
+      "properties": {
+        "@id": "node/769158957",
+        "amenity": "waste_disposal",
+        "media:camera_device_number": "1",
+        "media:camera_number": "100-0024,100-0025",
+        "operational_status": "bad",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7784075,
+          -1.3181613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769158960",
+      "properties": {
+        "@id": "node/769158960",
+        "amenity": "waste_disposal",
+        "operational_status": "bad",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7785973,
+          -1.317305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769158964",
+      "properties": {
+        "@id": "node/769158964",
+        "amenity": "waste_disposal",
+        "operational_status": "bad",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7854002,
+          -1.3067534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769158967",
+      "properties": {
+        "@id": "node/769158967",
+        "amenity": "waste_disposal",
+        "operational_status": "bad",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.778492,
+          -1.3176611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/769158969",
+      "properties": {
+        "@id": "node/769158969",
+        "amenity": "waste_disposal",
+        "media:camera_device_number": "1",
+        "media:camera_number": "100-0020,100-0021",
+        "operational_status": "bad",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7795178,
+          -1.3107167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/771235527",
+      "properties": {
+        "@id": "node/771235527",
+        "amenity": "waste_disposal",
+        "operational_status": "bad",
+        "watsan:description": "a terrace(starting point)and there is alot of trash dump on it",
+        "watsan:dumping_site": "yes",
+        "watsan:other": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7977613,
+          -1.3121874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/772439549",
+      "properties": {
+        "@id": "node/772439549",
+        "amenity": "waste_disposal",
+        "operational_status": "bad",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7771907,
+          -1.3116998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/772439562",
+      "properties": {
+        "@id": "node/772439562",
+        "amenity": "recycling",
+        "media:video_device_number": "09",
+        "media:video_number": "7",
+        "name": "Self-Help Group",
+        "opening_hours": "06:00-18:00",
+        "operational_status": "operational",
+        "operator:description": "runs by youth",
+        "operator:type": "ngo_cbo",
+        "watsan:description": "car wash and carpets",
+        "watsan:recycling": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7781584,
+          -1.3132197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/772458371",
+      "properties": {
+        "@id": "node/772458371",
+        "amenity": "waste_disposal",
+        "media:video_device_number": "09",
+        "media:video_number": "8",
+        "operational_status": "operational",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7833186,
+          -1.3065852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/772458373",
+      "properties": {
+        "@id": "node/772458373",
+        "amenity": "waste_disposal",
+        "media:video_device_number": "09",
+        "media:video_number": "11",
+        "operational_status": "operational",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7786258,
+          -1.3111976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/772458374",
+      "properties": {
+        "@id": "node/772458374",
+        "amenity": "waste_disposal",
+        "fixme": "resurvey",
+        "mapillary": "174262231255472",
+        "name": "Makina",
+        "opening_hours": "24/7",
+        "operational_status": "bad",
+        "survey:date": "2018-02-13",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7814651,
+          -1.3086248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/772551850",
+      "properties": {
+        "@id": "node/772551850",
+        "amenity": "waste_disposal",
+        "media:camera_device_number": "02",
+        "media:camera_number": "100-0018",
+        "operational_status": "operational",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7791417,
+          -1.3152683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/772551865",
+      "properties": {
+        "@id": "node/772551865",
+        "amenity": "waste_disposal",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.786982,
+          -1.3103169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/775527630",
+      "properties": {
+        "@id": "node/775527630",
+        "amenity": "waste_disposal",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator:type": "public",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7867151,
+          -1.3113782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/775537375",
+      "properties": {
+        "@id": "node/775537375",
+        "amenity": "waste_disposal",
+        "mapillary": "502026707900726",
+        "name": "Temporary Garbage Collection Site",
+        "opening_hours": "Mo; Fr",
+        "operational_status": "operational",
+        "operator:type": "private",
+        "source": "survey",
+        "survey:date": "2018-02-12",
+        "watsan:cost": "300 per month",
+        "watsan:description": "the place is set for temporary dumping before they are collected and taken to the main dumping areas",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.780885,
+          -1.3102212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/781274704",
+      "properties": {
+        "@id": "node/781274704",
+        "amenity": "waste_disposal",
+        "operational_status": "bad",
+        "watsan:description": "the end point of the terrace",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7980562,
+          -1.3123549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/795683902",
+      "properties": {
+        "@id": "node/795683902",
+        "amenity": "waste_disposal",
+        "watsan:description": "Thiis is where people dump their waste products",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7961619,
+          -1.3129813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/795764942",
+      "properties": {
+        "@id": "node/795764942",
+        "amenity": "waste_disposal",
+        "watsan:description": "it is located a long the river.People do throw their waste products in the river.",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7994027,
+          -1.3135185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/795800074",
+      "properties": {
+        "@id": "node/795800074",
+        "amenity": "waste_disposal",
+        "opening_hours": "24/7",
+        "operational_status": "bad",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7935142,
+          -1.3165965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/795850349",
+      "properties": {
+        "@id": "node/795850349",
+        "amenity": "waste_disposal",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7941673,
+          -1.3177458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/941479919",
+      "properties": {
+        "@id": "node/941479919",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7871999,
+          -1.3154263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/941479988",
+      "properties": {
+        "@id": "node/941479988",
+        "amenity": "recycling",
+        "name": "Ushirika",
+        "opening_hours": "Mo-Fr 05:00-20:00",
+        "operational_status": "operational",
+        "operator": "Ushirika",
+        "operator:type": "ngo_cbo",
+        "watsan:description": "It also produces bio gas energy",
+        "watsan:recycling": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7940157,
+          -1.3122081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/941480083",
+      "properties": {
+        "@id": "node/941480083",
+        "amenity": "waste_disposal",
+        "media:camera_device_number": "01",
+        "media:camera_number": "100-0013,100-0014",
+        "operational_status": "operational",
+        "operator:type": "ngo_cbo",
+        "watsan:cost": "100sh per month",
+        "watsan:dumping_site": "yes",
+        "watsan:users_per_day": "50"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7767201,
+          -1.3146953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/941480103",
+      "properties": {
+        "@id": "node/941480103",
+        "amenity": "waste_disposal",
+        "media:camera_device_number": "1",
+        "media:camera_number": "100-0018,100-0031,100-0032",
+        "operational_status": "bad",
+        "operator:type": "private",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7791019,
+          -1.3153192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/941480243",
+      "properties": {
+        "@id": "node/941480243",
+        "amenity": "waste_disposal",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator:type": "public",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7718788,
+          -1.3094074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/941480336",
+      "properties": {
+        "@id": "node/941480336",
+        "amenity": "waste_disposal",
+        "media:camera_device_number": "02",
+        "media:camera_number": "100-00016",
+        "operational_status": "operational",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7796547,
+          -1.3155469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1809764851",
+      "properties": {
+        "@id": "node/1809764851",
+        "amenity": "recycling",
+        "recycling:cans": "yes",
+        "recycling:glass": "yes",
+        "recycling:paper": "yes",
+        "recycling:scrap_metal": "yes",
+        "recycling_type": "Taka ni Pato Centre"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.774495,
+          -1.311169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2117408675",
+      "properties": {
+        "@id": "node/2117408675",
+        "amenity": "waste_disposal",
+        "name": "Dumping site",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7964051,
+          -1.3105686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2117408677",
+      "properties": {
+        "@id": "node/2117408677",
+        "amenity": "waste_disposal",
+        "name": "Dumping site",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8048537,
+          -1.314659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2117408707",
+      "properties": {
+        "@id": "node/2117408707",
+        "amenity": "waste_disposal",
+        "name": "dumping_site",
+        "watsan:dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7973835,
+          -1.3136021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2117408708",
+      "properties": {
+        "@id": "node/2117408708",
+        "amenity": "recycling",
+        "recycling:batteries": "yes",
+        "recycling:cans": "yes",
+        "recycling:glass": "yes",
+        "recycling:scrap_metal": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8060792,
+          -1.3119422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2433643008",
+      "properties": {
+        "@id": "node/2433643008",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7743203,
+          -1.312493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2438886399",
+      "properties": {
+        "@id": "node/2438886399",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7754801,
+          -1.3131916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2438933720",
+      "properties": {
+        "@id": "node/2438933720",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7760765,
+          -1.3126182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2438933725",
+      "properties": {
+        "@id": "node/2438933725",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7761303,
+          -1.3127636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2444373404",
+      "properties": {
+        "@id": "node/2444373404",
+        "amenity": "waste_disposal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7806288,
+          -1.3148087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452557809",
+      "properties": {
+        "@id": "node/2452557809",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.779349,
+          -1.315724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452608449",
+      "properties": {
+        "@id": "node/2452608449",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7817659,
+          -1.3163222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452608490",
+      "properties": {
+        "@id": "node/2452608490",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7830198,
+          -1.3168034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452615150",
+      "properties": {
+        "@id": "node/2452615150",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7725041,
+          -1.3094848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452639915",
+      "properties": {
+        "@id": "node/2452639915",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7736576,
+          -1.3106637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452639938",
+      "properties": {
+        "@id": "node/2452639938",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7726651,
+          -1.3114147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452639941",
+      "properties": {
+        "@id": "node/2452639941",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7724863,
+          -1.3114794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452885323",
+      "properties": {
+        "@id": "node/2452885323",
+        "amenity": "waste_disposal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7882599,
+          -1.3150905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2452885343",
+      "properties": {
+        "@id": "node/2452885343",
+        "amenity": "waste_disposal",
+        "dumping_site": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7833844,
+          -1.3154054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751104",
+      "properties": {
+        "@id": "node/7930751104",
+        "amenity": "waste_disposal",
+        "condition": "good",
+        "fee": "no",
+        "operator:description": "county_government",
+        "operator:funding": "county_government",
+        "operator:type": "county_government",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7847733,
+          -1.3059767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751105",
+      "properties": {
+        "@id": "node/7930751105",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590652568425.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7805767,
+          -1.3077717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751106",
+      "properties": {
+        "@id": "node/7930751106",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590561151168.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "none",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7876446,
+          -1.3092483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751107",
+      "properties": {
+        "@id": "node/7930751107",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590650647570.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7929017,
+          -1.31448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751108",
+      "properties": {
+        "@id": "node/7930751108",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590563894455.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7767817,
+          -1.3144417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751109",
+      "properties": {
+        "@id": "node/7930751109",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590655046574.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7714867,
+          -1.3124383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751110",
+      "properties": {
+        "@id": "node/7930751110",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654088083.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.79656,
+          -1.31411
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751111",
+      "properties": {
+        "@id": "node/7930751111",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654087084.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.775515,
+          -1.3138117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751112",
+      "properties": {
+        "@id": "node/7930751112",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590568652711.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7787183,
+          -1.3169117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751113",
+      "properties": {
+        "@id": "node/7930751113",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590573011002.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7741383,
+          -1.31717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751114",
+      "properties": {
+        "@id": "node/7930751114",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590569287953.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7783383,
+          -1.31744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751115",
+      "properties": {
+        "@id": "node/7930751115",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590648850930.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7912627,
+          -1.312515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751116",
+      "properties": {
+        "@id": "node/7930751116",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590564388455.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7864617,
+          -1.3116667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751117",
+      "properties": {
+        "@id": "node/7930751117",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590488957331.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7766183,
+          -1.3122283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751118",
+      "properties": {
+        "@id": "node/7930751118",
+        "amenity": "waste_disposal",
+        "condition": "good",
+        "fee": "no",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7867883,
+          -1.3129383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751119",
+      "properties": {
+        "@id": "node/7930751119",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590570372528.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7897417,
+          -1.3102588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751120",
+      "properties": {
+        "@id": "node/7930751120",
+        "amenity": "waste_disposal",
+        "condition": "fair",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590655287937.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7973933,
+          -1.3132533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751121",
+      "properties": {
+        "@id": "node/7930751121",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590657979693.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7914328,
+          -1.3154267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751122",
+      "properties": {
+        "@id": "node/7930751122",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590571741042.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.789843,
+          -1.3107862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751123",
+      "properties": {
+        "@id": "node/7930751123",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590655694393.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.77375,
+          -1.312245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751124",
+      "properties": {
+        "@id": "node/7930751124",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590481840679.jpg",
+        "operator:description": "Shofco",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.783275,
+          -1.3065417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751125",
+      "properties": {
+        "@id": "node/7930751125",
+        "amenity": "waste_disposal",
+        "condition": "good",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590561403574.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.788665,
+          -1.309255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751126",
+      "properties": {
+        "@id": "node/7930751126",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590561944641.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7891117,
+          -1.3082633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751127",
+      "properties": {
+        "@id": "node/7930751127",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590570136752.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.77759,
+          -1.3176817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751128",
+      "properties": {
+        "@id": "node/7930751128",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590656082532.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7938089,
+          -1.312492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751129",
+      "properties": {
+        "@id": "node/7930751129",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590650558535.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7925417,
+          -1.3144383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751130",
+      "properties": {
+        "@id": "node/7930751130",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590650382976.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7752833,
+          -1.31541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751131",
+      "properties": {
+        "@id": "node/7930751131",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590653905157.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.79561,
+          -1.3147367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751132",
+      "properties": {
+        "@id": "node/7930751132",
+        "amenity": "waste_disposal",
+        "condition": "good",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590485961620.jpg",
+        "operator:description": "none",
+        "operator:funding": "Uniliver",
+        "operator:type": "religious",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.78065,
+          -1.31237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751133",
+      "properties": {
+        "@id": "node/7930751133",
+        "amenity": "waste_disposal",
+        "condition": "fair",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654378739.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7751267,
+          -1.3136367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751134",
+      "properties": {
+        "@id": "node/7930751134",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654894807.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7731767,
+          -1.31275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751135",
+      "properties": {
+        "@id": "node/7930751135",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590568879568.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7847567,
+          -1.3155067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751136",
+      "properties": {
+        "@id": "node/7930751136",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590562071951.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "none",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7885883,
+          -1.30833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751137",
+      "properties": {
+        "@id": "node/7930751137",
+        "amenity": "waste_disposal",
+        "condition": "good",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590570738521.jpg",
+        "operator:description": "Gogo self group",
+        "operator:funding": "Gogo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7878517,
+          -1.31093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751138",
+      "properties": {
+        "@id": "node/7930751138",
+        "amenity": "waste_disposal",
+        "condition": "fair",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590659284865.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7913542,
+          -1.3166967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751139",
+      "properties": {
+        "@id": "node/7930751139",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590652003986.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7967136,
+          -1.3151829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751140",
+      "properties": {
+        "@id": "node/7930751140",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590649409830.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7917306,
+          -1.3128361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751141",
+      "properties": {
+        "@id": "node/7930751141",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590564992665.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7882917,
+          -1.3112983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751142",
+      "properties": {
+        "@id": "node/7930751142",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590652826635.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7766767,
+          -1.316425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751143",
+      "properties": {
+        "@id": "node/7930751143",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654159736.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7764416,
+          -1.3141821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751144",
+      "properties": {
+        "@id": "node/7930751144",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590655475593.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7730867,
+          -1.3121167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751145",
+      "properties": {
+        "@id": "node/7930751145",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590653393398.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7945521,
+          -1.3155925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751146",
+      "properties": {
+        "@id": "node/7930751146",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654752673.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7749033,
+          -1.3139283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751147",
+      "properties": {
+        "@id": "node/7930751147",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590565722571.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.77653,
+          -1.3165083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751148",
+      "properties": {
+        "@id": "node/7930751148",
+        "amenity": "waste_disposal",
+        "condition": "fair",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654938486.jpg",
+        "operator:description": "none",
+        "operator:funding": "county_government",
+        "operator:type": "county_government",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7973483,
+          -1.3133217
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751149",
+      "properties": {
+        "@id": "node/7930751149",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590557071296.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7988,
+          -1.31533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751151",
+      "properties": {
+        "@id": "node/7930751151",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590648705854.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7933417,
+          -1.311818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751152",
+      "properties": {
+        "@id": "node/7930751152",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654611986.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7762961,
+          -1.3128803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751153",
+      "properties": {
+        "@id": "node/7930751153",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590561545290.jpg",
+        "operator:description": "NYS",
+        "operator:funding": "NYS",
+        "operator:type": "NYS",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7775433,
+          -1.31531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751154",
+      "properties": {
+        "@id": "node/7930751154",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590655175375.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.77288,
+          -1.3123633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751155",
+      "properties": {
+        "@id": "node/7930751155",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590568783008.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7786367,
+          -1.316925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751156",
+      "properties": {
+        "@id": "node/7930751156",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590652852135.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.79765,
+          -1.3153883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751157",
+      "properties": {
+        "@id": "node/7930751157",
+        "amenity": "waste_disposal",
+        "condition": "fair",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590562015415.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7887217,
+          -1.308555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751158",
+      "properties": {
+        "@id": "node/7930751158",
+        "amenity": "waste_disposal",
+        "condition": "fair",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654885276.jpg",
+        "operator:description": "county_government",
+        "operator:funding": "county_government",
+        "operator:type": "county_government",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7765217,
+          -1.3121836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751159",
+      "properties": {
+        "@id": "node/7930751159",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590562733618.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.789085,
+          -1.3090433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751160",
+      "properties": {
+        "@id": "node/7930751160",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590482879971.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.77672,
+          -1.3141333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751161",
+      "properties": {
+        "@id": "node/7930751161",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590665444563.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7905854,
+          -1.3135893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751162",
+      "properties": {
+        "@id": "node/7930751162",
+        "amenity": "waste_disposal",
+        "condition": "good",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590557685244.jpg",
+        "operator:description": "NewNairobidam community group",
+        "operator:funding": "New Nairobi Dam",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8009983,
+          -1.3174683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751163",
+      "properties": {
+        "@id": "node/7930751163",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590571343317.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7876167,
+          -1.3143233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751164",
+      "properties": {
+        "@id": "node/7930751164",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590575338848.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7826268,
+          -1.3149837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751165",
+      "properties": {
+        "@id": "node/7930751165",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590655537801.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7730017,
+          -1.3122117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751166",
+      "properties": {
+        "@id": "node/7930751166",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image:classroom": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590561642289.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.771845,
+          -1.3087416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751167",
+      "properties": {
+        "@id": "node/7930751167",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590654642459.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.774945,
+          -1.3139583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751168",
+      "properties": {
+        "@id": "node/7930751168",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590655620132.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.773075,
+          -1.3121417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751169",
+      "properties": {
+        "@id": "node/7930751169",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590494613960.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7865167,
+          -1.3118933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751170",
+      "properties": {
+        "@id": "node/7930751170",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590649887199.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.795135,
+          -1.313135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751171",
+      "properties": {
+        "@id": "node/7930751171",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590561942579.jpg",
+        "operator:description": "NYS",
+        "operator:funding": "NYS",
+        "operator:type": "NYS",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7789833,
+          -1.31516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751172",
+      "properties": {
+        "@id": "node/7930751172",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590571697723.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7874817,
+          -1.3141867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751173",
+      "properties": {
+        "@id": "node/7930751173",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590567618722.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7876133,
+          -1.3134833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751174",
+      "properties": {
+        "@id": "node/7930751174",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590563676798.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7725694,
+          -1.311801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7930751175",
+      "properties": {
+        "@id": "node/7930751175",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590482245509.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "none",
+        "operator:type": "cbo",
+        "waste": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7834117,
+          -1.3066017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503092705",
+      "properties": {
+        "@id": "node/8503092705",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614853606475.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7894967,
+          -1.3120496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503121888",
+      "properties": {
+        "@id": "node/8503121888",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615189161063.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7788117,
+          -1.31529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503137438",
+      "properties": {
+        "@id": "node/8503137438",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614848582025.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,organic,plastic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7863666,
+          -1.3120336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503139244",
+      "properties": {
+        "@id": "node/8503139244",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614849074101.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7869041,
+          -1.3117389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503153516",
+      "properties": {
+        "@id": "node/8503153516",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614853675513.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7893663,
+          -1.3121463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503194232",
+      "properties": {
+        "@id": "node/8503194232",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615208137825.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7905632,
+          -1.3133407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503201195",
+      "properties": {
+        "@id": "node/8503201195",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615277788610.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7921573,
+          -1.3139126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503213595",
+      "properties": {
+        "@id": "node/8503213595",
+        "access": "customers",
+        "amenity": "waste_disposal",
+        "fee": "yes",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615280200553.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7942758,
+          -1.3154267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503215986",
+      "properties": {
+        "@id": "node/8503215986",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615277995243.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7923179,
+          -1.3140911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503223281",
+      "properties": {
+        "@id": "node/8503223281",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615283390709.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7919606,
+          -1.316248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503225803",
+      "properties": {
+        "@id": "node/8503225803",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615279657443.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7936504,
+          -1.3152306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503237189",
+      "properties": {
+        "@id": "node/8503237189",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615281177948.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7937737,
+          -1.3167266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503238099",
+      "properties": {
+        "@id": "node/8503238099",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615210081640.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7913946,
+          -1.315355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523751",
+      "properties": {
+        "@id": "node/8503523751",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614853014748.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.792945,
+          -1.30948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523753",
+      "properties": {
+        "@id": "node/8503523753",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614850855493.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7835497,
+          -1.306444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523754",
+      "properties": {
+        "@id": "node/8503523754",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614766089803.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7887127,
+          -1.3081804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523755",
+      "properties": {
+        "@id": "node/8503523755",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "yes",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614766378503.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7882985,
+          -1.3078401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523756",
+      "properties": {
+        "@id": "node/8503523756",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614757260942.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.78797,
+          -1.31083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523757",
+      "properties": {
+        "@id": "node/8503523757",
+        "access": "customers",
+        "amenity": "waste_disposal",
+        "fee": "yes",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614836232068.jpg",
+        "waste": "recycle_collection",
+        "waste:type": "plastic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7793732,
+          -1.3184318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523758",
+      "properties": {
+        "@id": "node/8503523758",
+        "access": "customers",
+        "amenity": "recycling",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614836576321.jpg",
+        "recycling_type": "centre",
+        "waste": "recycle_collection",
+        "waste:type": "organic,plastic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7732612,
+          -1.3086503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523759",
+      "properties": {
+        "@id": "node/8503523759",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614764482951.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7717912,
+          -1.3100597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523760",
+      "properties": {
+        "@id": "node/8503523760",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614761983877.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash, plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7716522,
+          -1.308827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523761",
+      "properties": {
+        "@id": "node/8503523761",
+        "access": "customers",
+        "amenity": "recycling",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614761194021.jpg",
+        "recycling_type": "centre",
+        "waste": "recycle_collection",
+        "waste:type": "plastic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7717593,
+          -1.3085893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523762",
+      "properties": {
+        "@id": "node/8503523762",
+        "access": "customers",
+        "amenity": "recycling",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614758756430.jpg",
+        "recycling_type": "centre",
+        "waste": "recycle_collection",
+        "waste:type": "plastic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7737997,
+          -1.3087535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523763",
+      "properties": {
+        "@id": "node/8503523763",
+        "amenity": "recycling",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614844313726.jpg",
+        "recycling_type": "centre",
+        "waste": "recycle_collection",
+        "waste:type": "trash, plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7780126,
+          -1.3096069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523765",
+      "properties": {
+        "@id": "node/8503523765",
+        "access": "customers",
+        "amenity": "recycling",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614842668183.jpg",
+        "recycling_type": "centre",
+        "waste": "recycle_collection",
+        "waste:type": "plastic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7734909,
+          -1.3097862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523766",
+      "properties": {
+        "@id": "node/8503523766",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614840581814.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7728994,
+          -1.3108074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523767",
+      "properties": {
+        "@id": "node/8503523767",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614838608138.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.772555,
+          -1.310085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8503523768",
+      "properties": {
+        "@id": "node/8503523768",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1614756100768.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash, plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.776931,
+          -1.3109607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8523996691",
+      "properties": {
+        "@id": "node/8523996691",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615532857975.jpg",
+        "operator:description": "cbo",
+        "operator:funding": "cbo",
+        "operator:type": "cbo",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7914218,
+          -1.3123199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524010169",
+      "properties": {
+        "@id": "node/8524010169",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1590570372528.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "trash",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7895368,
+          -1.3103612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524092628",
+      "properties": {
+        "@id": "node/8524092628",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615526407938.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7925803,
+          -1.310812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524095802",
+      "properties": {
+        "@id": "node/8524095802",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615524693504.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7931839,
+          -1.3110325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524121745",
+      "properties": {
+        "@id": "node/8524121745",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615439396100.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7977519,
+          -1.3119013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524122259",
+      "properties": {
+        "@id": "node/8524122259",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615439561794.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7975636,
+          -1.3117883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524129202",
+      "properties": {
+        "@id": "node/8524129202",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "condition": "dilapidated",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615456774364.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7963908,
+          -1.3154526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524131987",
+      "properties": {
+        "@id": "node/8524131987",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615459963610.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7984623,
+          -1.3184116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524148639",
+      "properties": {
+        "@id": "node/8524148639",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615459037380.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7983605,
+          -1.3172177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524163265",
+      "properties": {
+        "@id": "node/8524163265",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615460430808.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7966411,
+          -1.318245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524168094",
+      "properties": {
+        "@id": "node/8524168094",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615541306683.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7961321,
+          -1.3176331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524176048",
+      "properties": {
+        "@id": "node/8524176048",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615541857685.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7964469,
+          -1.318085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524177551",
+      "properties": {
+        "@id": "node/8524177551",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615541705018.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7965361,
+          -1.3179423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524198982",
+      "properties": {
+        "@id": "node/8524198982",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615543095612.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7943333,
+          -1.3189675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524205219",
+      "properties": {
+        "@id": "node/8524205219",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615541661286.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.79649,
+          -1.3178624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524207389",
+      "properties": {
+        "@id": "node/8524207389",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615537348486.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7940549,
+          -1.3179892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524214136",
+      "properties": {
+        "@id": "node/8524214136",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615543756703.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7931543,
+          -1.3174061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524223634",
+      "properties": {
+        "@id": "node/8524223634",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615538656431.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7946004,
+          -1.3177453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524234399",
+      "properties": {
+        "@id": "node/8524234399",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615465102395.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7945491,
+          -1.3175262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524256958",
+      "properties": {
+        "@id": "node/8524256958",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615464830436.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7945815,
+          -1.3175364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8524259265",
+      "properties": {
+        "@id": "node/8524259265",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615482871873.jpg",
+        "operator:description": "none",
+        "operator:funding": "none",
+        "operator:type": "none",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7921475,
+          -1.317335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478741",
+      "properties": {
+        "@id": "node/8527478741",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615457341121.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "organic,plastic,trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7976855,
+          -1.3160155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478742",
+      "properties": {
+        "@id": "node/8527478742",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615456440683.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7960736,
+          -1.316112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478743",
+      "properties": {
+        "@id": "node/8527478743",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615456237495.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7962166,
+          -1.3164388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478744",
+      "properties": {
+        "@id": "node/8527478744",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615456153805.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash plastic organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7961948,
+          -1.3167402
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478745",
+      "properties": {
+        "@id": "node/8527478745",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615454675845.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash plastic organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7929554,
+          -1.3134007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478746",
+      "properties": {
+        "@id": "node/8527478746",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615453950332.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "plastic,trash,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.791843,
+          -1.3122903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478747",
+      "properties": {
+        "@id": "node/8527478747",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615359435418.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7992045,
+          -1.3152119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478748",
+      "properties": {
+        "@id": "node/8527478748",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615453709489.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7901198,
+          -1.31079
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478749",
+      "properties": {
+        "@id": "node/8527478749",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615280880522.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7979513,
+          -1.3154716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478750",
+      "properties": {
+        "@id": "node/8527478750",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615278534502.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7964622,
+          -1.3155615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478751",
+      "properties": {
+        "@id": "node/8527478751",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615547418534.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7786849,
+          -1.3168955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478752",
+      "properties": {
+        "@id": "node/8527478752",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615546759792.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.778358,
+          -1.3165071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478753",
+      "properties": {
+        "@id": "node/8527478753",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615540455074.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7776428,
+          -1.3154171
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478754",
+      "properties": {
+        "@id": "node/8527478754",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615463032461.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7767148,
+          -1.316393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478755",
+      "properties": {
+        "@id": "node/8527478755",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615449296799.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7759547,
+          -1.3127794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478756",
+      "properties": {
+        "@id": "node/8527478756",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615462307907.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7757822,
+          -1.3158099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478757",
+      "properties": {
+        "@id": "node/8527478757",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615448818903.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7760352,
+          -1.313483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478758",
+      "properties": {
+        "@id": "node/8527478758",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615359017903.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7739271,
+          -1.3132473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478759",
+      "properties": {
+        "@id": "node/8527478759",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615278467713.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7728844,
+          -1.312034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8527478760",
+      "properties": {
+        "@id": "node/8527478760",
+        "access": "yes",
+        "amenity": "waste_disposal",
+        "fee": "no",
+        "image": "https://kc.humanitarianresponse.info/attachment/original?media_file=mapkibera/attachments/1615275027636.jpg",
+        "waste": "waste_dumping_site",
+        "waste:type": "trash,plastic,organic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7739132,
+          -1.3104287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12390250476",
+      "properties": {
+        "@id": "node/12390250476",
+        "amenity": "waste_transfer_station",
+        "operator:type": "community",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7878761,
+          -1.3231246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12390250477",
+      "properties": {
+        "@id": "node/12390250477",
+        "amenity": "waste_disposal",
+        "illegal": "yes",
+        "operator:type": "community",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7782453,
+          -1.3174488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393496540",
+      "properties": {
+        "@id": "node/12393496540",
+        "amenity": "waste_transfer_station",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.785162,
+          -1.3244792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12393628590",
+      "properties": {
+        "@id": "node/12393628590",
+        "amenity": "waste_disposal",
+        "illegal": "yes",
+        "operator:type": "community",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7769277,
+          -1.3188571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12395825831",
+      "properties": {
+        "@id": "node/12395825831",
+        "amenity": "waste_disposal",
+        "illegal": "yes",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7932269,
+          -1.3117096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12395825832",
+      "properties": {
+        "@id": "node/12395825832",
+        "amenity": "waste_disposal",
+        "illegal": "yes",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7991421,
+          -1.3179151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12395825833",
+      "properties": {
+        "@id": "node/12395825833",
+        "amenity": "waste_disposal",
+        "illegal": "yes",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7988694,
+          -1.3154864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12395825834",
+      "properties": {
+        "@id": "node/12395825834",
+        "amenity": "waste_disposal",
+        "illegal": "yes",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8031651,
+          -1.3153334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12395891955",
+      "properties": {
+        "@id": "node/12395891955",
+        "amenity": "waste_disposal",
+        "illegal": "yes",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7898226,
+          -1.3132796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12396372837",
+      "properties": {
+        "@id": "node/12396372837",
+        "amenity": "waste_transfer_station",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7857315,
+          -1.3058229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12396447995",
+      "properties": {
+        "@id": "node/12396447995",
+        "amenity": "waste_transfer_station",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7880307,
+          -1.3110926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12396677586",
+      "properties": {
+        "@id": "node/12396677586",
+        "amenity": "waste_transfer_station",
+        "illegal": "yes",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7835835,
+          -1.3181899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12396677587",
+      "properties": {
+        "@id": "node/12396677587",
+        "amenity": "waste_transfer_station",
+        "name": "raila village estate waste collection point",
+        "operator:type": "community",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7818414,
+          -1.3184772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12396677588",
+      "properties": {
+        "@id": "node/12396677588",
+        "amenity": "waste_disposal",
+        "description": "It is located on a road reserve",
+        "illegal": "yes",
+        "operator:type": "public"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7779034,
+          -1.3215462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12396677589",
+      "properties": {
+        "@id": "node/12396677589",
+        "amenity": "waste_disposal",
+        "description": "It is on a road reserve",
+        "illegal": "yes",
+        "operator:type": "public"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7774999,
+          -1.3225333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12396677592",
+      "properties": {
+        "@id": "node/12396677592",
+        "amenity": "waste_transfer_station",
+        "operator:type": "public",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7890242,
+          -1.3062831
+        ]
+      }
+    }
+  ]
+}
