@@ -18,6 +18,7 @@ body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);li
 .card{pointer-events:auto;background:var(--card);max-width:410px;padding:22px 24px;border-left:6px solid var(--rule);border-radius:3px;box-shadow:0 1px 6px rgba(0,0,0,.25)}
 .card h2{margin:0 0 10px;font-size:1.45rem;line-height:1.2;font-weight:800}
 .card p{margin:0 0 10px}.card p:last-child{margin:0}
+.card ul{margin:0 0 10px;padding-left:18px}.card li{margin-bottom:6px}
 .card .small{font-size:.85rem;color:var(--muted)}
 .hero h1{margin:0 0 12px;font-size:2.4rem;line-height:1.05;font-weight:800}
 .num{font-weight:800;font-size:1.15rem}
@@ -26,16 +27,48 @@ body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);li
 #legend label{display:block;cursor:pointer}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
 a{color:inherit}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 12px}
+.stat{border:1px solid rgba(127,127,127,.35);border-radius:6px;padding:8px 8px 6px}
+.stat b.o{color:#009E73}.stat b{display:block;font-size:1.5rem;font-weight:800;line-height:1.1}
+.stat>span{display:block;font-size:.78rem;color:var(--muted)}
+.stat>em{display:block;font-style:normal;font-size:.7rem;color:var(--muted);margin-top:4px;font-family:ui-monospace,monospace}
+#legend h3{margin:10px 0 4px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+#legend h3:first-child{margin-top:0}
+#legend .sw{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+#legend .row{display:block;font-size:.82rem}
+#legend .base{display:flex;gap:6px;margin-top:8px}
+#legend .base button{flex:1;font:inherit;font-size:.78rem;padding:4px 6px;border:1px solid rgba(127,127,127,.5);background:transparent;color:inherit;border-radius:4px;cursor:pointer}
+#legend .base button[aria-pressed=true]{background:var(--rule);border-color:var(--rule);color:#fff}
+.mk{width:18px;height:18px;border-radius:50%;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;position:relative}
+.mk svg{width:11px;height:11px;fill:#fff}
+.mk.broken::after{content:"";position:absolute;left:-2px;right:-2px;top:50%;height:2px;background:#fff;transform:rotate(-45deg);}
+.mk{width:14px;height:14px;border:2px solid #fff;border-radius:0;display:block;position:relative;box-shadow:none}
+.mk.water{border-radius:50%}.mk.toilets{border-radius:2px}.mk.waste{transform:rotate(45deg);width:12px;height:12px;border-radius:1px}
+.mk svg,.mk::after{display:none}
+figure.media{margin:10px 0 0}
+figure.media img,figure.media video,figure.media iframe{width:100%;border-radius:4px;display:block;border:0}
+figure.media iframe{aspect-ratio:16/9}
+figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
 @media (max-width:760px){.step{align-items:flex-end;padding:12px}.card{max-width:none;width:100%}.hero h1{font-size:1.9rem}}
+.sh{display:inline-block;width:11px;height:11px;margin-right:6px;background:#777;vertical-align:-1px}.sh.c{border-radius:50%}.sh.s{border-radius:2px}.sh.d{transform:rotate(45deg) scale(.85)}
+#key .row{display:block;font-size:.82rem}
 </style>
 </head>
 <body>
 <div id="map" role="img" aria-label="Map of water points, toilets and waste points in Kibera and Mathare, Nairobi"></div>
-<div id="legend" aria-label="Map layers">
-  <label><input type="checkbox" data-layer="water" checked> <span class="dot" style="background:var(--water)"></span>Water points</label>
-  <label><input type="checkbox" data-layer="toilets" checked> <span class="dot" style="background:var(--toilet)"></span>Toilets</label>
-  <label><input type="checkbox" data-layer="waste" checked> <span class="dot" style="background:var(--waste)"></span>Waste points</label>
+<div id="legend" aria-label="Map layers and key">
+  <h3>Show</h3>
+  <label><input type="checkbox" data-layer="water" checked> <span class="sh c"></span>Water points</label>
+  <label><input type="checkbox" data-layer="toilets" checked> <span class="sh s"></span>Toilets</label>
+  <label><input type="checkbox" data-layer="waste" checked> <span class="sh d"></span>Waste points</label>
+  <h3>Colour shows</h3>
+  <div class="base"><button type="button" data-color="access" aria-pressed="true">Who can use it</button><button type="button" data-color="fee" aria-pressed="false">What it costs</button></div>
+  <div id="key"></div>
+  <h3>Background</h3>
+  <div class="base"><button type="button" data-base="map" aria-pressed="true">Map</button><button type="button" data-base="sat" aria-pressed="false">Satellite</button></div>
 </div>
+
+<main
 
 <main class="col">
   <section class="step" data-view="start" data-layers="">
@@ -44,6 +77,24 @@ a{color:inherit}
       <p>Water and sanitation in Kibera and Mathare, Nairobi.</p>
       <p><strong>Being on the map is the first step to being planned for.</strong> Scroll to see what residents have mapped and what the map cannot tell us.</p>
       <p class="small">A student project, KU Leuven. Built with open data from OpenStreetMap.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="start" data-layers="">
+    <div class="card">
+      <h2>A map decides what counts</h2>
+      <p>Whatever a map draws can be counted, planned and funded. Whatever it leaves out is easy to overlook.</p>
+      <p>Researchers who study maps call them a source of power. In the forest case Peluso studied in Indonesia, state maps left out villages and showed the land as empty and available for others to use.</p>
+      <p class="small">Source: Peluso (1995), "Whose Woods Are These? Counter-Mapping Forest Territories in Kalimantan, Indonesia", Antipode.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="start" data-layers="">
+    <div class="card">
+      <h2>Counter-mapping</h2>
+      <p>Counter-mapping means communities making their own maps to answer the official ones, often with the same tools. In 2009 young residents of Kibera did this for their own settlement.</p>
+      <p>This page asks what happened next. Did being on the map lead to water, toilets and waste collection, and who can use what the map shows?</p>
+      <p class="small">How to read the map: the shape shows the type of facility (circle for water, square for toilets, diamond for waste). The colour shows who can use it, or what it costs. Use the key at the top right.</p>
     </div>
   </section>
 
@@ -65,10 +116,23 @@ a{color:inherit}
 
   <section class="step" data-view="both" data-layers="water,toilets,waste">
     <div class="card">
-      <h2>What the map shows today</h2>
-      <p><span class="num w" data-count="water">…</span> water points, <span class="num t" data-count="toilets">…</span> toilets and <span class="num g" data-count="waste">…</span> waste points are tagged in this snapshot, exported on <span id="exportDate">[date]</span>.</p>
-      <p>A 2020 mapping report, as I cite it, counted 840 water points, 879 toilets and 170 waste points. Today's snapshot has fewer water points and more toilets and waste points. The tags I queried, the area boundaries, imports and removals all change a count, so this map cannot say which of them explains the gap.</p>
-      <p class="small">Click any dot to see what was recorded. Toilets include those in schools, clinics and other buildings.</p>
+      <h2>Visible, but usable?</h2>
+      <p>Each shape is a facility someone recorded. Being on the map does not mean a resident can use it.</p>
+      <div class="stats">
+        <div class="stat"><b class="o" data-open="toilets">…</b><span>of <span data-count="toilets">…</span> toilets are recorded as open to the public</span><em><span data-restr="toilets">…</span> private or customers only</em></div>
+        <div class="stat"><b class="o" data-open="water">…</b><span>of <span data-count="water">…</span> water points are recorded as open to the public</span><em><span data-restr="water">…</span> private or restricted</em></div>
+        <div class="stat"><b class="o" data-open="waste">…</b><span>of <span data-count="waste">…</span> waste points are recorded as open to the public</span><em><span data-restr="waste">…</span> private or restricted</em></div>
+      </div>
+      <p>Many points have no access tag at all, so these are minimum counts for open and for restricted. Snapshot exported <span id="exportDate">[date]</span>.</p>
+      <p class="small">Colour shows who can use it. Switch to "What it costs" in the key. Toilets include those in schools, clinics and other buildings.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="toilets,water" data-color="fee">
+    <div class="card">
+      <h2>What it costs to use</h2>
+      <p>Where a fee is recorded, <span data-pay="toilets">…</span> toilets charge and <span data-free="toilets">…</span> are free. For water, <span data-pay="water">…</span> points charge a fee and <span data-free="water">…</span> are recorded as free.</p>
+      <p>Most points carry no fee tag, so this layer shows what mappers noted, and not what residents pay. A toilet that costs a few shillings per visit is a different thing for a household than for a single user.</p>
     </div>
   </section>
 
@@ -91,6 +155,20 @@ a{color:inherit}
 
   <section class="step" data-view="both" data-layers="water,toilets,waste">
     <div class="card">
+      <h2>Counter-maps in other African cities</h2>
+      <p>Other cities show the same pattern. A map gets used when an agency already needs the data, and it rarely stops an eviction.</p>
+      <ul>
+        <li><strong>Mukuru, Nairobi.</strong> Community mapping of health facilities showed gaps, and the Ministry of Health recruited more community health volunteers for informal settlements.</li>
+        <li><strong>Digital Matatus, Nairobi.</strong> Informal minibus routes were released as open data. The project reports five apps built on it and use by UN-Habitat for transit planning.</li>
+        <li><strong>Ramani Huria, Dar es Salaam.</strong> Residents and students mapped drainage and flood history, and the data fed flood modelling.</li>
+        <li><strong>Makoko, Lagos.</strong> Residents mapped with drones in 2019 hoping to be recognised. No outcome is reported, and 24 waterfront communities had been demolished by January 2020.</li>
+      </ul>
+      <p class="small">These accounts come from the projects themselves and from news and NGO reports, not independent evaluations.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
       <h2>What the map leaves out</h2>
       <p>It shows facilities only, with no homes and no people. A dot shows that someone recorded a tap or a toilet. It does not show whether water flows today, what it costs or who can use it.</p>
       <p>Some places may be missing, out of date or untagged, and the same facility may appear twice.</p>
@@ -108,7 +186,7 @@ a{color:inherit}
   <section class="step" data-view="both" data-layers="water,toilets,waste">
     <div class="card">
       <h2>Sources and credits</h2>
-      <p class="small">Facility data: © OpenStreetMap contributors (ODbL), including Map Kibera and its 2020 water and sanitation mapping project. Base map: © OpenStreetMap contributors © CARTO.</p>
+      <p class="small">Facility data: © OpenStreetMap contributors (ODbL), including Map Kibera and its 2020 water and sanitation mapping project. Base map: © OpenStreetMap contributors. Counter-mapping framing: Peluso (1995), Antipode.</p>
       <p class="small">Built by Hilda Narinoi Ries, KU Leuven, for the Individual Portfolio in Sustainable Development. This is a student project and not an official Map Kibera Trust product. [Add after they have checked it: Reviewed by Map Kibera Trust on (date).]</p>
     </div>
   </section>
@@ -123,14 +201,45 @@ var FILES={
   waste:["data/waste_kibera.geojson","data/waste_mathare.geojson"]
 };
 var COLORS={water:"#0072B2",toilets:"#E69F00",waste:"#CC79A7"};
+var ICON={
+ water:'<svg viewBox="0 0 24 24"><path d="M12 2C9 7 6 10.5 6 14.5a6 6 0 0 0 12 0C18 10.5 15 7 12 2z"/></svg>',
+ toilets:'<svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2.5"/><path d="M8 9h8l1 7h-2v6h-6v-6H7z"/></svg>',
+ waste:'<svg viewBox="0 0 24 24"><path d="M9 3h6l1 2h4v2H4V5h4zM6 9h12l-1 12H7z"/></svg>'};
+var STATUS={working:"#2b8cbe",repair:"#f0a50f",broken:"#e4572e",unknown:"#8a948f"};
+var STATUS_LABEL={working:"Working",repair:"Needs repair",broken:"Broken or closed",unknown:"Not recorded"};
+function status(p){
+  var o=String(p.operational_status||"").toLowerCase(),c=String(p.condition||"").toLowerCase();
+  if(/non|closed|bad|broken|dilapidated/.test(o+" "+c)){return "broken";}
+  if(/maint|repair|construction|poor/.test(o+" "+c)){return "repair";}
+  if(/operational|good|fair/.test(o+" "+c)){return "working";}
+  return "unknown";
+}
+var acc={water:{open:0,restricted:0,unknown:0},toilets:{open:0,restricted:0,unknown:0},waste:{open:0,restricted:0,unknown:0}};
+var fee={water:{pay:0,free:0},toilets:{pay:0,free:0},waste:{pay:0,free:0}};
+var items=[],colorMode="access";
+var PAL={access:{open:"#009E73",restricted:"#D55E00",unknown:"#9a9a9a"},fee:{free:"#0072B2",pay:"#E69F00",unknown:"#9a9a9a"}};
+var LAB={access:{open:"Recorded as open to the public",restricted:"Private, customers only or no access",unknown:"No access recorded"},fee:{free:"Free",pay:"Charges a fee",unknown:"No fee recorded"}};
+function accessClass(p){var a=String(p.access||"").toLowerCase();if(!a){return "unknown";}return (a==="yes"||a==="permissive"||a==="public")?"open":"restricted";}
+function feeClass(p){var f=String(p.fee||"").toLowerCase();if(!f){return "unknown";}return (f==="no")?"free":"pay";}
+function colorFor(ac,fe){return colorMode==="access"?PAL.access[ac]:PAL.fee[fe];}
+function mkIcon(type,col){return L.divIcon({className:"",iconSize:[16,16],html:'<span class="mk '+type+'" style="background:'+col+'"></span>'});}
+function drawKey(){var h="";Object.keys(PAL[colorMode]).forEach(function(k){h+='<span class="row"><span class="sw" style="background:'+PAL[colorMode][k]+'"></span>'+LAB[colorMode][k]+'</span>';});document.getElementById("key").innerHTML=h;}
+function recolor(){items.forEach(function(i){i.m.setIcon(mkIcon(i.type,colorFor(i.ac,i.fe)));});drawKey();document.querySelectorAll("[data-color]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.color===colorMode?"true":"false");});}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-color]");if(b){colorMode=b.dataset.color;recolor();}});
+drawKey();
 var NAMES={water:"Water point",toilets:"Toilet",waste:"Waste point"};
 var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 document.getElementById("exportDate").textContent=CONFIG.exportDate;
 
 var map=L.map("map",{zoomControl:false}).setView([-1.3135,36.7875],15);
 L.control.zoom({position:"bottomright"}).addTo(map);
-L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{maxZoom:19,
-  attribution:"&copy; OpenStreetMap contributors &copy; CARTO"}).addTo(map);
+var base={
+ map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"}),
+ sat:L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:"Imagery &copy; Esri, Maxar, Earthstar Geographics"})};
+base.map.addTo(map);
+document.querySelectorAll("[data-base]").forEach(function(btn){btn.addEventListener("click",function(){
+  var k=btn.dataset.base;Object.keys(base).forEach(function(n){if(n===k){base[n].addTo(map);}else{map.removeLayer(base[n]);}});
+  document.querySelectorAll("[data-base]").forEach(function(x){x.setAttribute("aria-pressed",x===btn?"true":"false");});});});
 
 var groups={water:L.layerGroup(),toilets:L.layerGroup(),waste:L.layerGroup()};
 var counts={water:0,toilets:0,waste:0};
@@ -138,8 +247,8 @@ var bounds={kibera:L.latLngBounds([]),mathare:L.latLngBounds([]),both:L.latLngBo
 
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function popup(type,f){
-  var p=f.properties||{},h="<strong>"+NAMES[type]+"</strong>";
-  ["name","operator","fee","access","operational_status"].forEach(function(k){
+  var p=f.properties||{},h="<strong>"+NAMES[type]+"</strong><br>Status: "+STATUS_LABEL[status(p)];
+  ["name","operator","access","fee","operational_status"].forEach(function(k){
     if(p[k]){h+="<br>"+k.replace("_"," ")+": "+esc(p[k]);}});
   var id=f.id||p["@id"];
   if(id&&String(id).indexOf("/")>0){h+='<br><a target="_blank" rel="noopener" href="https://www.openstreetmap.org/'+esc(id)+'">View on OpenStreetMap</a>';}
@@ -150,8 +259,10 @@ function load(type,url,area){
     (data.features||[]).forEach(function(f){
       if(!f.geometry){return;}
       var ll=f.geometry.type==="Point"?L.latLng(f.geometry.coordinates[1],f.geometry.coordinates[0]):L.geoJSON(f).getBounds().getCenter();
-      L.circleMarker(ll,{radius:4,color:"#ffffff",weight:1,fillColor:COLORS[type],fillOpacity:.9})
-        .bindPopup(popup(type,f)).addTo(groups[type]);
+      var pr=f.properties||{},ac=accessClass(pr),fe=feeClass(pr);
+      acc[type][ac]++;if(fe==='pay'||fe==='free'){fee[type][fe]++;}
+      var m=L.marker(ll,{icon:mkIcon(type,colorFor(ac,fe))}).bindPopup(popup(type,f)).addTo(groups[type]);
+      items.push({m:m,type:type,ac:ac,fe:fe});
       counts[type]++;bounds[area].extend(ll);bounds.both.extend(ll);
     });
   }).catch(function(){console.warn("Could not load "+url);});
@@ -165,12 +276,19 @@ Promise.all(jobs).then(function(){
   Object.keys(counts).forEach(function(t){
     document.querySelectorAll('[data-count="'+t+'"]').forEach(function(el){el.textContent=counts[t].toLocaleString("en");});
   });
+  Object.keys(fee).forEach(function(t){["pay","free"].forEach(function(k){
+    document.querySelectorAll('[data-'+k+'="'+t+'"]').forEach(function(el){el.textContent=fee[t][k].toLocaleString("en");});});});
+  Object.keys(acc).forEach(function(t){
+    document.querySelectorAll('[data-open="'+t+'"]').forEach(function(el){el.textContent=acc[t].open.toLocaleString("en");});
+    document.querySelectorAll('[data-restr="'+t+'"]').forEach(function(el){el.textContent=acc[t].restricted.toLocaleString("en");});
+  });
   if(current){go(current);}
 });
 
 var current=null,manual={};
 function go(el){
   current=el;
+  if(el.dataset.color&&el.dataset.color!==colorMode){colorMode=el.dataset.color;recolor();}
   var show=(el.dataset.layers||"").split(",");
   Object.keys(groups).forEach(function(t){
     var on=show.indexOf(t)>-1&&manual[t]!==false;
