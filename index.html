@@ -20,16 +20,20 @@ body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);li
 .card p{margin:0 0 10px}.card p:last-child{margin:0}
 .chart{margin:10px 0 4px}.chart .r{display:grid;grid-template-columns:96px 1fr 48px;gap:6px;align-items:center;font-size:.8rem;margin:4px 0}
 .chart .b{height:12px;background:rgba(127,127,127,.2);border-radius:2px}.chart .b i{display:block;height:100%;border-radius:2px;background:var(--rule)}.chart .b i.o{background:#D55E00}
-.chart h4{margin:10px 0 2px;font-size:.78rem}.chart .r span:last-child{text-align:right;font-weight:700}
+.chart.wide .r{grid-template-columns:118px 1fr 26px}.chart h4{margin:10px 0 2px;font-size:.78rem}.chart .r span:last-child{text-align:right;font-weight:700}
 .yt{position:relative;aspect-ratio:16/9;background:#111;border-radius:4px;overflow:hidden}.yt button{all:unset;cursor:pointer;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;text-align:center;padding:12px}
 .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.pc b{display:block;margin-bottom:4px}.pc p{margin:0 0 6px}.pc .q{font-style:italic}.pc small{color:#666}
+.pc img{width:100%;max-height:150px;object-fit:cover;border-radius:3px;display:block}.pc b{display:block;margin-bottom:4px}.pc p{margin:0 0 6px}.pc .q{font-style:italic}.pc small{color:#666}
 .card table{width:100%;border-collapse:collapse;font-size:.78rem;margin:8px 0}.card th,.card td{text-align:left;vertical-align:top;padding:4px 5px;border-bottom:1px solid rgba(127,127,127,.3)}
 .cityl{background:var(--card);color:inherit;border:1px solid rgba(127,127,127,.5);font-weight:700}
 #tabs{position:fixed;top:0;left:0;right:0;z-index:1200;display:flex;gap:4px;justify-content:center;flex-wrap:wrap;padding:6px 8px;background:var(--card);box-shadow:0 1px 4px rgba(0,0,0,.25);font-size:.78rem}
 #tabs a{color:var(--muted);text-decoration:none;padding:4px 9px;border-bottom:2px solid transparent;font-weight:600}
 #tabs a.on{color:var(--ink);border-bottom-color:var(--rule)}
 @media(max-width:600px){#tabs{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}#tabs a{white-space:nowrap}}
+.ba{margin:8px 0}.baw{position:relative;overflow:hidden;line-height:0;border-radius:3px}.baw img{width:100%;display:block}
+.ba-top{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}.ba-line{position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 3px rgba(0,0,0,.6);pointer-events:none}
+.baw input{position:absolute;left:0;right:0;bottom:8px;width:100%;margin:0;accent-color:#D55E00;cursor:ew-resize}
+.ba-l{position:absolute;top:6px;padding:2px 6px;font-size:.7rem;line-height:1.3;font-weight:700;background:rgba(0,0,0,.65);color:#fff;border-radius:2px}
 .kicker{margin:0 0 4px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .card ul{margin:0 0 10px;padding-left:18px}.card li{margin-bottom:6px}
 .card .small{font-size:.85rem;color:var(--muted)}
@@ -156,7 +160,11 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
       <p class="kicker">Before 2009</p>
       <h2>A blank spot on the map</h2>
       <p>Map Kibera describes Kibera as a blank spot on the map before it began mapping in 2009. A settlement missing from official records is easy to leave out of plans for water, toilets and waste collection.</p>
-      <figure class="media" data-img="images/kibera_blank_map.png"><img alt="Kibera shown as a blank area on Google Maps compared with the Map Kibera volunteer map" loading="lazy"><figcaption>Kibera on Google Maps (left) and on the volunteer map (right). Image: [add credit and licence].</figcaption></figure>
+      <figure class="media" data-img="images/kibera_blank_map.png"><img alt="Slider screenshot: Kibera as a mostly empty outline on Google Maps (right) and the detailed map made by volunteers (left)" loading="lazy"><figcaption>Kibera on Google Maps (right, a pink outline labelled &quot;Kibera slum&quot; with little detail) and on the volunteer-made map (left). Screenshot of the slider in the <a href="https://www.smithsonianmag.com/science-nature/diy-cartographers-are-putting-slums-literal-map-180958485/" target="_blank" rel="noopener">Smithsonian Magazine article</a>. Article by Erin Blakemore, 21 March 2016.</figcaption></figure>
+            <figure class="ba" data-a="images/kibera_volunteers.png" data-b="images/kibera_google.png" style="display:none">
+        <div class="baw"><img class="ba-base" alt="Kibera on Google Maps, mostly an empty outline"><div class="ba-top"><img class="ba-over" alt="Kibera on the volunteer-made map, with streets, schools and facilities"></div><div class="ba-line"></div><span class="ba-l" style="left:6px">Volunteer map</span><span class="ba-l" style="right:6px">Google Maps</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare the volunteer map with Google Maps"></div>
+        <figcaption>Drag the slider to compare Google Maps' view of Kibera with the map created by volunteers. Images: from Erin Blakemore, "DIY Cartographers Are Putting Slums on the Literal Map", <a href="https://www.smithsonianmag.com/science-nature/diy-cartographers-are-putting-slums-literal-map-180958485/" target="_blank" rel="noopener">Smithsonian Magazine</a>, 21 March 2016. The article gives no separate image credit.</figcaption>
+      </figure>
       <p class="small">See the before and after: <a href="https://www.smithsonianmag.com/science-nature/diy-cartographers-are-putting-slums-literal-map-180958485/" target="_blank" rel="noopener">Smithsonian Magazine</a> (slider comparing Google Maps' view with the volunteers' map) and <a href="https://www.geographyrealm.com/users-helping-map-kenyan-slums/" target="_blank" rel="noopener">Geography Realm</a>.</p>
     </div>
   </section>
@@ -380,10 +388,31 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
     <div class="card">
       <p class="kicker">2019 · Lagos, Nigeria</p>
       <h2>Makoko</h2>
-      <p>Makoko is a waterfront community on the Lagos lagoon. No official census exists, and locals estimate more than one million residents. In 2012 the state government announced demolition with a 72-hour notice.</p>
-      <p>In September 2019 Code for Africa and the Humanitarian OpenStreetMap Team launched a project in which young residents learned to fly drones and add their community to the map. Code for Africa's Jacopo Ottaviani calls it "the first part of a conversation around inclusion". No service outcome had been reported at the time of the article.</p>
+      <p>Makoko is a waterfront community on the Lagos lagoon. No census has ever been taken there. Estimates range from about 250,000 (a 2015 World Bank document) to millions (a community leader), and Google Maps shows it as a blank spot. In 2012 the government reportedly gave residents 72 hours' notice to leave.</p>
+      <p>In September 2019 Code for Africa and the Humanitarian OpenStreetMap Team launched a project. Young residents learned to fly drones and used a phone app to mark roads and points of interest. Its goals are to change the conversation with government about Makoko's legitimacy, support planning and estimate population density and housing quality. By late 2019 volunteers had marked about 80 points of interest and mapped more than 5 km of perimeter by drone.</p>
+      <div class="chart wide" role="img" aria-label="Places of interest mapped in Makoko by type, 82 in total">
+        <h4>Places of interest mapped in Makoko (82 points)</h4>
+        <div class="r"><span>Boat terminal</span><div class="b"><i style="width:100.0%"></i></div><span>12</span></div>
+        <div class="r"><span>Clean water source</span><div class="b"><i style="width:100.0%"></i></div><span>12</span></div>
+        <div class="r"><span>Factory/industry</span><div class="b"><i style="width:91.7%"></i></div><span>11</span></div>
+        <div class="r"><span>Market</span><div class="b"><i style="width:83.3%"></i></div><span>10</span></div>
+        <div class="r"><span>Church</span><div class="b"><i style="width:75.0%"></i></div><span>9</span></div>
+        <div class="r"><span>School</span><div class="b"><i style="width:75.0%"></i></div><span>9</span></div>
+        <div class="r"><span>Head of community</span><div class="b"><i style="width:66.7%"></i></div><span>8</span></div>
+        <div class="r"><span>Health facility</span><div class="b"><i style="width:33.3%"></i></div><span>4</span></div>
+        <div class="r"><span>Mosque</span><div class="b"><i style="width:25.0%"></i></div><span>3</span></div>
+        <div class="r"><span>Historical site</span><div class="b"><i style="width:16.7%"></i></div><span>2</span></div>
+        <div class="r"><span>Waste dumpsite</span><div class="b"><i style="width:16.7%"></i></div><span>2</span></div>
+      </div>
+      <p class="small">Chart rebuilt from "Places of Interest in Makoko" in "Neglected and Unmapped" (Mapping Makoko / Code for Africa, 27 May 2020); values read from the published chart.</p>
+      <p>Residents hold two views. Benjamin Aide, a school administrator who joined the mapping team, says the maps will "show the world that we are here". Some residents fear that more attention could invite new eviction attempts. The 2012 notice was never carried out in full, and Makoko's chief says residents still fear losing their homes. In Otodo Gbame, another Lagos waterfront community, more than 30,000 families were forcibly evicted, and a Lagos High Court ruled that unconstitutional in 2017.</p>
+      <p>No government response or change in Makoko's status had been reported by May 2020. An earlier waterfront regeneration plan, submitted in 2014, has not been carried out. Its author sees the new maps as a way to ground that plan in data.</p>
+      <figure class="ba" data-a="images/makoko_osm.png" data-b="images/makoko_google.png" style="display:none">
+        <div class="baw"><img class="ba-base" alt="Makoko on Google Maps, mostly blank"><div class="ba-top"><img class="ba-over" alt="Makoko on OpenStreetMap, with buildings, canals and named places"></div><div class="ba-line"></div><span class="ba-l" style="left:6px">OpenStreetMap</span><span class="ba-l" style="right:6px">Google Maps</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare OpenStreetMap with Google Maps"></div>
+        <figcaption>Drag the slider to compare Makoko on OpenStreetMap with Google Maps. Images: "Neglected and Unmapped", Mapping Makoko / Code for Africa, 27 May 2020. Map data © OpenStreetMap contributors; tiles courtesy of Humanitarian OpenStreetMap Team.</figcaption>
+      </figure>
       <figure class="media" data-img="images/makoko.jpg"><img alt="Makoko on the Lagos lagoon" loading="lazy"><figcaption>Makoko. Image: [add credit and licence].</figcaption></figure>
-      <p class="small">Source: CNN, 26 February 2020, "How Makoko, Nigeria's floating slum, went digital with new mapping project" (<a href="https://www.wral.com/how-makoko-nigerias-floating-slum-went-digital-with-new-mapping-project/18976014/" target="_blank" rel="noopener">syndicated copy</a>). Population is a local estimate.</p>
+      <p class="small">Sources: Mapping Makoko, <a href="https://pulitzercenter.org/node/18088" target="_blank" rel="noopener">"Neglected and Unmapped"</a>, Code for Africa and the Pulitzer Center, 27 May 2020 (also on The Guardian Nigeria); Oluwatosin Adeshokan, <a href="https://www.devex.com/news/mapping-makoko-how-data-could-help-legitimize-nigeria-s-informal-settlements-96793" target="_blank" rel="noopener">"Mapping Makoko: How data could help legitimize Nigeria's informal settlements"</a>, Devex, 12 May 2020 (supported by the Pulitzer Center); Oluwatosin Adeshokan, "How Makoko, Nigeria's Floating Slum Went Digital With New Mapping Project", CNN, 26 February 2020 (<a href="https://www.wral.com/how-makoko-nigerias-floating-slum-went-digital-with-new-mapping-project/18976014/" target="_blank" rel="noopener">syndicated copy</a>; Pulitzer Center-supported). Population figures are estimates: locals say more than one million (CNN), Devex says about 300,000 without a source, and a community leader quoted in "Neglected and Unmapped" says 2 to 3 million.</p>
     </div>
   </section>
 
@@ -488,7 +517,7 @@ document.getElementById("exportDate").textContent=CONFIG.exportDate;
 var map=L.map("map",{zoomControl:false}).setView([-1.3135,36.7875],15);
 L.control.zoom({position:"bottomright"}).addTo(map);
 var base={
- map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"}),
+ map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors"}),
  sat:L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:"Imagery &copy; Esri, Maxar, Earthstar Geographics"})};
 base.map.addTo(map);
 var userBase="map",curBase="map";
@@ -543,7 +572,11 @@ Promise.all(jobs).then(function(){
 
 
 var cityGroup=L.layerGroup(),cityOn=false,nbo=[],afr=[];
-function pc(t,m,q,src){return '<div class="pc"><b>'+t+'</b><p>'+m+'</p><p class="q">Question: '+q+'</p><small>'+src+'</small></div>';}
+var FILES={"Kibera":"Kibera_aerial_view_western_part.jpg","Kibera, 2009":"Kibera_aerial_view_western_part.jpg","Rocinha":"1_rocinha_favela_closeup.JPG","Camps near Goma":"Displaced_people_set_camp_in_Goma_outskirts_(7703445526).jpg","Makoko":"Aerial-shot-of-makoko-community-in-lagos-2.jpg","Makoko, 2019":"Aerial-shot-of-makoko-community-in-lagos-2.jpg","Dar es Salaam":"Sewage_in_the_street_in_Tandale,_Dar_es_Salaam_(3233303875).jpg","Dar es Salaam, 2015":"Sewage_in_the_street_in_Tandale,_Dar_es_Salaam_(3233303875).jpg"};
+function pc(t,m,q,src){var f=FILES[t],im="";
+ if(f){var page="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(f);
+  im='<figure style="margin:0 0 6px"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(f)+'?width=300" alt="Photo of '+t+'" loading="lazy" onerror="this.parentNode.style.display=\'none\'"><figcaption><small>Photo: <a href="'+page+'" target="_blank" rel="noopener">Wikimedia Commons</a> (author and licence on the file page)</small></figcaption></figure>';}
+ return '<div class="pc"><b>'+t+'</b>'+im+'<p>'+m+'</p><p class="q">Question: '+q+'</p><small>'+src+'</small></div>';}
 var PLACES=[
  {n:"Nairobi settlements",ll:[-1.29,36.82],g:"afr",h:pc("Nairobi: four mapped settlements","Map Kibera Trust says it has mapped Kibera, Mathare, Mukuru and Kangemi. Zoom in to see each one.","Does each settlement get the same follow-up once it is mapped?","Map Kibera interview, 5 Nov 2026")},
  {n:"Kibera",ll:[-1.3135,36.7875],g:"nbo",h:pc("Kibera, 2009","Residents drew the first map of a place that was a blank spot on government maps.","Who acts on the data once it exists?","Map Kibera interview, 5 Nov 2026")},
@@ -600,6 +633,13 @@ var worldGroup=L.layerGroup();
  ["Makoko, Lagos",6.4950,3.3930,"Makoko","Residents mapped with drones in 2019 to be recognised.","How long should a community wait for a result?","CNN, 26 Feb 2020"],
  ["Dar es Salaam",-6.7924,39.2083,"Dar es Salaam","Residents and students mapped flood-prone wards from 2015.","Did the data change who was protected?","Ramani Huria project pages"]
 ].forEach(function(c){L.circleMarker([c[1],c[2]],{radius:7,color:"#fff",weight:2,fillColor:"#D55E00",fillOpacity:1}).bindTooltip(c[0],{direction:"top",className:"cityl"}).bindPopup(pc(c[3],c[4],c[5],c[6]),{maxWidth:260}).addTo(worldGroup);});
+
+document.querySelectorAll("figure.ba").forEach(function(f){var A=new Image(),B=new Image(),n=0;
+  function ok(){n++;if(n<2)return;f.style.display="";var st=document.querySelector('figure.media[data-img="images/kibera_blank_map.png"]');if(st){st.setAttribute("data-hide","1");st.style.display="none";st.querySelector("img").onload=null;}
+   f.querySelector(".ba-base").src=B.src;f.querySelector(".ba-over").src=A.src;
+   var top=f.querySelector(".ba-top"),line=f.querySelector(".ba-line"),r=f.querySelector("input");
+   function set(){top.style.clipPath="inset(0 "+(100-r.value)+"% 0 0)";line.style.left=r.value+"%";}r.addEventListener("input",set);set();}
+  A.onload=ok;B.onload=ok;A.src=f.dataset.a;B.src=f.dataset.b;});
 var current=null,manual={},mask=null;
 function go(el){
   current=el;
