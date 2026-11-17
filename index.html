@@ -14,7 +14,7 @@
 body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);line-height:1.55}
 #map{position:fixed;inset:0;z-index:0}
 .col{position:relative;z-index:2;pointer-events:none}
-.step{min-height:100vh;display:flex;align-items:center;padding:24px}
+.step{min-height:100vh;display:flex;align-items:center;padding:56px 24px 24px}
 .card{pointer-events:auto;background:var(--card);max-width:410px;padding:22px 24px;border-left:6px solid var(--rule);border-radius:3px;box-shadow:0 1px 6px rgba(0,0,0,.25)}
 .card h2{margin:0 0 10px;font-size:1.45rem;line-height:1.2;font-weight:800}
 .card p{margin:0 0 10px}.card p:last-child{margin:0}
@@ -26,6 +26,10 @@ body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);li
 .pc b{display:block;margin-bottom:4px}.pc p{margin:0 0 6px}.pc .q{font-style:italic}.pc small{color:#666}
 .card table{width:100%;border-collapse:collapse;font-size:.78rem;margin:8px 0}.card th,.card td{text-align:left;vertical-align:top;padding:4px 5px;border-bottom:1px solid rgba(127,127,127,.3)}
 .cityl{background:var(--card);color:inherit;border:1px solid rgba(127,127,127,.5);font-weight:700}
+#tabs{position:fixed;top:0;left:0;right:0;z-index:1200;display:flex;gap:4px;justify-content:center;flex-wrap:wrap;padding:6px 8px;background:var(--card);box-shadow:0 1px 4px rgba(0,0,0,.25);font-size:.78rem}
+#tabs a{color:var(--muted);text-decoration:none;padding:4px 9px;border-bottom:2px solid transparent;font-weight:600}
+#tabs a.on{color:var(--ink);border-bottom-color:var(--rule)}
+@media(max-width:600px){#tabs{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}#tabs a{white-space:nowrap}}
 .kicker{margin:0 0 4px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .card ul{margin:0 0 10px;padding-left:18px}.card li{margin-bottom:6px}
 .card .small{font-size:.85rem;color:var(--muted)}
@@ -64,6 +68,7 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
 </style>
 </head>
 <body>
+<nav id="tabs" aria-label="Story sections"></nav>
 <div id="map" role="img" aria-label="Map of water points, toilets and waste points in Kibera and Mathare, Nairobi"></div>
 <div id="legend" aria-label="Map layers and key">
   <h3>Show</h3>
@@ -101,6 +106,29 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
   </section>
 
 
+    <section class="step" data-view="africa" data-layers="" data-fly="-8,-2,3" data-world="1">
+    <div class="card">
+      <p class="kicker">Introduction</p>
+      <h2>Maps and who gets left out</h2>
+      <p>A map is a set of choices about what to draw and name. What appears on a map can be counted, planned for and funded. What is missing is easy to overlook, whether it is a street, a clinic or a whole neighbourhood.</p>
+      <p>Residents of informal settlements and other marginalised groups in cities often face the same problems:</p>
+      <ul>
+        <li><strong>Missing from records.</strong> In Rocinha, a favela in Rio de Janeiro, Google Maps showed about 3 streets in 2015 where satellite imagery showed about 10,000.</li>
+        <li><strong>Fewer services.</strong> Water, toilets and waste collection are planned from maps and data.</li>
+        <li><strong>Insecure homes.</strong> In July 2018, road demolitions in Kibera affected about 30,000 families, according to Map Kibera.</li>
+        <li><strong>Crowding on little land.</strong> Nairobi's poorest 60% of residents live on 8.7% of the city's land.</li>
+        <li><strong>Data that ages.</strong> Maps need funding and trained people to stay true.</li>
+      </ul>
+      <div class="chart" role="img" aria-label="Share of urban population living in slums, 2022">
+        <h4>Share of urban people living in slums, 2022</h4>
+        <div class="r"><span>World</span><div class="b"><i style="width:24.8%"></i></div><span>24.8%</span></div>
+        <div class="r"><span>S-S Africa</span><div class="b"><i class="o" style="width:53.6%"></i></div><span>53.6%</span></div>
+      </div>
+      <p>Missing Maps volunteers had mapped 3.5 million people who were not on existing maps by 2015. Hover over or click a marker for a postcard.</p>
+      <p class="small">Sources: <a href="https://www.weforum.org/stories/technological-innovation/how-technology-is-charting-the-unmapped-world/" target="_blank" rel="noopener">Reuters/World Economic Forum, 19 June 2015</a> (Rocinha, Missing Maps); <a href="https://unstats.un.org/sdgs/report/2024/Goal-11" target="_blank" rel="noopener">UN SDG Report 2024</a>; UNEP Kenya Atlas, p. 151 (an older estimate); Map Kibera. S-S Africa = sub-Saharan Africa.</p>
+    </div>
+  </section>
+
   <section class="step" data-view="start" data-layers="">
     <div class="card">
       <p class="kicker">Introduction</p>
@@ -123,12 +151,13 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
   </section>
 
 
-  <section class="step" data-view="kibera" data-layers="" data-mask="1">
+  <section class="step" data-view="kibera" data-layers="">
     <div class="card">
       <p class="kicker">Before 2009</p>
       <h2>A blank spot on the map</h2>
       <p>Map Kibera describes Kibera as a blank spot on the map before it began mapping in 2009. A settlement missing from official records is easy to leave out of plans for water, toilets and waste collection.</p>
-      <p class="small">The grey area on the map is an illustration of that blank spot: no facilities, no names. Scroll to see it fill in.</p>
+      <figure class="media" data-img="images/kibera_blank_map.png"><img alt="Kibera shown as a blank area on Google Maps compared with the Map Kibera volunteer map" loading="lazy"><figcaption>Kibera on Google Maps (left) and on the volunteer map (right). Image: [add credit and licence].</figcaption></figure>
+      <p class="small">See the before and after: <a href="https://www.smithsonianmag.com/science-nature/diy-cartographers-are-putting-slums-literal-map-180958485/" target="_blank" rel="noopener">Smithsonian Magazine</a> (slider comparing Google Maps' view with the volunteers' map) and <a href="https://www.geographyrealm.com/users-helping-map-kenyan-slums/" target="_blank" rel="noopener">Geography Realm</a>.</p>
     </div>
   </section>
 
@@ -199,6 +228,38 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
     </div>
   </section>
 
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.285,36.79,12" data-compare="1">
+    <div class="card">
+      <p class="kicker">Two Nairobis · distance</p>
+      <h2>Close on the map, far in services</h2>
+      <p>Kibera sits about 6.6 km from the centre of Nairobi, and a few kilometres from suburbs commonly described as higher-income. The dashed lines show straight-line distance. The gap is in what each place can reach.</p>
+      <div class="chart" role="img" aria-label="Share of Nairobi residents and share of land">
+        <h4>Nairobi's poorest 60% of residents</h4>
+        <div class="r"><span>Share of residents</span><div class="b"><i class="o" style="width:60%"></i></div><span>60%</span></div>
+        <div class="r"><span>Share of the city's land</span><div class="b"><i style="width:8.7%"></i></div><span>8.7%</span></div>
+      </div>
+      <p><strong>Key message:</strong> mapping makes this gap measurable.</p>
+      <p><strong>Question:</strong> how many hospitals, pharmacies, schools and toilets can people in each place reach on foot in 15 minutes?</p>
+      <p class="small">Sources: UNEP, Kenya Atlas of Our Changing Environment, p. 151 (the 60% and 8.7% figures, an older estimate); Wikipedia, Kibera (distance from the centre). Click a marker for a postcard. Marker positions are approximate.</p>
+    </div>
+  </section>
+
+
+
+
+    <section class="step" data-view="africa" data-layers="" data-base="sat" data-fly="-1.316,36.748,12">
+    <div class="card">
+      <p class="kicker">Two Nairobis · water</p>
+      <h2>Next door, a different map</h2>
+      <p>Kibera and Karen are about 9 km apart. Karen sits in Lang'ata constituency, which leads Kenya in households with luxurious homes in the 2019 census.</p>
+      <ul>
+        <li><strong>Water:</strong> a study of Nairobi's piped water found residents of high-income areas were six times, and middle-income residents four times, more likely to receive the WHO-recommended 1,500 litres per person per month.</li>
+        <li><strong>Connections:</strong> high- and middle-income residents mostly have piped water inside the home. Lower-income residents more often use communal taps or vendors.</li>
+        <li><strong>Losses:</strong> about 3.5 billion litres a month are lost to bursts, theft and irregular meters, more than twice what every resident would need to reach 1,500 litres.</li>
+      </ul>
+      <p class="small">Click the markers for postcards. This page's points cover Kibera and Mathare only, because OpenStreetMap records public toilets and taps and richer homes have them indoors, so counts are not comparable. Sources: <a href="https://theconversation.com/a-deep-data-dive-reveals-extent-of-unequal-water-provision-in-nairobi-173258" target="_blank" rel="noopener">The Conversation</a>; <a href="https://www.standardmedia.co.ke/entertainment/news/article/2001362670/census-the-20-constituencies-where-kenyas-wealthiest-live" target="_blank" rel="noopener">The Standard</a> (2019 census). Imagery: Esri, Maxar.</p>
+    </div>
+  </section>
 
   <section class="step" data-view="both" data-layers="water,toilets,waste">
     <div class="card">
@@ -246,6 +307,24 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
       <p class="small">S-S Africa = sub-Saharan Africa. Source: <a href="https://unstats.un.org/sdgs/report/2024/Goal-11" target="_blank" rel="noopener">UN, Sustainable Development Goals Report 2024, Goal 11</a> (indicator 11.1.1).</p>
     </div>
   </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
+    <div class="card">
+      <p class="kicker">World data</p>
+      <h2>Slums across the world</h2>
+      <p>Our World in Data maps the share of urban people living in slums, from UN-Habitat data. Sub-Saharan Africa has the highest shares. The chart below it shows the three countries in this story over time.</p>
+      <figure class="media">
+        <img src="images/slums_world_map.svg" alt="World map of the share of urban population living in slums; sub-Saharan Africa has the highest shares" loading="lazy">
+        <figcaption>Share of urban population living in slums. Source: United Nations Human Settlements Programme, via <a href="https://ourworldindata.org/grapher/share-of-urban-population-living-in-slums" target="_blank" rel="noopener">Our World in Data</a> (CC BY). Where 2025 data is missing, the closest year from 2020 to 2024 is shown. Open the source link for other years and countries.</figcaption>
+      </figure>
+      <figure class="media">
+        <iframe src="https://ourworldindata.org/grapher/share-of-urban-population-living-in-slums?tab=line&country=KEN~TZA~NGA" loading="lazy" title="Chart: share of urban population living in slums in Kenya, Tanzania and Nigeria over time" allow="web-share; clipboard-write" style="width:100%;height:420px;aspect-ratio:auto"></iframe>
+        <figcaption>Kenya, Tanzania and Nigeria over time. Same source.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
 
   <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
     <div class="card">
@@ -412,9 +491,10 @@ var base={
  map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"}),
  sat:L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:"Imagery &copy; Esri, Maxar, Earthstar Geographics"})};
 base.map.addTo(map);
-document.querySelectorAll("[data-base]").forEach(function(btn){btn.addEventListener("click",function(){
-  var k=btn.dataset.base;Object.keys(base).forEach(function(n){if(n===k){base[n].addTo(map);}else{map.removeLayer(base[n]);}});
-  document.querySelectorAll("[data-base]").forEach(function(x){x.setAttribute("aria-pressed",x===btn?"true":"false");});});});
+var userBase="map",curBase="map";
+function setBase(k){if(k===curBase){return;}curBase=k;Object.keys(base).forEach(function(n){if(n===k){base[n].addTo(map);}else{map.removeLayer(base[n]);}});
+  document.querySelectorAll("[data-base]").forEach(function(x){x.setAttribute("aria-pressed",x.dataset.base===k?"true":"false");});}
+document.querySelectorAll("[data-base]").forEach(function(btn){btn.addEventListener("click",function(){userBase=btn.dataset.base;setBase(userBase);});});
 
 var groups={water:L.layerGroup(),toilets:L.layerGroup(),waste:L.layerGroup()};
 var counts={water:0,toilets:0,waste:0};
@@ -467,6 +547,7 @@ function pc(t,m,q,src){return '<div class="pc"><b>'+t+'</b><p>'+m+'</p><p class=
 var PLACES=[
  {n:"Nairobi settlements",ll:[-1.29,36.82],g:"afr",h:pc("Nairobi: four mapped settlements","Map Kibera Trust says it has mapped Kibera, Mathare, Mukuru and Kangemi. Zoom in to see each one.","Does each settlement get the same follow-up once it is mapped?","Map Kibera interview, 5 Nov 2026")},
  {n:"Kibera",ll:[-1.3135,36.7875],g:"nbo",h:pc("Kibera, 2009","Residents drew the first map of a place that was a blank spot on government maps.","Who acts on the data once it exists?","Map Kibera interview, 5 Nov 2026")},
+ {n:"Karen",ll:[-1.3190,36.7090],g:"nbo",h:pc("Karen, Lang'ata constituency","Lang'ata constituency leads Kenya in households with luxurious homes (2019 census, via The Standard). Karen is in Lang'ata.","Why does a planned neighbourhood get its services first?","The Standard, 2020; KNBS 2019 census")},
  {n:"Mathare",ll:[-1.2600,36.8590],g:"nbo",h:pc("Mathare","Water points, toilets and waste points in this story map include Mathare.","Are the points still true today?","OpenStreetMap, exported 5 Nov 2026")},
  {n:"Mukuru",ll:[-1.3150,36.8650],g:"nbo",h:pc("Mukuru","UN-Habitat was Map Kibera's first partner for water and sanitation mapping in Mukuru. A 2023 to 2024 survey covered over 2,000 households and drainage sites.","Who keeps a survey current after the funding ends?","Map Kibera interview; RESET, Aug 2025")},
  {n:"Kangemi",ll:[-1.2667,36.7500],g:"nbo",h:pc("Kangemi","Map Kibera describes Kangemi as its most recent informal-settlement mapping.","What will the Kangemi map be used for first?","Map Kibera interview, 5 Nov 2026")},
@@ -476,7 +557,7 @@ var PLACES=[
  {n:"Makoko, Lagos",ll:[6.4950,3.3930],g:"afr",h:pc("Makoko, 2019","Residents mapped with drones to be recognised. No outcome was reported yet.","How long should a community wait for a result?","CNN, 26 Feb 2020")}
 ];
 PLACES.forEach(function(c){
-  var m=L.circleMarker(c.ll,{radius:7,color:"#fff",weight:2,fillColor:"#D55E00",fillOpacity:1}).bindTooltip(c.n,{permanent:true,direction:"right",className:"cityl",offset:[8,0]}).bindPopup(c.h,{maxWidth:260});
+  var m=L.circleMarker(c.ll,{radius:7,color:"#fff",weight:2,fillColor:(c.n==="Karen"?"#0072B2":"#D55E00"),fillOpacity:1}).bindTooltip(c.n,{permanent:true,direction:"right",className:"cityl",offset:[8,0]}).bindPopup(c.h,{maxWidth:260});
   if(c.g==="nbo"){nbo.push(m);}else if(c.n==="Nairobi settlements"){m.nb=true;afr.push(m);}else{afr.push(m);}
   if(c.g==="afr"&&c.n!=="Nairobi settlements"){m.always=true;}});
 function syncCities(){
@@ -489,6 +570,36 @@ document.querySelectorAll("[data-yt]").forEach(function(d){d.querySelector("butt
   d.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+d.dataset.yt+'?autoplay=1" title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';});});
 document.querySelectorAll("figure[data-img]").forEach(function(f){var im=f.querySelector("img");f.style.display="none";
   im.onload=function(){f.style.display="";};im.src=f.dataset.img;});
+
+var compareGroup=L.layerGroup(),KIB=[-1.3135,36.7875];
+var RICH=[{"n": "Lavington", "ll": [-1.28, 36.77], "d": 4.2}, {"n": "Kilimani", "ll": [-1.29, 36.787], "d": 2.6}, {"n": "Karen", "ll": [-1.319, 36.709], "d": 8.7}, {"n": "Muthaiga", "ll": [-1.256, 36.83], "d": 7.9}, {"n": "Runda", "ll": [-1.21, 36.804], "d": 11.7}];
+RICH.forEach(function(r){
+  L.polyline([KIB,r.ll],{color:"#555",weight:1.5,dashArray:"5 5"}).addTo(compareGroup);
+  if(r.n==="Karen"){return;}
+  L.circleMarker(r.ll,{radius:7,color:"#fff",weight:2,fillColor:"#0072B2",fillOpacity:1}).bindTooltip(r.n+" · "+r.d+" km",{permanent:true,direction:(r.n==="Muthaiga"?"left":"right"),className:"cityl",offset:[(r.n==="Muthaiga"?-8:8),0]}).bindPopup(pc(r.n,"Commonly described as a higher-income suburb, about "+r.d+" km in a straight line from Kibera.","What services can residents here reach in 15 minutes, and what can residents of Kibera reach?","Distance calculated from approximate centre points")).addTo(compareGroup);});
+
+var GROUPS=[["Introduction",["What this page asks","Maps and who gets left out","A map decides what counts","Counter-mapping"]],
+["Kibera's story",["A blank spot on the map","Residents drew their own map","What Map Kibera says happened next","Visible does not mean protected"]],
+["2026 snapshot",["Visible, but usable?","What it costs to use","Close on the map, far in services","Next door, a different map","What the map leaves out"]],
+["Beyond Kibera",["Map Kibera beyond Kibera","The wider picture","Slums across the world","Counter-maps in other African cities","Digital Matatus","Ramani Huria","Makoko"]],
+["Analysis",["What the cases show","Who decides what is shown","Necessary, not sufficient"]],
+["Sources",["Sources and credits"]]];
+(function(){var nav=document.getElementById("tabs"),first={};
+ var steps=[].slice.call(document.querySelectorAll("section.step"));
+ steps.forEach(function(st){var h=st.querySelector("h2");if(!h)return;GROUPS.forEach(function(g,i){if(g[1].indexOf(h.textContent)>-1){st.dataset.grp=i;if(!(i in first))first[i]=st;}});});
+ GROUPS.forEach(function(g,i){if(!(i in first))return;var a=document.createElement("a");a.href="#";a.textContent=g[0];a.dataset.i=i;
+  a.addEventListener("click",function(e){e.preventDefault();first[i].scrollIntoView({behavior:"smooth"});});nav.appendChild(a);});
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.target.dataset.grp!==undefined){[].forEach.call(nav.children,function(a){a.classList.toggle("on",a.dataset.i===e.target.dataset.grp);});}});},{rootMargin:"-45% 0px -45% 0px"});
+ steps.forEach(function(st){io.observe(st);});
+})();
+
+var worldGroup=L.layerGroup();
+[["Kibera, Nairobi",-1.3135,36.7875,"Kibera","A blank spot on government maps until residents mapped it in 2009.","Who acts on the data once it exists?","Map Kibera interview, 5 Nov 2026"],
+ ["Rocinha, Rio de Janeiro",-22.9858,-43.2481,"Rocinha","Google Maps showed about 3 streets where satellite imagery showed about 10,000.","What gets planned for a place that looks empty?","Reuters/WEF, 2015"],
+ ["Goma camps, DR Congo",-1.6585,29.2200,"Camps near Goma","MSF says there are often no maps of displacement camps. Volunteers marked over 65,000 shelters in 2023.","Who maps places that are hard to reach?","MSF, 9 Aug 2023"],
+ ["Makoko, Lagos",6.4950,3.3930,"Makoko","Residents mapped with drones in 2019 to be recognised.","How long should a community wait for a result?","CNN, 26 Feb 2020"],
+ ["Dar es Salaam",-6.7924,39.2083,"Dar es Salaam","Residents and students mapped flood-prone wards from 2015.","Did the data change who was protected?","Ramani Huria project pages"]
+].forEach(function(c){L.circleMarker([c[1],c[2]],{radius:7,color:"#fff",weight:2,fillColor:"#D55E00",fillOpacity:1}).bindTooltip(c[0],{direction:"top",className:"cityl"}).bindPopup(pc(c[3],c[4],c[5],c[6]),{maxWidth:260}).addTo(worldGroup);});
 var current=null,manual={},mask=null;
 function go(el){
   current=el;
@@ -500,9 +611,12 @@ function go(el){
     if(on){groups[t].addTo(map);}else{map.removeLayer(groups[t]);}
   });
   if(mask){if(el.dataset.mask){mask.addTo(map);}else{map.removeLayer(mask);}}
+  setBase(el.dataset.base||userBase);
+  if(el.dataset.world){worldGroup.addTo(map);}else{map.removeLayer(worldGroup);}
+  if(el.dataset.compare){compareGroup.addTo(map);}else{map.removeLayer(compareGroup);}
   var lg=document.getElementById("legend");
   if(el.dataset.fly){
-    lg.style.display="none";cityOn=true;syncCities();
+    lg.style.display="none";cityOn=!el.dataset.world;syncCities();
     var f=el.dataset.fly.split(",").map(Number),z=f[2],p=L.latLng(f[0],f[1]);
     if(window.innerWidth>760){p=map.unproject(map.project(p,z).subtract([230,0]),z);}
     if(reduce){map.setView(p,z,{animate:false});}else{map.flyTo(p,z,{duration:1.6});}
