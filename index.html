@@ -69,6 +69,13 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
 @media (max-width:760px){.step{align-items:flex-end;padding:12px}.card{max-width:none;width:100%}.hero h1{font-size:1.9rem}}
 .sh{display:inline-block;width:11px;height:11px;margin-right:6px;background:#777;vertical-align:-1px}.sh.c{border-radius:50%}.sh.s{border-radius:2px}.sh.d{transform:rotate(45deg) scale(.85)}
 #key .row{display:block;font-size:.82rem}
+.key{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.82rem;margin:6px 0}.key i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.sbar{display:flex;height:12px;border-radius:3px;overflow:hidden;margin:6px 0 4px}.sbar b{display:block;height:100%}
+.btns{display:flex;gap:6px;flex-wrap:wrap}.btns button{font:inherit;font-size:.8rem;padding:4px 10px;border:1px solid rgba(127,127,127,.5);background:transparent;color:inherit;border-radius:4px;cursor:pointer}.btns button[aria-pressed=true]{background:var(--rule);border-color:var(--rule);color:#fff}
+.card .small{font-size:.8rem;color:var(--muted)}
+.frame{display:block;margin:10px 0;font-size:.88rem;padding:10px 12px;border:1px solid var(--rule);border-radius:4px}.frame dt{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}.frame dd{margin:0 0 8px}
+.tri{display:block;width:100%;max-width:420px;margin:8px auto;color:inherit}.claim{border-left:3px solid #D55E00;padding-left:10px}
+.card ol{padding-left:1.2em}
 </style>
 </head>
 <body>
@@ -84,73 +91,137 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
   <div id="key"></div>
   <h3>Background</h3>
   <div class="base"><button type="button" data-base="map" aria-pressed="true">Map</button><button type="button" data-base="sat" aria-pressed="false">Satellite</button></div>
+  <div id="yearbox" style="display:none;margin-top:6px"><label for="yearsel" style="display:block;font-size:.74rem;font-weight:600">Satellite image year</label><select id="yearsel" style="width:100%;font:inherit;font-size:.8rem;padding:3px"><option value="latest">Latest</option></select><p class="small" id="yearnote" style="margin:4px 0 0;font-size:.68rem;line-height:1.3"></p></div>
 </div>
-
-<main
 
 <main class="col">
 
   <section class="step" data-view="start" data-layers="">
     <div class="card hero">
       <h1>Who is on the map?</h1>
-      <p>Water and sanitation in Kibera and Mathare, Nairobi.</p>
-      <p><strong>Being on the map is the first step to being planned for.</strong> Scroll to see what residents have mapped and what the map cannot tell us.</p>
-      <p class="small">A student project, KU Leuven. Built with open data from OpenStreetMap.</p>
+      <p>Counter-mapping, water and sanitation in Kibera and Mathare, Nairobi</p>
+      <dl class="frame">
+        <dt>Author</dt><dd>Hilda Narinoi Ries</dd>
+        <dt>Programme</dt><dd>MSc Sustainable Development, KU Leuven · Individual Portfolio 2026–27</dd>
+        <dt>Collaborating organisation</dt><dd>Map Kibera Trust, Nairobi</dd>
+        <dt>Learning input</dt><dd>Just City online sessions, TU Delft</dd>
+        <dt>Guiding question</dt><dd><strong>Does making an informal settlement visible on a map lead to fairer access to water and sanitation, and who controls that visibility?</strong></dd>
+      </dl>
+      <p class="small">Scroll to follow the argument. Built with open data from OpenStreetMap. A student project; not an official Map Kibera Trust product.</p>
     </div>
   </section>
 
 
-  <section class="step" data-view="start" data-layers="">
+
+
+
+  <section class="step" data-view="africa" data-layers="" data-fly="5,20,3">
     <div class="card">
-      <p class="kicker">Introduction</p>
-      <h2>What this page asks</h2>
-      <p>Places missing from official maps are easy to leave out of plans for water, toilets and waste collection. In 2009 residents of Kibera made their own map. This page follows what happened next, from 2009 to a snapshot of today's map.</p>
-      <p>It tests one claim: <strong>being on the map is necessary and insufficient.</strong></p>
+      <p class="kicker">Introduction · urbanisation</p>
+      <h2>An urbanising world</h2>
+      <p>In 2018, 55% of the world's people lived in urban areas. The UN projects 68% by 2050, and almost 90% of that growth will take place in Asia and Africa. Nigeria alone is projected to add about 189 million urban residents (UN DESA, 2018).</p>
+      <div class="chart" role="img" aria-label="Urban share of the world population">
+        <h4>Urban share of world population</h4>
+        <div class="r"><span>2018</span><div class="b"><i style="width:55%"></i></div><span>55%</span></div>
+        <div class="r"><span>2050</span><div class="b"><i class="o" style="width:68%"></i></div><span>68%</span></div>
+      </div>
+      <p>Africa was 43% urban in 2018. Its urban population is projected to double from about 700 million to 1.4 billion by 2050 (OECD/SWAC, 2025). Planning for that growth relies on records such as census counts, cadastres and base maps. A neighbourhood absent from these records is absent from the plan.</p>
+      <p class="small">Sources: UN DESA (2018), World Urbanization Prospects 2018: Key Facts; OECD/SWAC (2025), Africa's Urbanisation Dynamics, key messages.</p>
     </div>
   </section>
 
-
-    <section class="step" data-view="africa" data-layers="" data-fly="-8,-2,3" data-world="1">
+  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3" data-world="1">
     <div class="card">
-      <p class="kicker">Introduction</p>
-      <h2>Maps and who gets left out</h2>
-      <p>A map is a set of choices about what to draw and name. What appears on a map can be counted, planned for and funded. What is missing is easy to overlook, whether it is a street, a clinic or a whole neighbourhood.</p>
-      <p>Residents of informal settlements and other marginalised groups in cities often face the same problems:</p>
-      <ul>
-        <li><strong>Missing from records.</strong> In Rocinha, a favela in Rio de Janeiro, Google Maps showed about 3 streets in 2015 where satellite imagery showed about 10,000.</li>
-        <li><strong>Fewer services.</strong> Water, toilets and waste collection are planned from maps and data.</li>
-        <li><strong>Insecure homes.</strong> In July 2018, road demolitions in Kibera affected about 30,000 families, according to Map Kibera.</li>
-        <li><strong>Crowding on little land.</strong> Nairobi's poorest 60% of residents live on 8.7% of the city's land.</li>
-        <li><strong>Data that ages.</strong> Maps need funding and trained people to stay true.</li>
-      </ul>
-      <div class="chart" role="img" aria-label="Share of urban population living in slums, 2022">
-        <h4>Share of urban people living in slums, 2022</h4>
+      <p class="kicker">Introduction · sub-Saharan Africa</p>
+      <h2>Growth ahead of housing</h2>
+      <p>In sub-Saharan Africa, 53.6% of urban residents lived in slums or informal settlements in 2022. The world figure was 24.8% (UN, 2024). UN-Habitat defines a slum household by deprivation in at least one of five areas: water, sanitation, living space, durable housing and secure tenure (UN-Habitat, 2003).</p>
+      <div class="chart" role="img" aria-label="Share of urban residents in slums, 2022">
+        <h4>Urban residents in slums or informal settlements, 2022</h4>
         <div class="r"><span>World</span><div class="b"><i style="width:24.8%"></i></div><span>24.8%</span></div>
         <div class="r"><span>S-S Africa</span><div class="b"><i class="o" style="width:53.6%"></i></div><span>53.6%</span></div>
       </div>
-      <p>Missing Maps volunteers had mapped 3.5 million people who were not on existing maps by 2015. Hover over or click a marker for a postcard.</p>
-      <p class="small">Sources: <a href="https://www.weforum.org/stories/technological-innovation/how-technology-is-charting-the-unmapped-world/" target="_blank" rel="noopener">Reuters/World Economic Forum, 19 June 2015</a> (Rocinha, Missing Maps); <a href="https://unstats.un.org/sdgs/report/2024/Goal-11" target="_blank" rel="noopener">UN SDG Report 2024</a>; UNEP Kenya Atlas, p. 151 (an older estimate); Map Kibera. S-S Africa = sub-Saharan Africa.</p>
+      <p>Water and sanitation are part of the definition itself. For these settlements, the question of who is mapped is tied to the question of who is served. The markers show five places where that question has been asked: click one.</p>
+      <p class="small">Sources: UN, Sustainable Development Goals Report 2024, Goal 11 (indicator 11.1.1); UN-Habitat (2003), The Challenge of Slums. S-S Africa = sub-Saharan Africa.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
+    <div class="card">
+      <p class="kicker">Introduction · world data</p>
+      <h2>Slums across the world</h2>
+      <p>Our World in Data maps the share of urban people living in slums, from UN-Habitat data. Sub-Saharan Africa has the highest shares. The chart below it shows the three countries in this story over time.</p>
+      <figure class="media">
+        <img src="images/slums_world_map.svg" alt="World map of the share of urban population living in slums; sub-Saharan Africa has the highest shares" loading="lazy">
+        <figcaption>Share of urban population living in slums. Source: United Nations Human Settlements Programme, via <a href="https://ourworldindata.org/grapher/share-of-urban-population-living-in-slums" target="_blank" rel="noopener">Our World in Data</a> (CC BY). Where 2025 data is missing, the closest year from 2020 to 2024 is shown. Open the source link for other years and countries.</figcaption>
+      </figure>
+      <figure class="media">
+        <iframe src="https://ourworldindata.org/grapher/share-of-urban-population-living-in-slums?tab=line&country=KEN~TZA~NGA" loading="lazy" title="Chart: share of urban population living in slums in Kenya, Tanzania and Nigeria over time" allow="web-share; clipboard-write" style="width:100%;height:420px;aspect-ratio:auto"></iframe>
+        <figcaption>Kenya, Tanzania and Nigeria over time. Same source.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="step" data-view="kibera" data-layers="" data-fly="-1.3135,36.7875,13">
+    <div class="card">
+      <p class="kicker">Introduction · the case</p>
+      <h2>Kibera: large, and hard to count</h2>
+      <p>UN-Habitat (2020) calls Kibera the biggest informal settlement in Kenya and "arguably" in Africa, with an estimated 250,000 residents. Hagen (2010) describes it as one of Africa's largest slums.</p>
+      <p>The 2019 census recorded 185,777 people in Kibra sub-county, down from 212,261 in 2009 (KNBS, via citypopulation.de). Boundaries, methods and definitions produce different totals. The numbers used to plan services are themselves a product of how a place is drawn.</p>
+      <p class="small">Sources: UN-Habitat (2020), The case of Kibera: Informal settlements' vulnerability mapping in Kenya; Hagen (2010), Development Outreach 12(1); Kenya National Bureau of Statistics, 2009 and 2019 censuses.</p>
     </div>
   </section>
 
   <section class="step" data-view="start" data-layers="">
     <div class="card">
-      <p class="kicker">Introduction</p>
-      <h2>A map decides what counts</h2>
-      <p>Whatever a map draws can be counted, planned and funded. Whatever it leaves out is easy to overlook.</p>
-      <p>Researchers who study maps call them a source of power. In the forest case Peluso studied in Indonesia, state maps left out villages and showed the land as empty and available for others to use.</p>
-      <p class="small">Source: Peluso (1995), "Whose Woods Are These? Counter-Mapping Forest Territories in Kalimantan, Indonesia", Antipode.</p>
+      <p class="kicker">Introduction · maps and power</p>
+      <h2>Maps are not neutral</h2>
+      <p>Harley (1989) argued that a map is an exercise of power: what it includes, omits and names reflects who commissioned it. Peluso (1995) showed the effect in Kalimantan, where state forest maps left out village land and presented it as open to others.</p>
+      <p>Counter-mapping is the response. Communities make their own maps, often with the same tools as the state, to claim recognition for places and uses the official map leaves out.</p>
+      <p class="small">Sources: Harley (1989), "Deconstructing the map", Cartographica 26(2); Peluso (1995), "Whose woods are these? Counter-mapping forest territories in Kalimantan, Indonesia", Antipode 27(4).</p>
     </div>
   </section>
 
 
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-8,-2,3" data-world="1">
+    <div class="card">
+      <p class="kicker">Introduction · who gets left out</p>
+      <h2>Who gets left out</h2>
+      <p>Informal and marginalised groups meet the same pattern in different cities: absent from records, then absent from services, then exposed to removal.</p>
+      <ul>
+        <li><strong>Absent from records.</strong> In Rocinha, Rio de Janeiro, Google Maps showed about 3 streets in 2015 where satellite imagery showed about 10,000.</li>
+        <li><strong>Absent from services.</strong> Nairobi's poorest 60% of residents live on 8.7% of the city's land.</li>
+        <li><strong>Exposed to removal.</strong> Road demolitions in Kibera in July 2018 affected about 30,000 families, according to Map Kibera.</li>
+      </ul>
+      <p class="small">Sources: Reuters/WEF (2015); UNEP, Kenya Atlas of Our Changing Environment (older estimate); Map Kibera Trust. Click the markers for postcards.</p>
+    </div>
+  </section>
   <section class="step" data-view="start" data-layers="">
     <div class="card">
-      <p class="kicker">Introduction</p>
-      <h2>Counter-mapping</h2>
-      <p>Counter-mapping means communities making their own maps to answer the official ones, often with the same tools. In 2009 young residents of Kibera did this for their own settlement.</p>
-      <p>This page asks what happened next. Did being on the map lead to water, toilets and waste collection, and who can use what the map shows?</p>
-      <p class="small">How to read the map: the shape shows the type of facility (circle for water, square for toilets, diamond for waste). The colour shows who can use it, or what it costs. Use the key at the top right.</p>
+      <p class="kicker">Introduction · method</p>
+      <h2>Counter-mapping as evidence</h2>
+      <p>Residents produce evidence in the form institutions already use: points, lines and polygons in an open database. This page assesses what that evidence does once it exists.</p>
+      <p class="small"><strong>How to read the map.</strong> Shape shows the type of facility (circle water, square toilets, diamond waste). Colour shows who can use it, or what it costs. The key is at the top right.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="start" data-layers="">
+    <div class="card">
+      <p class="kicker">Framework · TU Delft Just City sessions</p>
+      <h2>A spatial justice lens</h2>
+      <p>The Just City sessions treated spatial justice as three linked dimensions: <strong>distribution</strong> of resources, <strong>recognition</strong> of people as subjects of justice, and fair <strong>procedure</strong> in decisions. The session organisers argued that they must work together. Recognition without distribution is symbolic. Distribution without recognition or due process is appeasement. Their question: who features in official maps?</p>
+      <svg class="tri" viewBox="0 0 420 300" role="img" aria-label="Triangle linking recognition, distribution and procedure, with the question this page asks at each corner">
+        <polygon points="210,38 52,252 368,252" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+        <circle cx="210" cy="38" r="9" fill="#D55E00"/><circle cx="52" cy="252" r="9" fill="#0072B2"/><circle cx="368" cy="252" r="9" fill="#E69F00"/>
+        <text x="210" y="16" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">RECOGNITION</text>
+        <text x="226" y="44" text-anchor="start" font-size="10.5" fill="currentColor">Is the place on the map?</text>
+        <text x="52" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">DISTRIBUTION</text>
+        <text x="52" y="294" text-anchor="start" font-size="10" fill="currentColor" dx="-40">Do mapped services work, stay near, cost little?</text>
+        <text x="368" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">PROCEDURE</text>
+        <text x="420" y="294" text-anchor="end" font-size="10" fill="currentColor">Who decides, funds and updates?</text>
+      </svg>
+      <p>The Just City framework (Rocco and Newton, 2026) names the recognition problem a crisis of recognition: marginalised voices coded out of the address (Miraftab, 2022). A map is a literal address. Two cautions came from the sessions. Verloo argued that justice is a process shaped by conflict, and that consensus can hide power. In the Q&amp;A, participants noted that visibility can endanger groups, so the issue is who controls it.</p>
+      <p class="claim"><strong>Working claim.</strong> A map gives recognition. It becomes justice only when distribution and procedure follow. Visibility is necessary, insufficient and perishable.</p>
+      <p class="small">Sources: Just City sessions, TU Delft (2026), organisers Rocco, Newton and Lopez, and guest speaker Verloo; Fraser (2009), Scales of Justice, Columbia University Press; Soja (2010), Seeking Spatial Justice, University of Minnesota Press. Rocco and Newton (2026), conceptual framework of the Manifesto for the Just City, Centre for the Just City, TU Delft. Diagram: author's own.</p>
     </div>
   </section>
 
@@ -195,7 +266,7 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
         <div class="r"><span>Government records</span><div class="b"><i style="width:20%"></i></div><span>~70</span></div>
         <div class="r"><span>Map Kibera map</span><div class="b"><i class="o" style="width:100%"></i></div><span>~350</span></div>
       </div>
-      <p class="small">These are Map Kibera's own statements, not independently verified by this project.</p>
+      <p class="small">These are Map Kibera's own statements. Hagen (2017), a Map Kibera co-founder, reports similar effects in education, security and water. Both are insider accounts and neither is independently verified here.</p>
     </div>
   </section>
 
@@ -233,6 +304,33 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
       <h2>What it costs to use</h2>
       <p>Where a fee is recorded, <span data-pay="toilets">…</span> toilets charge and <span data-free="toilets">…</span> are free. For water, <span data-pay="water">…</span> points charge a fee and <span data-free="water">…</span> are recorded as free.</p>
       <p>Most points carry no fee tag, so this layer shows what mappers noted, and not what residents pay. A toilet that costs a few shillings per visit is a different thing for a household than for a single user.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.3135,36.7875,14" data-ana="walk">
+    <div class="card">
+      <p class="kicker">2026 snapshot · distance</p>
+      <h2>How far is the walk to water?</h2>
+      <p>Each dot is one building, coloured by the walking distance along mapped paths and roads to the nearest water point that is not recorded as broken. The Sphere humanitarian standard sets 500 m as the maximum distance to water.</p>
+      <div class="key"><span><i style="background:#2c7bb6"></i>under 100 m</span><span><i style="background:#abd9e9"></i>100–250 m</span><span><i style="background:#fdae61"></i>250–500 m</span><span><i style="background:#d7191c"></i>over 500 m</span></div>
+      <div class="sbar" aria-label="Kibera buildings by walking distance"><b style="width:79.7%;background:#2c7bb6"></b><b style="width:15.2%;background:#abd9e9"></b><b style="width:3.6%;background:#fdae61"></b><b style="width:1.5%;background:#d7191c"></b></div>
+      <p class="small">Kibera: 229 of 15,477 buildings (1.5%) are over 500 m from a water point. Median walk 55 m. Mathare: 40 of 4,411 (0.9%), median 53 m.</p>
+      <p>Distance is not the main gap here. If only points recorded as working count, 647 Kibera buildings fall in the 250–500 m class and the median walk rises to 65 m. The map does not show the queue, the price or the hours.</p>
+      <p class="small">Method: my own calculation from OpenStreetMap buildings, paths and water points (Overpass export, 21 Nov 2026), restricted to the dense settlement footprint. Paths that are not mapped are not counted, so real routes can be longer. Standard: Sphere Handbook. Data © OpenStreetMap contributors (ODbL).</p>
+      <p class="btns"><button type="button" data-fly2="-1.3135,36.7875,14">Kibera</button><button type="button" data-fly2="-1.2635,36.852,16">Mathare</button></p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.3135,36.7875,14" data-ana="fresh">
+    <div class="card">
+      <p class="kicker">2026 snapshot · freshness</p>
+      <h2>Mapped once, rarely checked</h2>
+      <p>Each dot is a mapped facility, coloured by when it was last checked. The date is the survey or check date if one is tagged, and the last edit in OpenStreetMap if not. An edit is not always a visit to the site.</p>
+      <div class="key"><span><i style="background:#0072B2"></i>last 2 years</span><span><i style="background:#E69F00"></i>2 to 5 years</span><span><i style="background:#D55E00"></i>over 5 years</span></div>
+      <p class="btns" id="ftype"><button type="button" data-t="0" aria-pressed="true">Water</button><button type="button" data-t="1" aria-pressed="false">Toilets</button><button type="button" data-t="2" aria-pressed="false">Waste</button></p>
+      <p>In Kibera, 114 of 1,101 water points (10%) were checked in the last two years and 964 (88%) over five years ago. For toilets it is 375 of 1,197 (31%) and 635 (53%). Across all facilities, 503 of 2,501 (20%) are recent.</p>
+      <p>In Mathare, 30 of 214 water points (14%) are recent and 169 (79%) are over five years old. None of the Mathare records carries a check date.</p>
+      <p class="small">A point with an old date may still work, and a recent one may be broken. The date shows how much of the picture is current. Data © OpenStreetMap contributors (ODbL); my own calculation, 21 Nov 2026.</p>
     </div>
   </section>
 
@@ -293,44 +391,7 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
     </div>
   </section>
 
-  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
-    <div class="card">
-      <p class="kicker">World data</p>
-      <h2>The wider picture</h2>
-      <p>Kibera is one of many places where people live outside official records. UN data for 2022 puts the world's slum population at 1.12 billion, 24.8% of urban residents. In sub-Saharan Africa the share is 53.6%, about 265 million people.</p>
-      <div class="chart" role="img" aria-label="Share of urban population living in slums, world and sub-Saharan Africa, 2020 and 2022">
-        <h4>Share of urban population living in slums or informal settlements</h4>
-        <div class="r"><span>World 2020</span><div class="b"><i style="width:24.2%"></i></div><span>24.2%</span></div>
-        <div class="r"><span>World 2022</span><div class="b"><i style="width:24.8%"></i></div><span>24.8%</span></div>
-        <div class="r"><span>S-S Africa 2020</span><div class="b"><i class="o" style="width:50.2%"></i></div><span>50.2%</span></div>
-        <div class="r"><span>S-S Africa 2022</span><div class="b"><i class="o" style="width:53.6%"></i></div><span>53.6%</span></div>
-      </div>
-      <div class="chart" role="img" aria-label="Share of urban population living in slums, Kenya, Tanzania and Nigeria, 2018">
-        <h4>The three countries in this story, 2018</h4>
-        <div class="r"><span>Kenya</span><div class="b"><i style="width:46.5%"></i></div><span>46.5%</span></div>
-        <div class="r"><span>Tanzania</span><div class="b"><i style="width:40.1%"></i></div><span>40.1%</span></div>
-        <div class="r"><span>Nigeria</span><div class="b"><i style="width:53.9%"></i></div><span>53.9%</span></div>
-      </div>
-      <p class="small">Country figures: World Bank indicator EN.POP.SLUM.UR.ZS, 2018, via <a href="https://www.indexmundi.com/facts/indicators/EN.POP.SLUM.UR.ZS/rankings/africa" target="_blank" rel="noopener">IndexMundi</a>. Data file: <a href="data/world_slum_share.csv">world_slum_share.csv</a>.</p>
-      <p class="small">S-S Africa = sub-Saharan Africa. Source: <a href="https://unstats.un.org/sdgs/report/2024/Goal-11" target="_blank" rel="noopener">UN, Sustainable Development Goals Report 2024, Goal 11</a> (indicator 11.1.1).</p>
-    </div>
-  </section>
 
-  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
-    <div class="card">
-      <p class="kicker">World data</p>
-      <h2>Slums across the world</h2>
-      <p>Our World in Data maps the share of urban people living in slums, from UN-Habitat data. Sub-Saharan Africa has the highest shares. The chart below it shows the three countries in this story over time.</p>
-      <figure class="media">
-        <img src="images/slums_world_map.svg" alt="World map of the share of urban population living in slums; sub-Saharan Africa has the highest shares" loading="lazy">
-        <figcaption>Share of urban population living in slums. Source: United Nations Human Settlements Programme, via <a href="https://ourworldindata.org/grapher/share-of-urban-population-living-in-slums" target="_blank" rel="noopener">Our World in Data</a> (CC BY). Where 2025 data is missing, the closest year from 2020 to 2024 is shown. Open the source link for other years and countries.</figcaption>
-      </figure>
-      <figure class="media">
-        <iframe src="https://ourworldindata.org/grapher/share-of-urban-population-living-in-slums?tab=line&country=KEN~TZA~NGA" loading="lazy" title="Chart: share of urban population living in slums in Kenya, Tanzania and Nigeria over time" allow="web-share; clipboard-write" style="width:100%;height:420px;aspect-ratio:auto"></iframe>
-        <figcaption>Kenya, Tanzania and Nigeria over time. Same source.</figcaption>
-      </figure>
-    </div>
-  </section>
 
 
 
@@ -340,20 +401,22 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
       <h2>Counter-maps in other African cities</h2>
       <p>Other cities show the same pattern. A map gets used when an agency already needs the data, and it rarely stops an eviction.</p>
       <ul>
+        <li><strong>Mathare, Nairobi.</strong> NPR (2013) reported that residents used a community-drawn map to negotiate space for a water line, and that maps can be entered as evidence in court against evictions.</li>
         <li><strong>Mukuru, Nairobi.</strong> Community mapping of health facilities showed gaps, and the Ministry of Health recruited more community health volunteers for informal settlements.</li>
         <li><strong>Digital Matatus, Nairobi.</strong> Informal minibus routes were released as open data. The project reports five apps built on it and use by UN-Habitat for transit planning.</li>
         <li><strong>Ramani Huria, Dar es Salaam.</strong> Residents and students mapped drainage and flood history, and the data fed flood modelling.</li>
         <li><strong>Makoko, Lagos.</strong> Residents mapped with drones in 2019 hoping to be recognised. No outcome is reported, and 24 waterfront communities had been demolished by January 2020.</li>
       </ul>
-      <p class="small">These accounts come from the projects themselves and from news and NGO reports, not independent evaluations.</p>
+      <p class="small">These accounts come from the projects themselves and from news and NGO reports, not independent evaluations. Source for Mathare: Warner, NPR Cities Project, 2013.</p>
     </div>
   </section>
 
-  <section class="step" data-view="africa" data-layers="" data-fly="-1.2864,36.8172,11">
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.2864,36.8172,11" data-case="matatu">
     <div class="card">
       <p class="kicker">2014 · Nairobi</p>
       <h2>Digital Matatus</h2>
       <p>Nairobi's minibus system had no public map. In 2014 University of Nairobi students rode every route with phones and GPS devices, 130 routes in total, and the team released the data in open formats. The map was shared online and on paper.</p>
+      <p class="small casen" style="display:none"></p>
       <div class="chart" role="img" aria-label="Digital Matatus figures">
         <div class="r"><span>Routes mapped</span><div class="b"><i style="width:100%"></i></div><span>130</span></div>
         <div class="r"><span>New routes opened by drivers</span><div class="b"><i class="o" style="width:3.8%"></i></div><span>5</span></div>
@@ -368,11 +431,12 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
     </div>
   </section>
 
-  <section class="step" data-view="africa" data-layers="" data-fly="-6.8,39.25,11">
+  <section class="step" data-view="africa" data-layers="" data-fly="-6.8,39.25,11" data-case="dar">
     <div class="card">
       <p class="kicker">2015 · Dar es Salaam, Tanzania</p>
       <h2>Ramani Huria</h2>
       <p>Dar es Salaam floods in every rainy season, and many informal settlements were missing from maps. Ramani Huria ("Dar Open Map") began in 2015. It trains university students and residents to map with OpenStreetMap, with the World Bank, GFDRR and the Humanitarian OpenStreetMap Team.</p>
+      <p class="small casen" style="display:none"></p>
       <div class="chart" role="img" aria-label="Ramani Huria 2.0 first six months">
         <h4>Ramani Huria 2.0, first six months (from July 2017)</h4>
         <div class="r"><span>Buildings mapped</span><div class="b"><i style="width:100%"></i></div><span>51,000+</span></div>
@@ -384,12 +448,20 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
     </div>
   </section>
 
-  <section class="step" data-view="africa" data-layers="" data-fly="6.4950,3.3930,12">
+  <section class="step" data-view="africa" data-layers="" data-fly="6.4962,3.3935,16" data-makoko="1">
     <div class="card">
       <p class="kicker">2019 · Lagos, Nigeria</p>
       <h2>Makoko</h2>
-      <p>Makoko is a waterfront community on the Lagos lagoon. No census has ever been taken there. Estimates range from about 250,000 (a 2015 World Bank document) to millions (a community leader), and Google Maps shows it as a blank spot. In 2012 the government reportedly gave residents 72 hours' notice to leave.</p>
-      <p>In September 2019 Code for Africa and the Humanitarian OpenStreetMap Team launched a project. Young residents learned to fly drones and used a phone app to mark roads and points of interest. Its goals are to change the conversation with government about Makoko's legitimacy, support planning and estimate population density and housing quality. By late 2019 volunteers had marked about 80 points of interest and mapped more than 5 km of perimeter by drone.</p>
+      <p>Makoko is a waterfront community on the Lagos lagoon with no census and, until 2019, almost nothing on Google Maps. Since September 2019, Code for Africa and the Humanitarian OpenStreetMap Team have trained young residents to map it with drones and phones.</p>
+      <div id="mkctl" style="display:none">
+        <p class="btns"><button type="button" data-mk="0" aria-pressed="false">Official map</button><button type="button" data-mk="1" aria-pressed="true">Mapped by residents</button></p>
+        <div class="key"><span><i style="background:#8c6d46"></i>buildings</span><span><i style="background:#0072B2"></i>school</span><span><i style="background:#CC79A7"></i>worship</span><span><i style="background:#E69F00"></i>market, shop</span><span><i style="background:#D55E00"></i>health</span><span><i style="background:#56B4E9"></i>water</span><span><i style="background:#555"></i>other</span></div>
+        <p class="small" id="mkn"></p>
+      </div>
+      <figure class="ba" data-a="images/makoko_osm.png" data-b="images/makoko_google.png" style="display:none">
+        <div class="baw"><img class="ba-base" alt="Makoko on Google Maps, mostly blank"><div class="ba-top"><img class="ba-over" alt="Makoko on OpenStreetMap, with buildings, canals and named places"></div><div class="ba-line"></div><span class="ba-l" style="left:6px">OpenStreetMap</span><span class="ba-l" style="right:6px">Google Maps</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare OpenStreetMap with Google Maps"></div>
+        <figcaption>Drag the slider to compare Makoko on OpenStreetMap with Google Maps. Images: "Neglected and Unmapped", Mapping Makoko / Code for Africa, 27 May 2020. Map data © OpenStreetMap contributors; tiles courtesy of Humanitarian OpenStreetMap Team.</figcaption>
+      </figure>
       <div class="chart wide" role="img" aria-label="Places of interest mapped in Makoko by type, 82 in total">
         <h4>Places of interest mapped in Makoko (82 points)</h4>
         <div class="r"><span>Boat terminal</span><div class="b"><i style="width:100.0%"></i></div><span>12</span></div>
@@ -404,61 +476,65 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
         <div class="r"><span>Historical site</span><div class="b"><i style="width:16.7%"></i></div><span>2</span></div>
         <div class="r"><span>Waste dumpsite</span><div class="b"><i style="width:16.7%"></i></div><span>2</span></div>
       </div>
-      <p class="small">Chart rebuilt from "Places of Interest in Makoko" in "Neglected and Unmapped" (Mapping Makoko / Code for Africa, 27 May 2020); values read from the published chart.</p>
-      <p>Residents hold two views. Benjamin Aide, a school administrator who joined the mapping team, says the maps will "show the world that we are here". Some residents fear that more attention could invite new eviction attempts. The 2012 notice was never carried out in full, and Makoko's chief says residents still fear losing their homes. In Otodo Gbame, another Lagos waterfront community, more than 30,000 families were forcibly evicted, and a Lagos High Court ruled that unconstitutional in 2017.</p>
-      <p>No government response or change in Makoko's status had been reported by May 2020. An earlier waterfront regeneration plan, submitted in 2014, has not been carried out. Its author sees the new maps as a way to ground that plan in data.</p>
-      <figure class="ba" data-a="images/makoko_osm.png" data-b="images/makoko_google.png" style="display:none">
-        <div class="baw"><img class="ba-base" alt="Makoko on Google Maps, mostly blank"><div class="ba-top"><img class="ba-over" alt="Makoko on OpenStreetMap, with buildings, canals and named places"></div><div class="ba-line"></div><span class="ba-l" style="left:6px">OpenStreetMap</span><span class="ba-l" style="right:6px">Google Maps</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare OpenStreetMap with Google Maps"></div>
-        <figcaption>Drag the slider to compare Makoko on OpenStreetMap with Google Maps. Images: "Neglected and Unmapped", Mapping Makoko / Code for Africa, 27 May 2020. Map data © OpenStreetMap contributors; tiles courtesy of Humanitarian OpenStreetMap Team.</figcaption>
-      </figure>
-      <figure class="media" data-img="images/makoko.jpg"><img alt="Makoko on the Lagos lagoon" loading="lazy"><figcaption>Makoko. Image: [add credit and licence].</figcaption></figure>
-      <p class="small">Sources: Mapping Makoko, <a href="https://pulitzercenter.org/node/18088" target="_blank" rel="noopener">"Neglected and Unmapped"</a>, Code for Africa and the Pulitzer Center, 27 May 2020 (also on The Guardian Nigeria); Oluwatosin Adeshokan, <a href="https://www.devex.com/news/mapping-makoko-how-data-could-help-legitimize-nigeria-s-informal-settlements-96793" target="_blank" rel="noopener">"Mapping Makoko: How data could help legitimize Nigeria's informal settlements"</a>, Devex, 12 May 2020 (supported by the Pulitzer Center); Oluwatosin Adeshokan, "How Makoko, Nigeria's Floating Slum Went Digital With New Mapping Project", CNN, 26 February 2020 (<a href="https://www.wral.com/how-makoko-nigerias-floating-slum-went-digital-with-new-mapping-project/18976014/" target="_blank" rel="noopener">syndicated copy</a>; Pulitzer Center-supported). Population figures are estimates: locals say more than one million (CNN), Devex says about 300,000 without a source, and a community leader quoted in "Neglected and Unmapped" says 2 to 3 million.</p>
+      <p>Residents are divided: many hope the map will make the government see them, and some fear it could bring new evictions. Makoko received 72 hours' notice in 2012, and more than 30,000 families were evicted from Otodo Gbame, another Lagos waterfront community. No government response to the map had been reported by May 2020. In the triangle's terms, recognition came first and distribution has not followed.</p>
+      <p class="small">Sources: "Neglected and Unmapped", Mapping Makoko / Code for Africa, 27 May 2020 (<a href="https://pulitzercenter.org/node/18088" target="_blank" rel="noopener">Pulitzer Center</a>); Oluwatosin Adeshokan, <a href="https://www.devex.com/news/mapping-makoko-how-data-could-help-legitimize-nigeria-s-informal-settlements-96793" target="_blank" rel="noopener">Devex</a>, 12 May 2020, and CNN, 26 February 2020 (<a href="https://www.wral.com/how-makoko-nigerias-floating-slum-went-digital-with-new-mapping-project/18976014/" target="_blank" rel="noopener">copy</a>). Chart values are read from the published chart.</p>
     </div>
   </section>
 
 
 
-    <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
+  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
     <div class="card">
-      <p class="kicker">Analysis</p>
+      <p class="kicker">Analysis · four cases</p>
       <h2>What the cases show</h2>
       <table>
-        <tr><th>Case</th><th>What was mapped</th><th>Who used it</th><th>Limit</th></tr>
-        <tr><td>Kibera</td><td>Water, toilets, schools</td><td>County, NGOs</td><td>Evictions continue; data ages</td></tr>
-        <tr><td>Digital Matatus</td><td>130 routes</td><td>Drivers, riders, planners</td><td>Informal system stays informal</td></tr>
-        <tr><td>Ramani Huria</td><td>Drainage, buildings</td><td>Flood modellers, wards</td><td>Self-reported results</td></tr>
-        <tr><td>Makoko</td><td>Landmarks by drone</td><td>None reported yet</td><td>Visibility alone</td></tr>
+        <tr><th>Case</th><th>Recognition</th><th>Distribution</th><th>Procedure</th></tr>
+        <tr><td>Kibera</td><td>Mapped from 2009</td><td>Toilets, clinics, school registration (own account)</td><td>Evictions continue; funding gap</td></tr>
+        <tr><td>Digital Matatus</td><td>130 routes mapped</td><td>Planning data; 5 new routes reported</td><td>System stays informal</td></tr>
+        <tr><td>Ramani Huria</td><td>Wards and drains mapped</td><td>Flood modelling, ward atlases</td><td>Results self-reported</td></tr>
+        <tr><td>Makoko</td><td>Mapped by drone, 2019</td><td>None reported</td><td>Demolition risk remains</td></tr>
       </table>
-      <p><strong>Pattern 1.</strong> Maps led to action when an agency already needed the data.</p>
-      <p><strong>Pattern 2.</strong> Maps made communities countable. They did not give them power over evictions.</p>
-      <p><strong>Pattern 3.</strong> Every case depends on funding and trained people to stay current.</p>
-      <p><strong>Questions to take away:</strong></p>
-      <ul><li>Who needs this data?</li><li>Who keeps it current?</li><li>Who decides what is shown?</li></ul>
+      <p><strong>Pattern 1.</strong> Maps led to action where an agency already needed the data.</p>
+      <p><strong>Pattern 2.</strong> Maps made communities countable but gave them little control over removal.</p>
+      <p><strong>Pattern 3.</strong> Currency depends on funding and trained people.</p>
     </div>
   </section>
 
   <section class="step" data-view="both" data-layers="water,toilets,waste">
     <div class="card">
-      <p class="kicker">Who decides</p>
+      <p class="kicker">Procedure · who decides</p>
       <h2>Who decides what is shown</h2>
-      <p>Being visible can bring services, and it can bring risk. A 2011 study of Map Kibera by Berdou warns that mapping informal facilities can expose them to closure or government action.</p>
-      <p>Residents and the organisations that know the community should decide what appears on a map and who can use it. This map shows public facilities only.</p>
+      <p>Visibility can bring services and it can bring risk. Berdou (2011) warns that mapping informal facilities can expose them to closure or government action. The TU Delft Q&amp;A made the same point from Fortaleza: some groups want to be seen and others want to be left alone, and the decisive issue is who controls visibility.</p>
+      <p>This map shows public facilities only. It marks no homes and no people.</p>
       <figure class="media">
         <div class="yt" data-yt="nfQO3R-Toi0"><button type="button">Play video: Not Evenly Distributed<br>(loads from YouTube)</button></div>
-        <figcaption>"Not Evenly Distributed | Map Kibera", from Map Kibera Trust, edited by Stephen Pook, Biennale of Sydney, 2016, 5:10. <a href="https://www.youtube.com/watch?v=nfQO3R-Toi0" target="_blank" rel="noopener">Watch on YouTube</a>.</figcaption>
+        <figcaption>"Not Evenly Distributed | Map Kibera", Map Kibera Trust, Biennale of Sydney, 2016, 5:10. <a href="https://www.youtube.com/watch?v=nfQO3R-Toi0" target="_blank" rel="noopener">Watch on YouTube</a>.</figcaption>
       </figure>
-      <p class="small">More Map Kibera video: <a href="https://www.youtube.com/user/KiberaNewsNetwork" target="_blank" rel="noopener">Kibera News Network channel</a>, run by Map Kibera Trust.</p>
     </div>
   </section>
 
 
   <section class="step" data-view="both" data-layers="water,toilets,waste" data-color="access">
     <div class="card">
+      <p class="kicker">Conclusion · evidence</p>
+      <h2>What the evidence says</h2>
+      <p><strong>Recognition: achieved.</strong> Residents put Kibera and Mathare on the map. About 2,500 facilities are recorded in the two settlements. Map Kibera reports about 350 schools mapped where records listed about 70.</p>
+      <p><strong>Distribution: partial.</strong> Distance is rarely the barrier: 229 of 15,477 Kibera buildings are over 500 m from a recorded water point. Access is the gap. Only <span data-open="toilets">…</span> of <span data-count="toilets">…</span> toilets are recorded as open to the public.</p>
+      <p><strong>Procedure: weak.</strong> Evictions continue, with about 30,000 families affected in July 2018. Updating depends on funding, and 88% of recorded Kibera water points were last checked over five years ago.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste" data-color="access">
+    <div class="card">
       <p class="kicker">Conclusion</p>
-      <h2>Necessary, not sufficient</h2>
-      <p><strong>Maps led to services when an agency needed the data.</strong> Map Kibera and others report toilets, clinics, school registration and more health volunteers after mapping.</p>
-      <p><strong>Being on the map did not stop demolitions.</strong> Evictions continued in Kibera and in other cities.</p>
-      <p><strong>A dot is not access.</strong> Only <span data-open="toilets">…</span> of <span data-count="toilets">…</span> toilets are recorded as open to the public, and the map needs funding and people to stay true.</p>
+      <h2>Visible, necessary, insufficient</h2>
+      <p>Counter-mapping secures the first corner of the triangle. Two things have to follow for it to count as justice:</p>
+      <ol>
+        <li><strong>A service duty that follows the map.</strong> Data tied to budgets, operation and maintenance, in line with the sessions' point that formal voice needs an implementation budget.</li>
+        <li><strong>Residents' control over visibility and upkeep.</strong> Updating funded as recurring infrastructure, and residents deciding what is shown.</li>
+      </ol>
+      <p>A map that is not kept current loses value, which is why the claim adds a third word: perishable.</p>
+      <p class="small"><strong>Limits.</strong> One OpenStreetMap snapshot (Nov 2026); one organisation interviewed, and its statements are unverified; no resident voices; unmapped paths are not counted in the walking analysis. Case sources are project and news accounts, not independent evaluations.</p>
     </div>
   </section>
 
@@ -467,9 +543,10 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
     <div class="card">
       <p class="kicker">Sources</p>
       <h2>Sources and credits</h2>
-      <p class="small">Facility data: © OpenStreetMap contributors (ODbL), including Map Kibera and its 2020 water and sanitation mapping project. Base map: © OpenStreetMap contributors. Counter-mapping framing: Peluso (1995), Antipode.</p>
-      <p class="small">World data: UN SDG Report 2024, Goal 11. Case studies: PBS NOVA and ITDP (Digital Matatus), Ramani Huria project pages, CNN (Makoko). Video: Digital Matatus, digitalmatatus.com. Map Kibera figures come from an online interview on 5 November 2026 and are the organisation's own.</p>
-      <p class="small">Built by Hilda Narinoi Ries, KU Leuven, for the Individual Portfolio in Sustainable Development. This is a student project and not an official Map Kibera Trust product.</p>
+      <p class="small"><strong>Data.</strong> Facilities, buildings and paths © OpenStreetMap contributors (ODbL), including Map Kibera Trust's mapping. Exports from Overpass, Nov 2026. Walking-distance and freshness analysis: author's own calculation.</p>
+      <p class="small"><strong>References.</strong> Berdou (2011), Mediating voices and communicating realities, IDS. Fraser (2009), Scales of Justice, Columbia UP. Hagen (2010), Putting Nairobi's slums on the map, Development Outreach 12(1). Hagen (2017), Open mapping from the ground up, IDS. Harley (1989), Cartographica 26(2). KNBS (2009, 2019), Census. OECD/SWAC (2025), Africa's Urbanisation Dynamics. Peluso (1995), Antipode 27(4). Miraftab (2022), as cited in Rocco and Newton (2026). Soja (2010), Seeking Spatial Justice, Minnesota UP. Warner (2013), NPR Cities Project. UN (2024), SDG Report, Goal 11. UN DESA (2018), World Urbanization Prospects. UN-Habitat (2003), The Challenge of Slums. UN-Habitat (2020), The case of Kibera. Sphere Association, Sphere Handbook.</p>
+      <p class="small"><strong>Cases.</strong> PBS NOVA and ITDP (Digital Matatus); ramanihuria.org; Mapping Makoko / Code for Africa, CNN, Devex. <strong>Course.</strong> Just City sessions, TU Delft, 2026. <strong>Interview.</strong> Map Kibera Trust, online, 5 Nov 2026; its figures are the organisation's own.</p>
+      <p class="small">Student project, KU Leuven, Individual Portfolio in Sustainable Development. Not an official Map Kibera Trust product.</p>
     </div>
   </section>
 
@@ -522,7 +599,19 @@ var base={
 base.map.addTo(map);
 var userBase="map",curBase="map";
 function setBase(k){if(k===curBase){return;}curBase=k;Object.keys(base).forEach(function(n){if(n===k){base[n].addTo(map);}else{map.removeLayer(base[n]);}});
-  document.querySelectorAll("[data-base]").forEach(function(x){x.setAttribute("aria-pressed",x.dataset.base===k?"true":"false");});}
+  document.querySelectorAll("[data-base]").forEach(function(x){x.setAttribute("aria-pressed",x.dataset.base===k?"true":"false");});
+  document.getElementById("yearbox").style.display=(k==="sat")?"":"none";if(k==="sat"){loadYears();}}
+var latestSat=base.sat,yearsLoaded=false,WB="https://s3-us-west-2.amazonaws.com/config.maptiles.arcgis.com/waybackconfig.json";
+function swapSat(layer){var on=(curBase==="sat");if(on){map.removeLayer(base.sat);}base.sat=layer;if(on){layer.addTo(map);}}
+function loadYears(){if(yearsLoaded){return;}yearsLoaded=true;var note=document.getElementById("yearnote"),sel=document.getElementById("yearsel");
+  fetch(WB).then(function(r){return r.json();}).then(function(cfg){var best={};
+    Object.keys(cfg).forEach(function(k){var it=cfg[k],m=/(\d{4})-(\d{2})-(\d{2})/.exec(it.itemTitle||"");if(!m||!it.itemURL){return;}var d=m[0],y=m[1];if(!best[y]||d>best[y].d){best[y]={d:d,url:it.itemURL};}});
+    Object.keys(best).sort().reverse().forEach(function(y){var o=document.createElement("option");o.value=y;o.textContent=y;sel.appendChild(o);});
+    sel.addEventListener("change",function(){if(sel.value==="latest"){swapSat(latestSat);note.textContent="";return;}
+      var b=best[sel.value],u=b.url.replace("{level}","{z}").replace("{row}","{y}").replace("{col}","{x}");
+      swapSat(L.tileLayer(u,{maxZoom:19,maxNativeZoom:18,attribution:"Imagery &copy; Esri, Maxar, Earthstar Geographics; Esri Wayback"}));
+      note.textContent="Esri Wayback release of "+b.d+". The photo itself may be older. Where a year has no image, tiles stay blank.";});
+  }).catch(function(){document.getElementById("yearbox").style.display="none";});}
 document.querySelectorAll("[data-base]").forEach(function(btn){btn.addEventListener("click",function(){userBase=btn.dataset.base;setBase(userBase);});});
 
 var groups={water:L.layerGroup(),toilets:L.layerGroup(),waste:L.layerGroup()};
@@ -611,11 +700,12 @@ RICH.forEach(function(r){
   if(r.n==="Karen"){return;}
   L.circleMarker(r.ll,{radius:7,color:"#fff",weight:2,fillColor:"#0072B2",fillOpacity:1}).bindTooltip(r.n+" · "+r.d+" km",{permanent:true,direction:(r.n==="Muthaiga"?"left":"right"),className:"cityl",offset:[(r.n==="Muthaiga"?-8:8),0]}).bindPopup(pc(r.n,"Commonly described as a higher-income suburb, about "+r.d+" km in a straight line from Kibera.","What services can residents here reach in 15 minutes, and what can residents of Kibera reach?","Distance calculated from approximate centre points")).addTo(compareGroup);});
 
-var GROUPS=[["Introduction",["What this page asks","Maps and who gets left out","A map decides what counts","Counter-mapping"]],
+var GROUPS=[["Introduction",["An urbanising world","Growth ahead of housing","Slums across the world","Kibera: large, and hard to count","Maps are not neutral","Who gets left out","Counter-mapping as evidence","A spatial justice lens"]],
 ["Kibera's story",["A blank spot on the map","Residents drew their own map","What Map Kibera says happened next","Visible does not mean protected"]],
-["2026 snapshot",["Visible, but usable?","What it costs to use","Close on the map, far in services","Next door, a different map","What the map leaves out"]],
-["Beyond Kibera",["Map Kibera beyond Kibera","The wider picture","Slums across the world","Counter-maps in other African cities","Digital Matatus","Ramani Huria","Makoko"]],
-["Analysis",["What the cases show","Who decides what is shown","Necessary, not sufficient"]],
+["2026 snapshot",["Visible, but usable?","What it costs to use","How far is the walk to water?","Mapped once, rarely checked","Close on the map, far in services","Next door, a different map","What the map leaves out"]],
+["Beyond Kibera",["Map Kibera beyond Kibera","Counter-maps in other African cities","Digital Matatus","Ramani Huria","Makoko"]],
+["Analysis",["What the cases show","Who decides what is shown"]],
+["Conclusion",["What the evidence says","Visible, necessary, insufficient"]],
 ["Sources",["Sources and credits"]]];
 (function(){var nav=document.getElementById("tabs"),first={};
  var steps=[].slice.call(document.querySelectorAll("section.step"));
@@ -640,6 +730,45 @@ document.querySelectorAll("figure.ba").forEach(function(f){var A=new Image(),B=n
    var top=f.querySelector(".ba-top"),line=f.querySelector(".ba-line"),r=f.querySelector("input");
    function set(){top.style.clipPath="inset(0 "+(100-r.value)+"% 0 0)";line.style.left=r.value+"%";}r.addEventListener("input",set);set();}
   A.onload=ok;B.onload=ok;A.src=f.dataset.a;B.src=f.dataset.b;});
+
+var cv=L.canvas({padding:.5}),walkGroup=L.layerGroup(),freshGroup=L.layerGroup(),FG=[L.layerGroup(),L.layerGroup(),L.layerGroup()],anaLoaded=false,
+ WC=["#2c7bb6","#abd9e9","#fdae61","#d7191c"],FC=["#0072B2","#E69F00","#D55E00"],TN=["Water point","Toilet","Waste point"],AG=["checked in the last 2 years","checked 2 to 5 years ago","last checked over 5 years ago"];
+function loadAna(cb){if(anaLoaded){cb();return;}anaLoaded=true;
+ ["kibera","mathare"].forEach(function(a){fetch("data/analysis_"+a+".json").then(function(r){return r.json();}).then(function(d){
+  d.pts.forEach(function(p){L.circleMarker([p[0],p[1]],{renderer:cv,radius:2,stroke:false,fillColor:WC[p[2]],fillOpacity:.9,interactive:false}).addTo(walkGroup);});
+  d.fac.forEach(function(f){L.circleMarker([f[0],f[1]],{renderer:cv,radius:4,color:"#fff",weight:.6,fillColor:FC[f[3]],fillOpacity:.95}).bindTooltip(TN[f[2]]+", "+AG[f[3]]+(f[4]?" (check date tagged)":" (last edit date)")).addTo(FG[f[2]]);});
+  d.outline.forEach(function(r){L.polygon(r,{color:"#555",weight:1,fill:false,dashArray:"4 4",interactive:false}).addTo(walkGroup);});
+  cb();}).catch(function(){anaLoaded=false;});});}
+function syncAna(){var cur=current&&current.dataset.ana;
+ if(cur==="walk"){walkGroup.addTo(map);}else{map.removeLayer(walkGroup);}
+ FG.forEach(function(g,i){var b=document.querySelector('#ftype [data-t="'+i+'"]');if(cur==="fresh"&&b&&b.getAttribute("aria-pressed")==="true"){g.addTo(map);}else{map.removeLayer(g);}});}
+document.querySelectorAll("#ftype button").forEach(function(b){b.addEventListener("click",function(){b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true");syncAna();});});
+document.querySelectorAll("[data-fly2]").forEach(function(b){b.addEventListener("click",function(){var f=b.dataset.fly2.split(",").map(Number);var p=L.latLng(f[0],f[1]);if(window.innerWidth>760){p=map.unproject(map.project(p,f[2]).subtract([230,0]),f[2]);}map.flyTo(p,f[2],{duration:1.2});});});
+
+var makokoGroup=L.layerGroup(),mkLoaded=0,mkOn=1,MKC=function(t){var a=t.amenity||"",sh=t.shop;if(a==="school"||a==="kindergarten"||a==="college")return"#0072B2";if(a==="place_of_worship")return"#CC79A7";if(a==="marketplace"||sh)return"#E69F00";if(/clinic|hospital|pharmacy|doctors|health/.test(a)||t.healthcare)return"#D55E00";if(a==="drinking_water"||a==="water_point"||t.man_made==="water_tap"||t.man_made==="water_well")return"#56B4E9";return"#555";};
+function loadMakoko(){if(mkLoaded)return;mkLoaded=1;
+ Promise.all([fetch("data/makoko_buildings.geojson").then(function(r){if(!r.ok)throw 0;return r.json();}),fetch("data/makoko_places.geojson").then(function(r){return r.ok?r.json():{features:[]};}).catch(function(){return{features:[]};})]).then(function(d){
+  var nb=0,np=0;
+  d[0].features.forEach(function(f){if(f.geometry&&f.geometry.type==="Polygon"){L.polygon(f.geometry.coordinates[0].map(function(c){return[c[1],c[0]];}),{renderer:cv,color:"#6b5230",weight:.4,fillColor:"#8c6d46",fillOpacity:.75,interactive:false}).addTo(makokoGroup);nb++;}});
+  d[1].features.forEach(function(f){var t=f.properties||{};if(!f.geometry||f.geometry.type!=="Point")return;if(!(t.amenity||t.shop||t.healthcare||t.man_made==="water_tap"))return;var c=f.geometry.coordinates;
+   L.circleMarker([c[1],c[0]],{radius:5,color:"#fff",weight:1,fillColor:MKC(t),fillOpacity:1}).bindTooltip((t.name?t.name+" · ":"")+(t.amenity||t.shop||t.healthcare||"place").replace(/_/g," ")).addTo(makokoGroup);np++;});
+  document.getElementById("mkctl").style.display="";document.getElementById("mkn").textContent=nb.toLocaleString()+" buildings and "+np+" named or tagged places in OpenStreetMap, exported Nov 2026. © OpenStreetMap contributors.";
+  syncMk();}).catch(function(){mkLoaded=0;});}
+function syncMk(){var on=current&&current.dataset.makoko&&mkOn;if(on){makokoGroup.addTo(map);}else{map.removeLayer(makokoGroup);}}
+document.querySelectorAll("[data-mk]").forEach(function(b){b.addEventListener("click",function(){mkOn=+b.dataset.mk;document.querySelectorAll("[data-mk]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});syncMk();});});
+
+var CASES={dar:[["data/dar_buildings.geojson","b"],["data/dar_drains.geojson","l"]],matatu:[["data/matatu_routes.geojson","m"]]},caseG={},caseState={};
+function loadCase(k,el){if(caseState[k]){syncCase();return;}caseState[k]=1;var g=L.layerGroup();caseG[k]=g;var bb=L.latLngBounds([]),cnt=[];
+ Promise.all(CASES[k].map(function(f){return fetch(f[0]).then(function(r){if(!r.ok)throw 0;return r.json();});})).then(function(ds){
+  ds.forEach(function(d,i){var t=CASES[k][i][1],n=0;
+   var gj=L.geoJSON(d,{renderer:cv,interactive:false,filter:function(x){return x.geometry&&/Polygon|LineString/.test(x.geometry.type);},
+    style:function(){return t==="b"?{color:"#6b5230",weight:.3,fillColor:"#8c6d46",fillOpacity:.7}:t==="l"?{color:"#0072B2",weight:1.6,opacity:.9}:{color:"#D55E00",weight:1.6,opacity:.55};}});
+   gj.eachLayer(function(){n++;});gj.addTo(g);bb.extend(gj.getBounds());cnt.push(n.toLocaleString()+(t==="b"?" buildings":t==="l"?" drains and watercourses":" route shapes"));});
+  var note=document.querySelector('[data-case="'+k+'"] .casen');if(note){note.textContent="On the map: "+cnt.join(", ")+(k==="matatu"?" (2019 GTFS feed, Digital Matatus)":" (OpenStreetMap, exported Nov 2026)")+". "+(k==="dar"?"Brown is buildings, blue is drains and watercourses. ":"")+"Sources are listed in the Sources chapter.";note.style.display="";}
+  caseB=caseB||{};caseB[k]=bb;syncCase();fitCase();}).catch(function(){caseState[k]=0;});}
+var caseB={};
+function fitCase(){var k=current&&current.dataset.case;if(!k||!caseB[k]||!caseB[k].isValid())return;var pad=window.innerWidth>760?[[460,40],[40,40]]:[[20,20],[20,260]];map.fitBounds(caseB[k],{paddingTopLeft:pad[0],paddingBottomRight:pad[1],animate:!reduce});}
+function syncCase(){var k=current&&current.dataset.case;Object.keys(caseG).forEach(function(x){if(x===k){caseG[x].addTo(map);}else{map.removeLayer(caseG[x]);}});}
 var current=null,manual={},mask=null;
 function go(el){
   current=el;
@@ -654,6 +783,12 @@ function go(el){
   setBase(el.dataset.base||userBase);
   if(el.dataset.world){worldGroup.addTo(map);}else{map.removeLayer(worldGroup);}
   if(el.dataset.compare){compareGroup.addTo(map);}else{map.removeLayer(compareGroup);}
+  if(el.dataset.case){loadCase(el.dataset.case,el);}
+  syncCase();
+  if(el.dataset.makoko){loadMakoko();}
+  syncMk();
+  if(el.dataset.ana){loadAna(syncAna);}
+  syncAna();
   var lg=document.getElementById("legend");
   if(el.dataset.fly){
     lg.style.display="none";cityOn=!el.dataset.world;syncCities();
