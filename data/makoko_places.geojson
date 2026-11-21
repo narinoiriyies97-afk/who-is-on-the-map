@@ -1,0 +1,915 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-11-21T23:04:50Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "way/407982494",
+      "properties": {
+        "@id": "way/407982494",
+        "amenity": "parking",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.386847,
+          6.4951401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/502716273",
+      "properties": {
+        "@id": "way/502716273",
+        "amenity": "parking",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3872486,
+          6.4983819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/539288366",
+      "properties": {
+        "@id": "way/539288366",
+        "amenity": "university",
+        "loc_name": "UNILAG",
+        "name": "University of Lagos",
+        "wikidata": "Q1782980",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3941414,
+          6.5120106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/745649229",
+      "properties": {
+        "@id": "way/745649229",
+        "building": "yes",
+        "shop": "tyres",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3890006,
+          6.4967865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/775431199",
+      "properties": {
+        "@id": "way/775431199",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "anglican",
+        "name": "Christ Anglican Church, Ebute-Metta",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3856296,
+          6.4896296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/792738605",
+      "properties": {
+        "@id": "way/792738605",
+        "amenity": "school",
+        "surface": "unpaved",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3883499,
+          6.490869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/803362520",
+      "properties": {
+        "@id": "way/803362520",
+        "amenity": "hospital",
+        "name": "Ayeitoro PHC",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.387415,
+          6.4927587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4313425389",
+      "properties": {
+        "@id": "node/4313425389",
+        "addr:housenumber": "1",
+        "addr:street": "Igbehinadun Street",
+        "amenity": "car_rental",
+        "email": "ayomi4easy@gmail.com",
+        "name": "Makoko R/A Taxi Park",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "phone": "08111118843"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.386877,
+          6.499655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4348744892",
+      "properties": {
+        "@id": "node/4348744892",
+        "amenity": "place_of_worship",
+        "name": "CCC HQ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3866599,
+          6.4981987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6944692000",
+      "properties": {
+        "@id": "node/6944692000",
+        "amenity": "parking",
+        "capacity": "20",
+        "parking": "lane"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.393985,
+          6.5026558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6973195668",
+      "properties": {
+        "@id": "node/6973195668",
+        "addr:street": "Zunto, Agboji",
+        "name": "Moyi Firewood Point",
+        "shop": "kitchen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3947399,
+          6.4947346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6973195670",
+      "properties": {
+        "@id": "node/6973195670",
+        "addr:street": "Raimi Street",
+        "amenity": "fast_food",
+        "name": "Ita baale"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3875825,
+          6.495898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6973195672",
+      "properties": {
+        "@id": "node/6973195672",
+        "amenity": "bar",
+        "name": "Djebete Bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3940875,
+          6.4939255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6976537185",
+      "properties": {
+        "@id": "node/6976537185",
+        "addr:street": "Makoko",
+        "amenity": "kindergarten",
+        "name": "Bayita Bilingual School"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3934814,
+          6.494304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6976631185",
+      "properties": {
+        "@id": "node/6976631185",
+        "amenity": "police",
+        "name": "Makoko police post"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3857543,
+          6.4954088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6976696685",
+      "properties": {
+        "@id": "node/6976696685",
+        "addr:street": "Makoko Road",
+        "name": "Ase jere market",
+        "name:en": "Ase Jere Market",
+        "shop": "seafood"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3865416,
+          6.4945002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6978081761",
+      "properties": {
+        "@id": "node/6978081761",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "building"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3873082,
+          6.4961185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6978081765",
+      "properties": {
+        "@id": "node/6978081765",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "building"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3871194,
+          6.4961397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988054364",
+      "properties": {
+        "@id": "node/6988054364",
+        "amenity": "townhall",
+        "name": "Migbewe 1 Town Hall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3876575,
+          6.4946571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988054368",
+      "properties": {
+        "@id": "node/6988054368",
+        "amenity": "waste_disposal",
+        "name": "Baale Towe Waste Collection Point",
+        "waste": "Solid Waste Disposal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3890635,
+          6.494744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988054370",
+      "properties": {
+        "@id": "node/6988054370",
+        "addr:housenumber": "56b",
+        "addr:street": "Apolo Makoko",
+        "amenity": "school",
+        "name": "Whayinna Primary School"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3883093,
+          6.4956426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988054371",
+      "properties": {
+        "@id": "node/6988054371",
+        "addr:street": "Bale Towe",
+        "amenity": "school",
+        "name": "Makoko Dream Primary School"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3883804,
+          6.4954037
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988054372",
+      "properties": {
+        "@id": "node/6988054372",
+        "addr:housenumber": "32b/35b",
+        "addr:street": "Azinpono Lane Migbewe1",
+        "amenity": "school",
+        "name": "Doyisem Best Academy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3875777,
+          6.494686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988054373",
+      "properties": {
+        "@id": "node/6988054373",
+        "addr:street": "Bale Towe",
+        "amenity": "school",
+        "name": "Makoko Dream Nursery School"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3881164,
+          6.4957128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988071162",
+      "properties": {
+        "@id": "node/6988071162",
+        "addr:street": "Bale Towe Mogbewe II",
+        "amenity": "townhall",
+        "name": "Bale Towe Town Hall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3887513,
+          6.4950688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988071163",
+      "properties": {
+        "@id": "node/6988071163",
+        "addr:street": "Migbewe I",
+        "amenity": "pharmacy",
+        "name": "Patient Medicine Shop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.389105,
+          6.4938677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988071164",
+      "properties": {
+        "@id": "node/6988071164",
+        "addr:street": "Migbewe II",
+        "amenity": "social_facility",
+        "name": "Minanghan Health Centre",
+        "operator": "Private",
+        "social_facility": "nursing_home"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3906656,
+          6.4939383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988249200",
+      "properties": {
+        "@id": "node/6988249200",
+        "amenity": "charging_station",
+        "name": "Phone Charging Shop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3937347,
+          6.4952434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988249201",
+      "properties": {
+        "@id": "node/6988249201",
+        "addr:street": "Yansewe water way, Otogaji way, Adogbo 2",
+        "name": "Mou Dried Fire wood",
+        "shop": "convenience"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3914495,
+          6.4951962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988249202",
+      "properties": {
+        "@id": "node/6988249202",
+        "addr:street": "Zunme water way, near Jesudegbe boat terminal, Makoko",
+        "name": "Hunger Henrieth Frozen Foods",
+        "shop": "butcher"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3904134,
+          6.4949919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988249203",
+      "properties": {
+        "@id": "node/6988249203",
+        "addr:street": "Azinpono lane, Migbewhe 1 Makoko",
+        "name": "Dominic PlayStation House",
+        "shop": "video_games"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3889434,
+          6.4939768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988249204",
+      "properties": {
+        "@id": "node/6988249204",
+        "name": "Tailoring Shop",
+        "shop": "tailor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3878049,
+          6.4958927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988249205",
+      "properties": {
+        "@id": "node/6988249205",
+        "addr:street": "Migbewe I",
+        "amenity": "bar",
+        "name": "Bar",
+        "outdoor_seating": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3881907,
+          6.4944084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6988249209",
+      "properties": {
+        "@id": "node/6988249209",
+        "addr:street": "Migbewe II",
+        "name": "Dried Wood Vendor",
+        "shop": "convenience"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3908012,
+          6.4937855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7234360265",
+      "properties": {
+        "@id": "node/7234360265",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Pharmacy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3880884,
+          6.4900979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214198",
+      "properties": {
+        "@id": "node/7376214198",
+        "addr:street": "Balaa Aji house,migbewe 1",
+        "amenity": "drinking_water",
+        "name": "Clean Water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3885316,
+          6.494245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214199",
+      "properties": {
+        "@id": "node/7376214199",
+        "addr:street": "Bale Towe",
+        "amenity": "drinking_water",
+        "name": "Clean Water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3881906,
+          6.4953821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214201",
+      "properties": {
+        "@id": "node/7376214201",
+        "addr:street": "Migbewe 1",
+        "amenity": "drinking_water",
+        "name": "Clean Water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.389155,
+          6.493835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214204",
+      "properties": {
+        "@id": "node/7376214204",
+        "addr:street": "Baale Aji house",
+        "amenity": "drinking_water",
+        "name": "Baale Aji Public water source"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3883414,
+          6.4943065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214205",
+      "properties": {
+        "@id": "node/7376214205",
+        "addr:street": "Baale street",
+        "amenity": "drinking_water",
+        "indoor": "no",
+        "name": "Clean Water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.38808,
+          6.4953433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214206",
+      "properties": {
+        "@id": "node/7376214206",
+        "addr:street": "Raimi street",
+        "amenity": "drinking_water",
+        "name": "Ita Baale, borehole"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3874933,
+          6.4959233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214207",
+      "properties": {
+        "@id": "node/7376214207",
+        "addr:street": "Migbewe 1",
+        "amenity": "drinking_water",
+        "name": "Clean Water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3883579,
+          6.4943563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214208",
+      "properties": {
+        "@id": "node/7376214208",
+        "addr:street": "Migbewe",
+        "amenity": "drinking_water",
+        "name": "Clean Water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3881976,
+          6.4943386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7376214209",
+      "properties": {
+        "@id": "node/7376214209",
+        "addr:street": "19 Raimi Street",
+        "amenity": "drinking_water",
+        "name": "Ita Baale, borehole"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3875668,
+          6.4959578
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7382717015",
+      "properties": {
+        "@id": "node/7382717015",
+        "addr:street": "Olountooba Street, Migbewe",
+        "amenity": "place_of_worship",
+        "building": "mosque",
+        "name": "Olountooba Mosque",
+        "religion": "muslim"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.38823,
+          6.494525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7382717017",
+      "properties": {
+        "@id": "node/7382717017",
+        "addr:street": "Migbewe 1, Baale Aji Area, Makoko",
+        "amenity": "place_of_worship",
+        "building": "mosque",
+        "name": "Olountoba Central Mosque",
+        "religion": "muslim"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3880765,
+          6.4945599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7382717019",
+      "properties": {
+        "@id": "node/7382717019",
+        "addr:street": "Azinpono lane, Migbewe 1, makoko",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Message of Christ into the End Time",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3890117,
+          6.4939127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7382717020",
+      "properties": {
+        "@id": "node/7382717020",
+        "addr:street": "Raimi Street Beside Celestial Church",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3878056,
+          6.4958279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7382717021",
+      "properties": {
+        "@id": "node/7382717021",
+        "addr:street": "Raimi Street, Ita Baale",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Celestial Church of Christ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3877183,
+          6.4956733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7382717022",
+      "properties": {
+        "@id": "node/7382717022",
+        "addr:street": "N0 2 clinic, acts aposts",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "St Raphael Celestial Church of Christ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3873398,
+          6.49463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7382717023",
+      "properties": {
+        "@id": "node/7382717023",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "St. Andre Du Lac Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3881482,
+          6.4955341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/7382717024",
+      "properties": {
+        "@id": "node/7382717024",
+        "addr:full": "Makoko II Parish, 34 B",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Celestial Church of Christ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3879006,
+          6.4959211
+        ]
+      }
+    }
+  ]
+}
