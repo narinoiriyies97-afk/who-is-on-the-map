@@ -139,3 +139,32 @@ out geom;
 ### Nairobi matatu routes
 1. Go to http://www.digitalmatatus.com/map.html and download the GTFS feed (a .zip file).
 2. Send the zip to Claude as it is. Claude converts the route shapes for the map.
+
+
+## Round 5: Google Open Buildings (optional outline layer)
+
+The map already draws OpenStreetMap building footprints, coloured by walk distance. Google Open Buildings is an extra outline layer for comparison. It appears in the Layers panel only when the file below exists. I could not download it from my workspace, so this route is untested here.
+
+1. Install the Overture Maps tool once (Python 3): `pip install overturemaps`
+2. Download buildings for both areas (Overture combines Google, Microsoft and OpenStreetMap footprints):
+
+   overturemaps download --bbox=36.765,-1.330,36.805,-1.300 -f geojson --type=building -o kibera_raw.geojson
+   overturemaps download --bbox=36.835,-1.275,36.870,-1.250 -f geojson --type=building -o mathare_raw.geojson
+
+3. Keep only the Google footprints and join the two areas. Save this as filter_google.py next to the two files and run `python filter_google.py`:
+
+   import json
+   out = []
+   for name in ("kibera_raw.geojson", "mathare_raw.geojson"):
+       for f in json.load(open(name))["features"]:
+           src = f["properties"].get("sources") or []
+           if isinstance(src, str):
+               src = json.loads(src)
+           if any("Google" in (s.get("dataset") or "") for s in src):
+               out.append({"type": "Feature", "properties": {}, "geometry": f["geometry"]})
+   json.dump({"type": "FeatureCollection", "features": out}, open("google_buildings.geojson", "w"))
+   print(len(out), "Google footprints")
+
+4. Put google_buildings.geojson in the data/ folder on GitHub. Credit: Google Open Buildings (CC BY 4.0, or ODbL where it comes through Overture), via Overture Maps Foundation.
+
+If the file is larger than about 10 MB, send it to Claude and the footprints will be clipped to the settlement areas.

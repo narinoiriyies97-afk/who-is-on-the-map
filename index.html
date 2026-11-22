@@ -7,11 +7,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script>(function(){var t=null;try{t=localStorage.getItem("theme");}catch(e){}if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);})();</script>
 <style>
-:root{--ink:#1b2a33;--card:#ffffff;--rule:#0072B2;--water:#0072B2;--toilet:#E69F00;--waste:#CC79A7;--muted:#4d5f69}
-@media (prefers-color-scheme:dark){:root{--ink:#e8eef0;--card:#1e2a31;--muted:#a9b8bf}}
+:root{--ink:#1b2a33;--card:#ffffff;--rule:#0072B2;--water:#0072B2;--toilet:#E69F00;--waste:#CC79A7;--muted:#4d5f69;--bg:#e9eef0;--line:rgba(127,127,127,.4);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+:root[data-theme=dark]{--ink:#e8eef0;--card:#172229;--muted:#a9b8bf;--rule:#56B4E9;--water:#56B4E9;--bg:#0e1519;--line:rgba(255,255,255,.18);color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);line-height:1.55}
+body{margin:0;background:var(--bg);font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);line-height:1.55}
 #map{position:fixed;inset:0;z-index:0}
 .col{position:relative;z-index:2;pointer-events:none}
 .step{min-height:100vh;display:flex;align-items:center;padding:56px 24px 24px}
@@ -23,7 +24,7 @@ body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);li
 .chart.wide .r{grid-template-columns:118px 1fr 26px}.chart h4{margin:10px 0 2px;font-size:.78rem}.chart .r span:last-child{text-align:right;font-weight:700}
 .yt{position:relative;aspect-ratio:16/9;background:#111;border-radius:4px;overflow:hidden}.yt button{all:unset;cursor:pointer;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;text-align:center;padding:12px}
 .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.pc img{width:100%;max-height:150px;object-fit:cover;border-radius:3px;display:block}.pc b{display:block;margin-bottom:4px}.pc p{margin:0 0 6px}.pc .q{font-style:italic}.pc small{color:#666}
+.pc img{width:100%;max-height:150px;object-fit:cover;border-radius:3px;display:block}.pc b{display:block;margin-bottom:4px}.pc p{margin:0 0 6px}.pc .q{font-style:italic}.pc small{color:var(--muted)}
 .card table{width:100%;border-collapse:collapse;font-size:.78rem;margin:8px 0}.card th,.card td{text-align:left;vertical-align:top;padding:4px 5px;border-bottom:1px solid rgba(127,127,127,.3)}
 .cityl{background:var(--card);color:inherit;border:1px solid rgba(127,127,127,.5);font-weight:700}
 #tabs{position:fixed;top:0;left:0;right:0;z-index:1200;display:flex;gap:4px;justify-content:center;flex-wrap:wrap;padding:6px 8px;background:var(--card);box-shadow:0 1px 4px rgba(0,0,0,.25);font-size:.78rem}
@@ -40,8 +41,6 @@ body{margin:0;font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);li
 .hero h1{margin:0 0 12px;font-size:2.4rem;line-height:1.05;font-weight:800}
 .num{font-weight:800;font-size:1.15rem}
 .w{color:var(--water)}.t{color:var(--toilet)}.g{color:var(--waste)}
-#legend{position:fixed;top:12px;right:12px;z-index:3;background:var(--card);padding:10px 12px;border-radius:3px;font-size:.85rem;box-shadow:0 1px 6px rgba(0,0,0,.25)}
-#legend label{display:block;cursor:pointer}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
 a{color:inherit}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 12px}
@@ -49,25 +48,11 @@ a{color:inherit}
 .stat b.o{color:#009E73}.stat b{display:block;font-size:1.5rem;font-weight:800;line-height:1.1}
 .stat>span{display:block;font-size:.78rem;color:var(--muted)}
 .stat>em{display:block;font-style:normal;font-size:.7rem;color:var(--muted);margin-top:4px;font-family:ui-monospace,monospace}
-#legend h3{margin:10px 0 4px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-#legend h3:first-child{margin-top:0}
-#legend .sw{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
-#legend .row{display:block;font-size:.82rem}
-#legend .base{display:flex;gap:6px;margin-top:8px}
-#legend .base button{flex:1;font:inherit;font-size:.78rem;padding:4px 6px;border:1px solid rgba(127,127,127,.5);background:transparent;color:inherit;border-radius:4px;cursor:pointer}
-#legend .base button[aria-pressed=true]{background:var(--rule);border-color:var(--rule);color:#fff}
-.mk{width:18px;height:18px;border-radius:50%;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;position:relative}
-.mk svg{width:11px;height:11px;fill:#fff}
-.mk.broken::after{content:"";position:absolute;left:-2px;right:-2px;top:50%;height:2px;background:#fff;transform:rotate(-45deg);}
-.mk{width:14px;height:14px;border:2px solid #fff;border-radius:0;display:block;position:relative;box-shadow:none}
-.mk.water{border-radius:50%}.mk.toilets{border-radius:2px}.mk.waste{transform:rotate(45deg);width:12px;height:12px;border-radius:1px}
-.mk svg,.mk::after{display:none}
 figure.media{margin:10px 0 0}
 figure.media img,figure.media video,figure.media iframe{width:100%;border-radius:4px;display:block;border:0}
 figure.media iframe{aspect-ratio:16/9}
 figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
 @media (max-width:760px){.step{align-items:flex-end;padding:12px}.card{max-width:none;width:100%}.hero h1{font-size:1.9rem}}
-.sh{display:inline-block;width:11px;height:11px;margin-right:6px;background:#777;vertical-align:-1px}.sh.c{border-radius:50%}.sh.s{border-radius:2px}.sh.d{transform:rotate(45deg) scale(.85)}
 #key .row{display:block;font-size:.82rem}
 .key{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.82rem;margin:6px 0}.key i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px}
 .sbar{display:flex;height:12px;border-radius:3px;overflow:hidden;margin:6px 0 4px}.sbar b{display:block;height:100%}
@@ -77,22 +62,75 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
 .tri{display:block;width:100%;max-width:420px;margin:8px auto;color:inherit}.claim{border-left:3px solid #D55E00;padding-left:10px}
 .card ol{padding-left:1.2em}
 .refs{font-size:.8rem;line-height:1.4;padding-left:1.6em;margin:6px 0}.refs li{margin:0 0 5px}
+/* map controls */
+#mapctl{position:fixed;top:48px;right:12px;z-index:3;display:flex;flex-direction:column;align-items:flex-end;gap:8px;max-width:calc(100vw - 24px)}
+#mapctl .row2{display:flex;gap:8px}
+.ctlbtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;height:38px;padding:0 14px;cursor:pointer;box-shadow:0 1px 6px rgba(0,0,0,.35)}
+.ctlbtn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ctlbtn:focus-visible,#legend button:focus-visible,#legend input:focus-visible,#legend select:focus-visible{outline:2px solid var(--rule);outline-offset:2px}
+#themebtn{width:38px;padding:0}
+:root[data-theme=dark] .i-moon,:root:not([data-theme=dark]) .i-sun{display:none}
+#mapctl.nolayers #layersbtn,#mapctl.nolayers #legend{display:none}
+#legend{width:278px;max-height:calc(100vh - 118px);overflow:auto;background:var(--card);color:var(--ink);padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:.85rem;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+#legend[hidden]{display:none}
+#legend label{display:flex;align-items:center;gap:7px;cursor:pointer;margin:3px 0;line-height:1.25}
+#legend h3{margin:12px 0 4px;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+#legend h3:first-child{margin-top:0}
+#legend .row{display:block;font-size:.82rem}#legend .sw{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+#legend .base{display:flex;gap:6px;margin:6px 0 4px;flex-wrap:wrap}
+#legend .base button{flex:1;font:inherit;font-size:.76rem;padding:5px 6px;border:1px solid var(--line);background:transparent;color:inherit;border-radius:6px;cursor:pointer;white-space:nowrap}
+#legend .base button[aria-pressed=true]{background:var(--rule);border-color:var(--rule);color:#fff}
+#legend .note{margin:4px 0 0;font-size:.7rem;line-height:1.35;color:var(--muted)}
+#wkey{margin:6px 0 2px}#wkey .bar{display:flex;height:8px;border-radius:4px;overflow:hidden}#wkey .bar i{flex:1}#wkey .lab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.6rem;color:var(--muted);margin-top:3px}
+.gly,.mk{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--c,#555);color:#fff;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.55)}
+.gly{width:18px;height:18px;border-width:1.5px;flex:none}.gly svg{width:10px;height:10px}
+.mk{width:24px;height:24px}.mk svg{width:13px;height:13px}
+.gly svg,.mk svg{fill:currentColor;display:block}
+.ln,.bx{display:inline-block;width:18px;flex:none;height:0;border-top:2px dashed #e0b400}.ln.w{border-top:2px dotted var(--muted)}
+.ln2{display:inline-block;width:18px;flex:none;height:0;border-top:3px solid #ffb347}
+.bx{height:10px;border:1px solid var(--muted);background:linear-gradient(90deg,#2c7bb6 25%,#abd9e9 25% 50%,#fdae61 50% 75%,#d7191c 75%)}
+/* map text, popups, controls in both themes */
+.admlab{background:none!important;border:0!important;box-shadow:none!important;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#fff;text-shadow:0 0 3px #000,0 0 3px #000,0 0 5px #000;padding:0}
+.admlab.c{font-size:.7rem;color:#ffe08a;letter-spacing:.12em}.admlab:before{display:none!important}
+#map.zlow .admlab{display:none}
+#map.zsm .mk{transform:scale(.5)}#map.zmd .mk{transform:scale(.75)}
+:root[data-theme=dark] .osm-tiles{filter:invert(1) hue-rotate(180deg) brightness(.95) contrast(.9) saturate(.6)}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--card);color:var(--ink)}
+.leaflet-container a.leaflet-popup-close-button{color:var(--muted)}
+.leaflet-bar a,.leaflet-bar a:hover{background:var(--card);color:var(--ink);border-bottom-color:var(--line)}
+.leaflet-container .leaflet-control-attribution{background:var(--card);color:var(--muted);opacity:.92}.leaflet-control-attribution a{color:var(--muted)}
 </style>
 </head>
 <body>
 <nav id="tabs" aria-label="Story sections"></nav>
 <div id="map" role="img" aria-label="Map of water points, toilets and waste points in Kibera and Mathare, Nairobi"></div>
-<div id="legend" aria-label="Map layers and key">
-  <h3>Show</h3>
-  <label><input type="checkbox" data-layer="water" checked> <span class="sh c"></span>Water points</label>
-  <label><input type="checkbox" data-layer="toilets" checked> <span class="sh s"></span>Toilets</label>
-  <label><input type="checkbox" data-layer="waste" checked> <span class="sh d"></span>Waste points</label>
-  <h3>Colour shows</h3>
-  <div class="base"><button type="button" data-color="access" aria-pressed="true">Who can use it</button><button type="button" data-color="fee" aria-pressed="false">What it costs</button></div>
-  <div id="key"></div>
-  <h3>Background</h3>
-  <div class="base"><button type="button" data-base="map" aria-pressed="true">Map</button><button type="button" data-base="sat" aria-pressed="false">Satellite</button></div>
-  <div id="yearbox" style="display:none;margin-top:6px"><label for="yearsel" style="display:block;font-size:.74rem;font-weight:600">Satellite image year</label><select id="yearsel" style="width:100%;font:inherit;font-size:.8rem;padding:3px"><option value="latest">Latest</option></select><p class="small" id="yearnote" style="margin:4px 0 0;font-size:.68rem;line-height:1.3"></p></div>
+<div id="mapctl">
+  <div class="row2">
+    <button type="button" class="ctlbtn" id="layersbtn" aria-expanded="true" aria-controls="legend"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>Layers</button>
+    <button type="button" class="ctlbtn" id="themebtn" aria-label="Switch to dark theme" title="Switch between light and dark theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div id="legend" role="group" aria-label="Map layers and key">
+    <h3>Facilities</h3>
+    <label><input type="checkbox" data-layer="water" checked> <i class="gly" data-gly="water" style="--c:#0072B2"></i>Water points</label>
+    <label><input type="checkbox" data-layer="toilets" checked> <i class="gly" data-gly="toilets" style="--c:#0072B2"></i>Toilets</label>
+    <label><input type="checkbox" data-layer="waste" checked> <i class="gly" data-gly="waste" style="--c:#0072B2"></i>Waste points</label>
+    <h3>Study area</h3>
+    <label><input type="checkbox" data-layer="adm"> <span class="ln"></span>Ward and constituency boundaries</label>
+    <p class="note">Yellow dashes: constituency. White dots: ward. Teal dashes: dense settlement footprint used for the counts. Areas outside the wards are dimmed.</p>
+    <h3>Built environment</h3>
+    <label><input type="checkbox" data-layer="bld"> <span class="bx"></span>Buildings, by walk to nearest</label>
+    <div class="base" id="wtp" role="group" aria-label="Walk to nearest"><button type="button" data-wt="0" aria-pressed="true">Water</button><button type="button" data-wt="1" aria-pressed="false">Toilet</button><button type="button" data-wt="2" aria-pressed="false">Waste</button></div>
+    <div id="wkey"><div class="bar"><i style="background:#2c7bb6"></i><i style="background:#abd9e9"></i><i style="background:#fdae61"></i><i style="background:#d7191c"></i></div><div class="lab"><span>&lt;100 m</span><span>100–250</span><span>250–500</span><span>&gt;500 m</span></div></div>
+    <label><input type="checkbox" data-layer="roads"> <span class="ln2"></span>Roads and paths</label>
+    <label id="gbrow" hidden><input type="checkbox" data-layer="gb"> <span class="ln" style="border-top-color:#00e5ff;border-top-style:solid"></span>Google Open Buildings (outline)</label>
+    <p class="note">Footprints, roads and paths: OpenStreetMap. Walks follow mapped roads and paths only.</p>
+    <h3>Icon colour shows</h3>
+    <div class="base"><button type="button" data-color="access" aria-pressed="true">Who can use it</button><button type="button" data-color="fee" aria-pressed="false">What it costs</button></div>
+    <div id="key"></div>
+    <h3>Background</h3>
+    <div class="base"><button type="button" data-base="sat" aria-pressed="true">Satellite</button><button type="button" data-base="map" aria-pressed="false">Streets</button></div>
+    <div id="yearbox" style="margin-top:6px"><label for="yearsel" style="display:block;font-size:.74rem;font-weight:600">Satellite image year</label><select id="yearsel" style="width:100%;font:inherit;font-size:.8rem;padding:4px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px"><option value="latest">Latest</option></select><p class="note" id="yearnote"></p></div>
+  </div>
 </div>
 
 <main class="col">
@@ -280,7 +318,7 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
     <div class="card">
       <p class="kicker">2026 snapshot</p>
       <h2>Visible, but usable?</h2>
-      <p>Each shape is a facility someone recorded. Being on the map does not mean a resident can use it.</p>
+      <p>Each badge is a facility someone recorded. Being on the map does not mean a resident can use it.</p>
       <div class="stats">
         <div class="stat"><b class="o" data-open="toilets">…</b><span>of <span data-count="toilets">…</span> toilets are recorded as open to the public</span><em><span data-restr="toilets">…</span> private or customers only</em></div>
         <div class="stat"><b class="o" data-open="water">…</b><span>of <span data-count="water">…</span> water points are recorded as open to the public</span><em><span data-restr="water">…</span> private or restricted</em></div>
@@ -288,7 +326,7 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
       </div>
       <p>Many points have no access tag at all, so these are minimum counts for open and for restricted. Snapshot exported <span id="exportDate">[date]</span>.</p>
       <p class="small">Colour shows who can use it. Switch to "What it costs" in the key. Toilets include those in schools, clinics and other buildings.</p>
-    <p class="small"><strong>How to read the map.</strong> Shape shows the type of facility (circle water, square toilets, diamond waste). Colour shows who can use it or what it costs. The key is at the top right.</p>
+    <p class="small"><strong>How to read the map.</strong> The symbol shows the type of facility (drop for water, figures for toilets, bin for waste). Colour shows who can use it or what it costs. Layers, the key and the light and dark theme sit at the top right.</p>
     </div>
   </section>
 
@@ -302,21 +340,25 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
     </div>
   </section>
 
-  <section class="step" data-view="africa" data-layers="" data-fly="-1.3135,36.7875,14" data-ana="walk">
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.3135,36.7875,15" data-ana="walk">
     <div class="card">
       <p class="kicker">2026 snapshot · distance</p>
       <h2>How far is the walk to water?</h2>
-      <p>Each dot is one building, coloured by the walking distance along mapped paths and roads to the nearest water point that is not recorded as broken. The Sphere humanitarian standard sets 500 m as the maximum distance to water.</p>
+      <p class="btns" id="wtype" role="group" aria-label="Walk to nearest"><button type="button" data-wt="0" aria-pressed="true">Water</button><button type="button" data-wt="1" aria-pressed="false">Toilet</button><button type="button" data-wt="2" aria-pressed="false">Waste</button></p>
+      <p>Each building is coloured by its walk along mapped roads and paths to the nearest <span id="wname">water point that is not recorded as broken</span>. The teal outline marks the dense settlement footprint used for the counts.</p>
+      <p data-w="0">The Sphere humanitarian standard sets 500 m as the maximum distance to water.</p>
+      <p data-w="1" hidden>No distance standard is applied to toilets here. The classes repeat the water bands for comparison. Toilets tagged private, customers only or closed are left out. Cleanliness, safety at night and price are not shown.</p>
+      <p data-w="2" hidden>Only mapped collection and disposal points count. Unmapped dumping sites and collection routes are missing, so these walks can be longer than the real ones.</p>
       <div class="key"><span><i style="background:#2c7bb6"></i>under 100 m</span><span><i style="background:#abd9e9"></i>100–250 m</span><span><i style="background:#fdae61"></i>250–500 m</span><span><i style="background:#d7191c"></i>over 500 m</span></div>
-      <div class="sbar" aria-label="Kibera buildings by walking distance"><b style="width:79.7%;background:#2c7bb6"></b><b style="width:15.2%;background:#abd9e9"></b><b style="width:3.6%;background:#fdae61"></b><b style="width:1.5%;background:#d7191c"></b></div>
-      <p class="small">Kibera: 229 of 15,477 buildings (1.5%) are over 500 m from a water point. Median walk 55 m. Mathare: 40 of 4,411 (0.9%), median 53 m.</p>
-      <p>Distance is not the main gap here. If only points recorded as working count, 647 Kibera buildings fall in the 250–500 m class and the median walk rises to 65 m. The map does not show the queue, the price or the hours.</p>
-      <p class="small">Method: my own calculation from OpenStreetMap buildings, paths and water points (Overpass export, 21 Nov 2026), restricted to the dense settlement footprint. Paths that are not mapped are not counted, so real routes can be longer. Standard: Sphere Handbook. Data © OpenStreetMap contributors (ODbL).</p>
-      <p class="btns"><button type="button" data-fly2="-1.3135,36.7875,14">Kibera</button><button type="button" data-fly2="-1.2635,36.852,16">Mathare</button></p>
+      <div class="sbar" id="wbar" aria-label="Kibera buildings by walking distance"><b style="width:79.7%;background:#2c7bb6"></b><b style="width:15.2%;background:#abd9e9"></b><b style="width:3.6%;background:#fdae61"></b><b style="width:1.5%;background:#d7191c"></b></div>
+      <p class="small" id="wdyn">Kibera: 229 of 15,477 buildings (1.5%) are over 500 m from a water point. Median walk 55 m. Mathare: 40 of 4,411 (0.9%), median 53 m.</p>
+      <p data-w="0">Distance is not the main gap here. If only points recorded as working count, 647 Kibera buildings fall in the 250–500 m class and the median walk rises to 65 m. Queue, price and hours are not on the map.</p>
+      <p class="small">Method: my own calculation from OpenStreetMap buildings, paths and facilities (Overpass export, 21 Nov 2026). Unmapped paths are not counted. Boundaries: geoBoundaries (CC BY 4.0). Standard: Sphere Handbook. © OpenStreetMap contributors (ODbL).</p>
+      <p class="btns"><button type="button" data-fly2="-1.3135,36.7875,15">Kibera</button><button type="button" data-fly2="-1.2635,36.852,16">Mathare</button></p>
     </div>
   </section>
 
-  <section class="step" data-view="africa" data-layers="" data-fly="-1.3135,36.7875,14" data-ana="fresh">
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.3135,36.7875,15" data-ana="fresh">
     <div class="card">
       <p class="kicker">2026 snapshot · data currency</p>
       <h2>How up to date is the data?</h2>
@@ -552,6 +594,7 @@ figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
         <li>Peluso, N. L. (1995). Whose woods are these? Counter-mapping forest territories in Kalimantan, Indonesia. <em>Antipode</em>, 27(4), 383–406.</li>
         <li>Ramani Huria (n.d.). Project and data pages. ramanihuria.org.</li>
         <li>Rocco, R., &amp; Newton, C. (2026). Conceptual framework of the Manifesto for the Just City activity. Centre for the Just City, TU Delft. Just City sessions, TU Delft, 2026 (including N. Verloo).</li>
+        <li>Runfola, D., et al. (2020). geoBoundaries: A global database of political administrative boundaries. <em>PLOS ONE</em>, 15(4), e0231866. Kenya ADM2 and ADM3 layers, CC BY 4.0.</li>
         <li>Soja, E. W. (2010). <em>Seeking Spatial Justice</em>. University of Minnesota Press.</li>
         <li>Sphere Association. <em>The Sphere Handbook</em>: Humanitarian Charter and Minimum Standards in Humanitarian Response.</li>
         <li>UN (2024). <em>The Sustainable Development Goals Report 2024</em>, Goal 11. United Nations.</li>
@@ -578,7 +621,7 @@ var FILES={
 var COLORS={water:"#0072B2",toilets:"#E69F00",waste:"#CC79A7"};
 var ICON={
  water:'<svg viewBox="0 0 24 24"><path d="M12 2C9 7 6 10.5 6 14.5a6 6 0 0 0 12 0C18 10.5 15 7 12 2z"/></svg>',
- toilets:'<svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2.5"/><path d="M8 9h8l1 7h-2v6h-6v-6H7z"/></svg>',
+ toilets:'<svg viewBox="0 0 24 24"><circle cx="7" cy="4.5" r="2"/><path d="M4.5 8.5h5V15H8.5v6.5h-3V15H4.5z"/><circle cx="17" cy="4.5" r="2"/><path d="M17 8.5l3.5 8h-2V21.5h-3V16.5h-2z"/></svg>',
  waste:'<svg viewBox="0 0 24 24"><path d="M9 3h6l1 2h4v2H4V5h4zM6 9h12l-1 12H7z"/></svg>'};
 var STATUS={working:"#2b8cbe",repair:"#f0a50f",broken:"#e4572e",unknown:"#8a948f"};
 var STATUS_LABEL={working:"Working",repair:"Needs repair",broken:"Broken or closed",unknown:"Not recorded"};
@@ -597,7 +640,9 @@ var LAB={access:{open:"Recorded as open to the public",restricted:"Private, cust
 function accessClass(p){var a=String(p.access||"").toLowerCase();if(!a){return "unknown";}return (a==="yes"||a==="permissive"||a==="public")?"open":"restricted";}
 function feeClass(p){var f=String(p.fee||"").toLowerCase();if(!f){return "unknown";}return (f==="no")?"free":"pay";}
 function colorFor(ac,fe){return colorMode==="access"?PAL.access[ac]:PAL.fee[fe];}
-function mkIcon(type,col){return L.divIcon({className:"",iconSize:[16,16],html:'<span class="mk '+type+'" style="background:'+col+'"></span>'});}
+function glyCol(c){var h=c.replace("#","");if(h.length!==6){return "#fff";}var r=parseInt(h.substr(0,2),16),g=parseInt(h.substr(2,2),16),b=parseInt(h.substr(4,2),16);return (0.299*r+0.587*g+0.114*b)>165?"#14212a":"#fff";}
+function mkIcon(type,col){return L.divIcon({className:"",iconSize:[24,24],html:'<span class="mk '+type+'" style="--c:'+col+';color:'+glyCol(col)+'">'+ICON[type]+'</span>'});}
+document.querySelectorAll("[data-gly]").forEach(function(e){e.innerHTML=ICON[e.dataset.gly];});
 function drawKey(){var h="";Object.keys(PAL[colorMode]).forEach(function(k){h+='<span class="row"><span class="sw" style="background:'+PAL[colorMode][k]+'"></span>'+LAB[colorMode][k]+'</span>';});document.getElementById("key").innerHTML=h;}
 function recolor(){items.forEach(function(i){i.m.setIcon(mkIcon(i.type,colorFor(i.ac,i.fe)));});drawKey();document.querySelectorAll("[data-color]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.color===colorMode?"true":"false");});}
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-color]");if(b){colorMode=b.dataset.color;recolor();}});
@@ -607,13 +652,16 @@ var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 document.getElementById("exportDate").textContent=CONFIG.exportDate;
 
 var map=L.map("map",{zoomControl:false}).setView([-1.3135,36.7875],15);
+map.createPane("bldPane").style.zIndex=405;map.createPane("roadPane").style.zIndex=410;map.createPane("admPane").style.zIndex=415;map.createPane("labelPane").style.zIndex=420;map.getPane("labelPane").style.pointerEvents="none";
+var rb=L.canvas({pane:"bldPane",padding:.5}),rr=L.canvas({pane:"roadPane",padding:.5});
 L.control.zoom({position:"bottomright"}).addTo(map);
 var base={
- map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors"}),
+ map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,className:"osm-tiles",attribution:"&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors"}),
  sat:L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:"Imagery &copy; Esri, Maxar, Earthstar Geographics"})};
-base.map.addTo(map);
-var userBase="map",curBase="map";
+var labels=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",{pane:"labelPane",maxZoom:19,attribution:"Labels &copy; Esri"});
+var userBase="sat",curBase="";
 function setBase(k){if(k===curBase){return;}curBase=k;Object.keys(base).forEach(function(n){if(n===k){base[n].addTo(map);}else{map.removeLayer(base[n]);}});
+  if(k==="sat"){labels.addTo(map);}else{map.removeLayer(labels);}if(window.restyleVec){restyleVec();}
   document.querySelectorAll("[data-base]").forEach(function(x){x.setAttribute("aria-pressed",x.dataset.base===k?"true":"false");});
   document.getElementById("yearbox").style.display=(k==="sat")?"":"none";if(k==="sat"){loadYears();}}
 var latestSat=base.sat,yearsLoaded=false,WB="https://s3-us-west-2.amazonaws.com/config.maptiles.arcgis.com/waybackconfig.json";
@@ -629,7 +677,7 @@ function loadYears(){if(yearsLoaded){return;}yearsLoaded=true;var note=document.
   }).catch(function(){document.getElementById("yearbox").style.display="none";});}
 document.querySelectorAll("[data-base]").forEach(function(btn){btn.addEventListener("click",function(){userBase=btn.dataset.base;setBase(userBase);});});
 
-var groups={water:L.layerGroup(),toilets:L.layerGroup(),waste:L.layerGroup()};
+var groups={water:L.layerGroup(),toilets:L.layerGroup(),waste:L.layerGroup(),adm:L.layerGroup(),bld:L.layerGroup(),roads:L.layerGroup(),gb:L.layerGroup()};
 var counts={water:0,toilets:0,waste:0};
 var bounds={kibera:L.latLngBounds([]),mathare:L.latLngBounds([]),both:L.latLngBounds([])};
 
@@ -750,9 +798,8 @@ var cv=L.canvas({padding:.5}),walkGroup=L.layerGroup(),freshGroup=L.layerGroup()
  WC=["#2c7bb6","#abd9e9","#fdae61","#d7191c"],FC=["#0072B2","#E69F00","#D55E00"],TN=["Water point","Toilet","Waste point"],AG=["checked in the last 2 years","checked 2 to 5 years ago","last checked over 5 years ago"];
 function loadAna(cb){if(anaLoaded){cb();return;}anaLoaded=true;
  ["kibera","mathare"].forEach(function(a){fetch("data/analysis_"+a+".json").then(function(r){return r.json();}).then(function(d){
-  d.pts.forEach(function(p){L.circleMarker([p[0],p[1]],{renderer:cv,radius:2,stroke:false,fillColor:WC[p[2]],fillOpacity:.9,interactive:false}).addTo(walkGroup);});
   d.fac.forEach(function(f){L.circleMarker([f[0],f[1]],{renderer:cv,radius:4,color:"#fff",weight:.6,fillColor:FC[f[3]],fillOpacity:.95}).bindTooltip(TN[f[2]]+", "+AG[f[3]]+(f[4]?" (check date tagged)":" (last edit date)")).addTo(FG[f[2]]);});
-  d.outline.forEach(function(r){L.polygon(r,{color:"#555",weight:1,fill:false,dashArray:"4 4",interactive:false}).addTo(walkGroup);});
+  d.outline.forEach(function(r){L.polygon(r,{color:"#4de1c1",weight:2,fill:false,dashArray:"7 4",interactive:false,pane:"admPane"}).addTo(groups.adm);});
   cb();}).catch(function(){anaLoaded=false;});});}
 function syncAna(){var cur=current&&current.dataset.ana;
  if(cur==="walk"){walkGroup.addTo(map);}else{map.removeLayer(walkGroup);}
@@ -786,16 +833,80 @@ function fitCase(){var k=current&&current.dataset.case;if(!k||!caseB[k]||!caseB[
 function syncCase(){var k=current&&current.dataset.case;Object.keys(caseG).forEach(function(x){if(x===k){caseG[x].addTo(map);}else{map.removeLayer(caseG[x]);}});}
 
 var kalGroup=L.layerGroup();L.circleMarker([0.3,113.5],{radius:7,color:"#fff",weight:2,fillColor:"#D55E00",fillOpacity:1}).bindTooltip("Kalimantan, Indonesia",{permanent:true,direction:"right",className:"cityl",offset:[8,0]}).bindPopup('<div class="pc"><b>Kalimantan, Indonesia</b><p>Peluso (1995) studied village counter-maps of forest territory made to answer state forest maps that left village land out.</p><small>Peluso (1995), Antipode 27(4)</small></div>',{maxWidth:260}).addTo(kalGroup);
+
+/* built environment, boundaries, theme */
+var BC=["#2c7bb6","#abd9e9","#fdae61","#d7191c"],WN=["water","toilets","waste"],WTX=["water point that is not recorded as broken","toilet not tagged private, customers only or closed","waste point"],wtype=0,
+ bldP=[],roadL=[],admL=[],spotP=null,LSTAT=null,LDp=null;
+function dec(a){var o=[],la=0,lo=0;for(var i=1;i<a.length;i+=2){la+=a[i];lo+=a[i+1];o.push([la/1e5,lo/1e5]);}return o;}
+function bcls(code){return [code%4,Math.floor(code/4)%4,Math.floor(code/16)%4][wtype];}
+function darkTheme(){return document.documentElement.getAttribute("data-theme")==="dark";}
+function lightBg(){return curBase==="sat"||darkTheme();}
+function rstyle(t){var l=lightBg();
+ if(t===0){return{color:l?"#ffb347":"#c76a00",weight:3,opacity:.95};}
+ if(t===1){return{color:l?"#ffffff":"#5c6b75",weight:1.6,opacity:.85};}
+ return{color:l?"#ffe9a8":"#7a5f00",weight:1.1,opacity:.95,dashArray:"3 3"};}
+function astyle(k){var l=lightBg();
+ if(k==="c"){return{color:l?"#ffe08a":"#8a6500",weight:2.4,fill:false,dashArray:"9 5",opacity:.95};}
+ return{color:l?"#ffffff":"#2b3a44",weight:1.3,fill:false,dashArray:"2 4",opacity:.9};}
+function restyleVec(){roadL.forEach(function(r){r.l.setStyle(rstyle(r.t));});admL.forEach(function(a){a.l.setStyle(astyle(a.k));});
+ if(spotP){spotP.setStyle({fillOpacity:darkTheme()?.5:.34});}}
+function restyleBld(){bldP.forEach(function(b){b.l.setStyle({fillColor:BC[bcls(b.c)]});});}
+function loadLayers(){if(LDp){return LDp;}
+ var J=function(u){return fetch(u).then(function(r){if(!r.ok){throw 0;}return r.json();});};
+ LDp=Promise.all([J("data/layers_kibera.json"),J("data/layers_mathare.json"),J("data/admin_boundaries.json")]).then(function(d){
+  LSTAT={kibera:d[0].s,mathare:d[1].s};
+  [d[0],d[1]].forEach(function(a){
+   a.b.forEach(function(r){var l=L.polygon(dec(r),{renderer:rb,stroke:true,color:"#0b1b24",weight:.3,opacity:.5,fillColor:BC[bcls(r[0])],fillOpacity:.88,interactive:false});bldP.push({l:l,c:r[0]});l.addTo(groups.bld);});
+   a.r.forEach(function(r){var t=r[0],l=L.polyline(dec(r),Object.assign({renderer:rr,interactive:false},rstyle(t)));roadL.push({l:l,t:t});l.addTo(groups.roads);});});
+  var adm=d[2];
+  spotP=L.polygon([[[-85,-180],[-85,180],[85,180],[85,-180]]].concat(adm.spot),{pane:"admPane",stroke:false,fillColor:"#000",fillOpacity:.34,interactive:false}).addTo(groups.adm);
+  [["constituency","c"],["ward","w"]].forEach(function(lv){adm[lv[0]].forEach(function(u){
+   var l=L.polygon(u.rings,Object.assign({pane:"admPane",interactive:false},astyle(lv[1]))).addTo(groups.adm);admL.push({l:l,k:lv[1]});
+   L.circleMarker(u.lab,{pane:"admPane",radius:0,stroke:false,fill:false,interactive:false}).bindTooltip(lv[1]==="c"?u.name+" constituency":u.name+" ward",{permanent:true,direction:"center",className:"admlab "+lv[1],pane:"labelPane"}).addTo(groups.adm);});});
+  restyleVec();walkNote();
+ }).catch(function(){LDp=null;});
+ return LDp;}
+function walkNote(){if(!LSTAT){return;}var h=[],k=WN[wtype],nm={kibera:"Kibera",mathare:"Mathare"};
+ ["kibera","mathare"].forEach(function(a){var q=LSTAT[a][k],n=q[0]+q[1]+q[2]+q[3];h.push(nm[a]+": "+q[3].toLocaleString("en")+" of "+n.toLocaleString("en")+" buildings ("+(100*q[3]/n).toFixed(1)+"%) are over 500 m from the nearest "+(k==="toilets"?"toilet":k==="waste"?"waste point":"water point")+". Median walk "+q[4]+" m.");});
+ var el=document.getElementById("wdyn");if(el){el.textContent=h.join(" ");}
+ var q=LSTAT.kibera[k],n=q[0]+q[1]+q[2]+q[3],bar=document.getElementById("wbar");
+ if(bar){[].forEach.call(bar.children,function(b,i){b.style.width=(100*q[i]/n).toFixed(1)+"%";});}}
+function setWT(i){wtype=i;document.querySelectorAll("[data-wt]").forEach(function(b){b.setAttribute("aria-pressed",+b.dataset.wt===i?"true":"false");});
+ var n=document.getElementById("wname");if(n){n.textContent=WTX[i];}
+ document.querySelectorAll("[data-w]").forEach(function(e){e.hidden=(+e.dataset.w!==i);});
+ restyleBld();walkNote();if(current&&current.dataset.ana==="walk"){manual={};syncGroups();}}
+document.querySelectorAll("[data-wt]").forEach(function(b){b.addEventListener("click",function(){setWT(+b.dataset.wt);});});
+/* optional Google Open Buildings outline, loaded only if data/google_buildings.geojson exists */
+var gbLoaded=false;
+fetch("data/google_buildings.geojson",{method:"HEAD"}).then(function(r){if(r.ok){document.getElementById("gbrow").hidden=false;}}).catch(function(){});
+function loadGb(){if(gbLoaded){return;}gbLoaded=true;fetch("data/google_buildings.geojson").then(function(r){return r.json();}).then(function(d){
+ L.geoJSON(d,{renderer:rb,interactive:false,filter:function(f){return f.geometry&&/Polygon/.test(f.geometry.type);},style:function(){return{color:"#00e5ff",weight:.8,fill:false,opacity:.9};}}).addTo(groups.gb);}).catch(function(){gbLoaded=false;});}
+/* theme and layers panel */
+function setTheme(t,keep){document.documentElement.setAttribute("data-theme",t);if(!keep){try{localStorage.setItem("theme",t);}catch(e){}}
+ document.getElementById("themebtn").setAttribute("aria-label",t==="dark"?"Switch to light theme":"Switch to dark theme");restyleVec();}
+document.getElementById("themebtn").addEventListener("click",function(){setTheme(darkTheme()?"light":"dark");});
+setTheme(darkTheme()?"dark":"light",true);
+var lpanel=document.getElementById("legend"),lbtn=document.getElementById("layersbtn");
+function openPanel(o){lpanel.hidden=!o;lbtn.setAttribute("aria-expanded",o?"true":"false");}
+lbtn.addEventListener("click",function(){openPanel(lpanel.hidden);});
+openPanel(window.innerWidth>760);
+function zcls(){var z=map.getZoom(),c=document.getElementById("map").classList;c.toggle("zlow",z<13);c.toggle("zsm",z<15);c.toggle("zmd",z>=15&&z<16);}
+map.on("zoomend",zcls);zcls();
 var current=null,manual={},mask=null;
+function wantLayers(el){var s=(el.dataset.layers||"").split(",").filter(Boolean),a=el.dataset.ana;
+ if(s.length||a){s.push("adm");}
+ if(a==="walk"){s.push("bld","roads");if(s.indexOf(WN[wtype])<0){s.push(WN[wtype]);}}
+ return s;}
+function syncGroups(){var el=current;if(!el){return;}var show=wantLayers(el);
+ if(show.indexOf("bld")>-1||show.indexOf("adm")>-1||manual.bld||manual.adm||manual.roads){loadLayers();}
+ Object.keys(groups).forEach(function(t){var on=(manual[t]===undefined)?show.indexOf(t)>-1:manual[t];
+  var cb=document.querySelector('[data-layer="'+t+'"]');if(cb){cb.checked=on;}
+  if(on){groups[t].addTo(map);}else{map.removeLayer(groups[t]);}});
+ document.getElementById("mapctl").classList.toggle("nolayers",!(show.length>0||el.dataset.ana));}
 function go(el){
   current=el;
   if(el.dataset.color&&el.dataset.color!==colorMode){colorMode=el.dataset.color;recolor();}
-  var show=(el.dataset.layers||"").split(",");
-  Object.keys(groups).forEach(function(t){
-    var on=show.indexOf(t)>-1&&manual[t]!==false;
-    document.querySelector('[data-layer="'+t+'"]').checked=on;
-    if(on){groups[t].addTo(map);}else{map.removeLayer(groups[t]);}
-  });
+  syncGroups();
   if(mask){if(el.dataset.mask){mask.addTo(map);}else{map.removeLayer(mask);}}
   setBase(el.dataset.base||userBase);
   if(el.dataset.world){worldGroup.addTo(map);}else{map.removeLayer(worldGroup);}
@@ -807,15 +918,14 @@ function go(el){
   syncMk();
   if(el.dataset.ana){loadAna(syncAna);}
   syncAna();
-  var lg=document.getElementById("legend");
   if(el.dataset.fly){
-    lg.style.display="none";cityOn=!el.dataset.world;syncCities();
+    cityOn=!el.dataset.world;syncCities();
     var f=el.dataset.fly.split(",").map(Number),z=f[2],p=L.latLng(f[0],f[1]);
     if(window.innerWidth>760){p=map.unproject(map.project(p,z).subtract([230,0]),z);}
     if(reduce){map.setView(p,z,{animate:false});}else{map.flyTo(p,z,{duration:1.6});}
     return;
   }
-  lg.style.display="";cityOn=false;syncCities();
+  cityOn=false;syncCities();
   var b=bounds[el.dataset.view];
   var pad=window.innerWidth>760?[[460,40],[40,40]]:[[20,20],[20,260]];
   if(b&&b.isValid()){map.fitBounds(b,{paddingTopLeft:pad[0],paddingBottomRight:pad[1],animate:!reduce});}
@@ -823,9 +933,11 @@ function go(el){
 document.querySelectorAll("[data-layer]").forEach(function(box){
   box.addEventListener("change",function(){
     var t=box.dataset.layer;manual[t]=box.checked;
+    if(box.checked&&(t==="bld"||t==="roads"||t==="adm")){loadLayers();}if(box.checked&&t==="gb"){loadGb();}
     if(box.checked){groups[t].addTo(map);}else{map.removeLayer(groups[t]);}
   });
 });
+setBase(userBase);
 var io=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){manual={};go(e.target);}});
 },{threshold:.6});
