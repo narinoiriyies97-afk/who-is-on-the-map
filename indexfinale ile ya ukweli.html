@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who is on the map? Water and sanitation in Kibera and Mathare</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script>(function(){var t=null;try{t=localStorage.getItem("theme");}catch(e){}if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);})();</script>
+<style>
+:root{--ink:#1b2a33;--card:#ffffff;--rule:#0072B2;--water:#0072B2;--toilet:#E69F00;--waste:#CC79A7;--muted:#4d5f69;--bg:#e9eef0;--line:rgba(127,127,127,.4);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+:root[data-theme=dark]{--ink:#e8eef0;--card:#172229;--muted:#a9b8bf;--rule:#56B4E9;--water:#56B4E9;--bg:#0e1519;--line:rgba(255,255,255,.18);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);line-height:1.55}
+#map{position:fixed;inset:0;z-index:0}
+.col{position:relative;z-index:2;pointer-events:none}
+.step{min-height:100vh;display:flex;align-items:center;padding:56px 24px 24px}
+.card{pointer-events:auto;background:var(--card);max-width:410px;padding:22px 24px;border-left:6px solid var(--rule);border-radius:3px;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+.card h2{margin:0 0 10px;font-size:1.45rem;line-height:1.2;font-weight:800}
+.card p{margin:0 0 10px}.card p:last-child{margin:0}
+.chart{margin:10px 0 4px}.chart .r{display:grid;grid-template-columns:96px 1fr 48px;gap:6px;align-items:center;font-size:.8rem;margin:4px 0}
+.chart .b{height:12px;background:rgba(127,127,127,.2);border-radius:2px}.chart .b i{display:block;height:100%;border-radius:2px;background:var(--rule)}.chart .b i.o{background:#D55E00}
+.chart.wide .r{grid-template-columns:118px 1fr 26px}.chart h4{margin:10px 0 2px;font-size:.78rem}.chart .r span:last-child{text-align:right;font-weight:700}
+.yt{position:relative;aspect-ratio:16/9;background:#111;border-radius:4px;overflow:hidden}.yt button{all:unset;cursor:pointer;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;text-align:center;padding:12px}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pc img{width:100%;max-height:150px;object-fit:cover;border-radius:3px;display:block}.pc b{display:block;margin-bottom:4px}.pc p{margin:0 0 6px}.pc .q{font-style:italic}.pc small{color:var(--muted)}
+.card table{width:100%;border-collapse:collapse;font-size:.78rem;margin:8px 0}.card th,.card td{text-align:left;vertical-align:top;padding:4px 5px;border-bottom:1px solid rgba(127,127,127,.3)}
+.cityl{background:var(--card);color:inherit;border:1px solid rgba(127,127,127,.5);font-weight:700}
+#tabs{position:fixed;top:0;left:0;right:0;z-index:1200;display:flex;gap:4px;justify-content:center;flex-wrap:wrap;padding:6px 8px;background:var(--card);box-shadow:0 1px 4px rgba(0,0,0,.25);font-size:.78rem}
+#tabs a{color:var(--muted);text-decoration:none;padding:4px 9px;border-bottom:2px solid transparent;font-weight:600}
+#tabs a.on{color:var(--ink);border-bottom-color:var(--rule)}
+@media(max-width:600px){#tabs{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}#tabs a{white-space:nowrap}}
+.ba{margin:8px 0}.baw{position:relative;overflow:hidden;line-height:0;border-radius:3px}.baw img{width:100%;display:block}
+.ba-top{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}.ba-line{position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 3px rgba(0,0,0,.6);pointer-events:none}
+.baw input{position:absolute;left:0;right:0;bottom:8px;width:100%;margin:0;accent-color:#D55E00;cursor:ew-resize}
+.ba-l{position:absolute;top:6px;padding:2px 6px;font-size:.7rem;line-height:1.3;font-weight:700;background:rgba(0,0,0,.65);color:#fff;border-radius:2px}
+.kicker{margin:0 0 4px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.card ul{margin:0 0 10px;padding-left:18px}.card li{margin-bottom:6px}
+.card .small{font-size:.85rem;color:var(--muted)}
+.hero h1{margin:0 0 12px;font-size:2.4rem;line-height:1.05;font-weight:800}
+.num{font-weight:800;font-size:1.15rem}
+.w{color:var(--water)}.t{color:var(--toilet)}.g{color:var(--waste)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+a{color:inherit}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 12px}
+.stat{border:1px solid rgba(127,127,127,.35);border-radius:6px;padding:8px 8px 6px}
+.stat b.o{color:#009E73}.stat b{display:block;font-size:1.5rem;font-weight:800;line-height:1.1}
+.stat>span{display:block;font-size:.78rem;color:var(--muted)}
+.stat>em{display:block;font-style:normal;font-size:.7rem;color:var(--muted);margin-top:4px;font-family:ui-monospace,monospace}
+figure.media{margin:10px 0 0}
+figure.media img,figure.media video,figure.media iframe{width:100%;border-radius:4px;display:block;border:0}
+figure.media iframe{aspect-ratio:16/9}
+figure.media figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
+@media (max-width:760px){.step{align-items:flex-end;padding:12px}.card{max-width:none;width:100%}.hero h1{font-size:1.9rem}}
+#key .row{display:block;font-size:.82rem}
+.key{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.82rem;margin:6px 0}.key i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.sbar{display:flex;height:12px;border-radius:3px;overflow:hidden;margin:6px 0 4px}.sbar b{display:block;height:100%}
+.btns{display:flex;gap:6px;flex-wrap:wrap}.btns button{font:inherit;font-size:.8rem;padding:4px 10px;border:1px solid rgba(127,127,127,.5);background:transparent;color:inherit;border-radius:4px;cursor:pointer}.btns button[aria-pressed=true]{background:var(--rule);border-color:var(--rule);color:#fff}
+.card .small{font-size:.8rem;color:var(--muted)}
+.frame{display:block;margin:10px 0;font-size:.88rem;padding:10px 12px;border:1px solid var(--rule);border-radius:4px}.frame dt{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}.frame dd{margin:0 0 8px}
+.tri{display:block;width:100%;max-width:420px;margin:8px auto;color:inherit}.claim{border-left:3px solid #D55E00;padding-left:10px}
+.card ol{padding-left:1.2em}
+.refs{font-size:.8rem;line-height:1.4;padding-left:1.6em;margin:6px 0}.refs li{margin:0 0 5px}
+/* map controls */
+#mapctl{position:fixed;top:48px;right:12px;z-index:3;display:flex;flex-direction:column;align-items:flex-end;gap:8px;max-width:calc(100vw - 24px)}
+#mapctl .row2{display:flex;gap:8px}
+.ctlbtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;height:38px;padding:0 14px;cursor:pointer;box-shadow:0 1px 6px rgba(0,0,0,.35)}
+.ctlbtn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ctlbtn:focus-visible,#legend button:focus-visible,#legend input:focus-visible,#legend select:focus-visible{outline:2px solid var(--rule);outline-offset:2px}
+#themebtn{width:38px;padding:0}
+:root[data-theme=dark] .i-moon,:root:not([data-theme=dark]) .i-sun{display:none}
+#mapctl.nolayers #layersbtn,#mapctl.nolayers #legend{display:none}
+#legend{width:278px;max-height:calc(100vh - 118px);overflow:auto;background:var(--card);color:var(--ink);padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:.85rem;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+#legend[hidden]{display:none}
+#legend label{display:flex;align-items:center;gap:7px;cursor:pointer;margin:3px 0;line-height:1.25}
+#legend h3{margin:12px 0 4px;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+#legend h3:first-child{margin-top:0}
+#legend .row{display:block;font-size:.82rem}#legend .sw{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+#legend .base{display:flex;gap:6px;margin:6px 0 4px;flex-wrap:wrap}
+#legend .base button{flex:1;font:inherit;font-size:.76rem;padding:5px 6px;border:1px solid var(--line);background:transparent;color:inherit;border-radius:6px;cursor:pointer;white-space:nowrap}
+#legend .base button[aria-pressed=true]{background:var(--rule);border-color:var(--rule);color:#fff}
+#legend .note{margin:4px 0 0;font-size:.7rem;line-height:1.35;color:var(--muted)}
+#wkey{margin:6px 0 2px}#wkey .bar{display:flex;height:8px;border-radius:4px;overflow:hidden}#wkey .bar i{flex:1}#wkey .lab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.6rem;color:var(--muted);margin-top:3px}
+.gly,.mk{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--c,#555);color:#fff;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.55)}
+.gly{width:18px;height:18px;border-width:1.5px;flex:none}.gly svg{width:10px;height:10px}
+.mk{width:24px;height:24px}.mk svg{width:13px;height:13px}
+.gly svg,.mk svg{fill:currentColor;display:block}
+.ln,.bx{display:inline-block;width:18px;flex:none;height:0;border-top:2px dashed #e0b400}.ln.w{border-top:2px dotted var(--muted)}
+.ln2{display:inline-block;width:18px;flex:none;height:0;border-top:3px solid #ffb347}
+.bx{height:10px;border:1px solid var(--muted);background:linear-gradient(90deg,#2c7bb6 25%,#abd9e9 25% 50%,#fdae61 50% 75%,#d7191c 75%)}
+/* map text, popups, controls in both themes */
+.admlab{background:none!important;border:0!important;box-shadow:none!important;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#fff;text-shadow:0 0 3px #000,0 0 3px #000,0 0 5px #000;padding:0}
+.admlab.c{font-size:.7rem;color:#ffe08a;letter-spacing:.12em}.admlab:before{display:none!important}
+#map.zlow .admlab,#map.zw .admlab.w{display:none}
+#map.zsm .mk{transform:scale(.5)}#map.zmd .mk{transform:scale(.75)}
+:root[data-theme=dark] .osm-tiles{filter:invert(1) hue-rotate(180deg) brightness(.95) contrast(.9) saturate(.6)}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--card);color:var(--ink)}
+.leaflet-container a.leaflet-popup-close-button{color:var(--muted)}
+.leaflet-bar a,.leaflet-bar a:hover{background:var(--card);color:var(--ink);border-bottom-color:var(--line)}
+.leaflet-container .leaflet-control-attribution{background:var(--card);color:var(--muted);opacity:.92}.leaflet-control-attribution a{color:var(--muted)}
+</style>
+</head>
+<body>
+<nav id="tabs" aria-label="Story sections"></nav>
+<div id="map" role="img" aria-label="Map of water points, toilets and waste points in Kibera and Mathare, Nairobi"></div>
+<div id="mapctl">
+  <div class="row2">
+    <button type="button" class="ctlbtn" id="layersbtn" aria-expanded="true" aria-controls="legend"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>Layers</button>
+    <button type="button" class="ctlbtn" id="themebtn" aria-label="Switch to dark theme" title="Switch between light and dark theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div id="legend" role="group" aria-label="Map layers and key">
+    <h3>Facilities</h3>
+    <label><input type="checkbox" data-layer="water" checked> <i class="gly" data-gly="water" style="--c:#0072B2"></i>Water points</label>
+    <label><input type="checkbox" data-layer="toilets" checked> <i class="gly" data-gly="toilets" style="--c:#0072B2"></i>Toilets</label>
+    <label><input type="checkbox" data-layer="waste" checked> <i class="gly" data-gly="waste" style="--c:#0072B2"></i>Waste points</label>
+    <h3>Study area</h3>
+    <label><input type="checkbox" data-layer="adm"> <span class="ln"></span>Constituency and ward boundaries</label>
+    <p class="note">Yellow dashes: Kibra and Mathare constituencies. White dots: their wards. Teal dashes: dense settlement footprint used for the counts. Everything outside the two constituencies is dimmed. Wards are geoBoundaries polygons grouped by the official IEBC ward list.</p>
+    <h3>Built environment</h3>
+    <label><input type="checkbox" data-layer="bld"> <span class="bx"></span>Buildings, by walk to nearest</label>
+    <div class="base" id="wtp" role="group" aria-label="Walk to nearest"><button type="button" data-wt="0" aria-pressed="true">Water</button><button type="button" data-wt="1" aria-pressed="false">Toilet</button><button type="button" data-wt="2" aria-pressed="false">Waste</button></div>
+    <div id="wkey"><div class="bar"><i style="background:#2c7bb6"></i><i style="background:#abd9e9"></i><i style="background:#fdae61"></i><i style="background:#d7191c"></i></div><div class="lab"><span>&lt;100 m</span><span>100–250</span><span>250–500</span><span>&gt;500 m</span></div></div>
+    <label><input type="checkbox" data-layer="roads"> <span class="ln2"></span>Roads and paths</label>
+    <label id="gbrow" hidden><input type="checkbox" data-layer="gb"> <span class="ln" style="border-top-color:#00e5ff;border-top-style:solid"></span>Google Open Buildings (outline)</label>
+    <p class="note">Footprints, roads and paths: OpenStreetMap. Walks follow mapped roads and paths only.</p>
+    <h3>Icon colour shows</h3>
+    <div class="base"><button type="button" data-color="access" aria-pressed="true">Who can use it</button><button type="button" data-color="fee" aria-pressed="false">What it costs</button></div>
+    <div id="key"></div>
+    <h3>Background</h3>
+    <div class="base"><button type="button" data-base="sat" aria-pressed="true">Satellite</button><button type="button" data-base="map" aria-pressed="false">Streets</button></div>
+    <div id="yearbox" style="margin-top:6px"><label for="yearsel" style="display:block;font-size:.74rem;font-weight:600">Satellite image year</label><select id="yearsel" style="width:100%;font:inherit;font-size:.8rem;padding:4px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px"><option value="latest">Latest</option></select><p class="note" id="yearnote"></p></div>
+  </div>
+</div>
+
+<main class="col">
+
+  <section class="step" data-view="start" data-layers="">
+    <div class="card hero">
+      <h1>Who is on the map?</h1>
+      <p>Counter-mapping, water and sanitation in Kibera and Mathare, Nairobi</p>
+      <dl class="frame">
+        <dt>Author</dt><dd>Hilda Narinoi Ries</dd>
+        <dt>Programme</dt><dd>MSc Sustainable Development, KU Leuven · Individual Portfolio 2026–27</dd>
+        <dt>Collaborating organisation</dt><dd>Map Kibera Trust, Nairobi</dd>
+        <dt>Learning input</dt><dd>Just City online sessions, TU Delft</dd>
+        <dt>Guiding question</dt><dd><strong>Does making an informal settlement visible on a map lead to fairer access to water and sanitation, and who controls that visibility?</strong></dd>
+      </dl>
+      <p class="small">Scroll to follow the argument. Built with open data from OpenStreetMap. A student project; not an official Map Kibera Trust product.</p>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="step" data-view="africa" data-layers="" data-fly="5,20,3">
+    <div class="card">
+      <p class="kicker">Introduction · urbanisation</p>
+      <h2>An urbanising world</h2>
+      <p>Cities now hold about 45% of the world's 8.2 billion people (UN DESA, 2025). Megacities of 10 million or more rose from 8 in 1975 to 33 in 2025, and two-thirds of growth to 2050 is projected to take place in cities.</p>
+      <div class="chart" role="img" aria-label="Number of megacities">
+        <h4>Megacities (10 million or more)</h4>
+        <div class="r"><span>1975</span><div class="b"><i style="width:21.6%"></i></div><span>8</span></div>
+        <div class="r"><span>2025</span><div class="b"><i style="width:89.2%"></i></div><span>33</span></div>
+        <div class="r"><span>2050</span><div class="b"><i class="o" style="width:100%"></i></div><span>37</span></div>
+      </div>
+      <p>Addis Ababa and Dar es Salaam are on track to pass 10 million. Africa's urban population is projected to double from about 700 million to 1.4 billion by 2050 (OECD/SWAC, 2025). Planning for that growth relies on records such as census counts, cadastres and base maps. A neighbourhood absent from these records is absent from the plan.</p>
+      <p class="small">Sources: UN DESA (2025), World Urbanization Prospects 2025, via UN News, 18 Nov 2025; OECD/SWAC (2025), Africa's Urbanisation Dynamics, key messages. Shares use the UN's 2025 Degree of Urbanisation method and are not comparable with earlier national definitions.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3" data-world="1">
+    <div class="card">
+      <p class="kicker">Introduction · sub-Saharan Africa</p>
+      <h2>Growth ahead of housing</h2>
+      <p>In sub-Saharan Africa, 53.6% of urban residents lived in slums or informal settlements in 2022. The world figure was 24.8% (UN, 2024). In 2024 the UN counted about 1.16 billion people in slums and informal settlements, more than 130 million above 2015 (UN-Habitat, 2026). UN-Habitat defines a slum household by deprivation in at least one of five areas: water, sanitation, living space, durable housing and secure tenure (UN-Habitat, 2003).</p>
+      <div class="chart" role="img" aria-label="Share of urban residents in slums, 2022">
+        <h4>Urban residents in slums or informal settlements, 2022</h4>
+        <div class="r"><span>World</span><div class="b"><i style="width:24.8%"></i></div><span>24.8%</span></div>
+        <div class="r"><span>S-S Africa</span><div class="b"><i class="o" style="width:53.6%"></i></div><span>53.6%</span></div>
+      </div>
+      <p>Water and sanitation are part of the definition itself. For these settlements, the question of who is mapped is tied to the question of who is served. The markers show five places where that question has been asked: click one.</p>
+      <p class="small">Sources: UN, Sustainable Development Goals Report 2024, Goal 11 (indicator 11.1.1); UN-Habitat (2003), The Challenge of Slums. UN-Habitat (2026), SDG 11 key facts and messages. S-S Africa = sub-Saharan Africa.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
+    <div class="card">
+      <p class="kicker">Introduction · world data</p>
+      <h2>Slums across the world</h2>
+      <p>Our World in Data maps the share of urban people living in slums, from UN-Habitat data. Sub-Saharan Africa has the highest shares. The chart below it shows the three countries in this story over time.</p>
+      <figure class="media">
+        <img src="images/slums_world_map.svg" alt="World map of the share of urban population living in slums; sub-Saharan Africa has the highest shares" loading="lazy">
+        <figcaption>Share of urban population living in slums. Source: United Nations Human Settlements Programme, via <a href="https://ourworldindata.org/grapher/share-of-urban-population-living-in-slums" target="_blank" rel="noopener">Our World in Data</a> (CC BY). Where 2025 data is missing, the closest year from 2020 to 2024 is shown. Open the source link for other years and countries.</figcaption>
+      </figure>
+      <figure class="media">
+        <iframe src="https://ourworldindata.org/grapher/share-of-urban-population-living-in-slums?tab=line&country=KEN~TZA~NGA" loading="lazy" title="Chart: share of urban population living in slums in Kenya, Tanzania and Nigeria over time" allow="web-share; clipboard-write" style="width:100%;height:420px;aspect-ratio:auto"></iframe>
+        <figcaption>Kenya, Tanzania and Nigeria over time. Same source.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="step" data-view="kibera" data-layers="" data-fly="-1.3135,36.7875,13">
+    <div class="card">
+      <p class="kicker">Introduction · the case</p>
+      <h2>Kibera: large, and hard to count</h2>
+      <p>UN-Habitat (2020) calls Kibera the biggest informal settlement in Kenya and "arguably" in Africa, with an estimated 250,000 residents. Hagen (2010) describes it as one of Africa's largest slums.</p>
+      <p>The 2019 census recorded 185,777 people in Kibra sub-county, down from 212,261 in 2009 (KNBS, via citypopulation.de). Boundaries, methods and definitions produce different totals. The numbers used to plan services are themselves a product of how a place is drawn.</p>
+      <p class="small">Sources: UN-Habitat (2020), The case of Kibera: Informal settlements' vulnerability mapping in Kenya; Hagen (2010), Development Outreach 12(1); Kenya National Bureau of Statistics, 2009 and 2019 censuses.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="0.3,113.5,5" data-kal="1">
+    <div class="card">
+      <p class="kicker">Introduction · maps and power</p>
+      <h2>Maps are not neutral</h2>
+      <p>Harley (1989) argued that a map is an exercise of power: what it includes, omits and names reflects who commissioned it. Peluso (1995) showed the effect in Kalimantan, where state forest maps left out village land and presented it as open to others.</p>
+      <p>Counter-mapping is the response. Communities make their own maps, often with the same tools as the state, to claim recognition for places and uses the official map leaves out.</p>
+      <p class="small">Sources: Harley (1989), "Deconstructing the map", Cartographica 26(2); Peluso (1995), "Whose woods are these? Counter-mapping forest territories in Kalimantan, Indonesia", Antipode 27(4).</p>
+    </div>
+  </section>
+
+
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-8,-2,3" data-world="1">
+    <div class="card">
+      <p class="kicker">Introduction · who gets left out</p>
+      <h2>Who gets left out</h2>
+      <p>Informal and marginalised groups meet the same pattern in different cities: absent from records, then absent from services, then exposed to removal.</p>
+      <ul>
+        <li><strong>Absent from records.</strong> In Rocinha, Rio de Janeiro, Google Maps showed about 3 streets in 2015 where satellite imagery showed about 10,000.</li>
+        <li><strong>Absent from services.</strong> Nairobi's poorest 60% of residents live on 8.7% of the city's land.</li>
+        <li><strong>Exposed to removal.</strong> Road demolitions in Kibera in July 2018 affected about 30,000 families, according to Map Kibera.</li>
+      </ul>
+      <p class="small">Sources: Reuters/WEF (2015); UNEP, Kenya Atlas of Our Changing Environment (older estimate); Map Kibera Trust. Click the markers for postcards.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="kibera" data-layers="water,toilets,waste">
+    <div class="card">
+      <p class="kicker">Framework · TU Delft Just City sessions</p>
+      <h2>A spatial justice lens</h2>
+      <p>The Just City sessions treated spatial justice as three linked dimensions: <strong>distribution</strong> of resources, <strong>recognition</strong> of people as subjects of justice, and fair <strong>procedure</strong> in decisions. The session organisers argued that they must work together. Recognition without distribution is symbolic. Distribution without recognition or due process is appeasement. Their question: who features in official maps?</p>
+      <svg class="tri" viewBox="0 0 420 300" role="img" aria-label="Triangle linking recognition, distribution and procedure, with the question this page asks at each corner">
+        <polygon points="210,38 52,252 368,252" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+        <circle cx="210" cy="38" r="9" fill="#D55E00"/><circle cx="52" cy="252" r="9" fill="#0072B2"/><circle cx="368" cy="252" r="9" fill="#E69F00"/>
+        <text x="210" y="16" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">RECOGNITION</text>
+        <text x="226" y="44" text-anchor="start" font-size="10.5" fill="currentColor">Is the place on the map?</text>
+        <text x="52" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">DISTRIBUTION</text>
+        <text x="52" y="294" text-anchor="start" font-size="10" fill="currentColor" dx="-40">Do mapped services work, stay near, cost little?</text>
+        <text x="368" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">PROCEDURE</text>
+        <text x="420" y="294" text-anchor="end" font-size="10" fill="currentColor">Who decides, funds and updates?</text>
+      </svg>
+      <p>The Just City framework (Rocco and Newton, 2026) names the recognition problem a crisis of recognition: marginalised voices coded out of the address (Miraftab, 2022). A map is a literal address. Two cautions came from the sessions. Verloo argued that justice is a process shaped by conflict, and that consensus can hide power. In the Q&amp;A, participants noted that visibility can endanger groups, so the issue is who controls it.</p>
+      <p class="claim"><strong>Working claim.</strong> A map gives recognition. It becomes justice only when distribution and procedure follow. Visibility is necessary, insufficient and perishable.</p>
+      <p class="small">Sources: Just City sessions, TU Delft (2026), organisers Rocco, Newton and Lopez, and guest speaker Verloo; Fraser (2009), Scales of Justice, Columbia University Press; Soja (2010), Seeking Spatial Justice, University of Minnesota Press. Rocco and Newton (2026), conceptual framework of the Manifesto for the Just City, Centre for the Just City, TU Delft. The triangle is my own drawing.</p>
+    </div>
+  </section>
+
+
+  <section class="step" data-view="kibera" data-layers="">
+    <div class="card">
+      <p class="kicker">Before 2009</p>
+      <h2>A blank spot on the map</h2>
+      <p>Map Kibera describes Kibera as a blank spot on the map before it began mapping in 2009. A settlement missing from official records is easy to leave out of plans for water, toilets and waste collection.</p>
+      <figure class="media" data-img="images/kibera_blank_map.png"><img alt="Slider screenshot: Kibera as a mostly empty outline on Google Maps (right) and the detailed map made by volunteers (left)" loading="lazy"><figcaption>Kibera on Google Maps (right, a pink outline labelled &quot;Kibera slum&quot; with little detail) and on the volunteer-made map (left). Screenshot of the slider in the <a href="https://www.smithsonianmag.com/science-nature/diy-cartographers-are-putting-slums-literal-map-180958485/" target="_blank" rel="noopener">Smithsonian Magazine article</a>. Article by Erin Blakemore, 21 March 2016.</figcaption></figure>
+            <figure class="ba" data-a="images/kibera_volunteers.png" data-b="images/kibera_google.png" style="display:none">
+        <div class="baw"><img class="ba-base" alt="Kibera on Google Maps, mostly an empty outline"><div class="ba-top"><img class="ba-over" alt="Kibera on the volunteer-made map, with streets, schools and facilities"></div><div class="ba-line"></div><span class="ba-l" style="left:6px">Volunteer map</span><span class="ba-l" style="right:6px">Google Maps</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare the volunteer map with Google Maps"></div>
+        <figcaption>Drag the slider to compare Google Maps' view of Kibera with the map created by volunteers. Images: from Erin Blakemore, "DIY Cartographers Are Putting Slums on the Literal Map", <a href="https://www.smithsonianmag.com/science-nature/diy-cartographers-are-putting-slums-literal-map-180958485/" target="_blank" rel="noopener">Smithsonian Magazine</a>, 21 March 2016. The article gives no separate image credit.</figcaption>
+      </figure>
+      <p class="small">See the before and after: <a href="https://www.smithsonianmag.com/science-nature/diy-cartographers-are-putting-slums-literal-map-180958485/" target="_blank" rel="noopener">Smithsonian Magazine</a> (slider comparing Google Maps' view with the volunteers' map) and <a href="https://www.geographyrealm.com/users-helping-map-kenyan-slums/" target="_blank" rel="noopener">Geography Realm</a>.</p>
+    </div>
+  </section>
+
+
+  <section class="step" data-view="kibera" data-layers="water,toilets,waste">
+    <div class="card">
+      <p class="kicker">2009</p>
+      <h2>Residents drew their own map</h2>
+      <p>In 2009, young residents worked with the founders of Map Kibera to make the first free, open digital map of the settlement. The approach later spread to Mathare and other neighbourhoods.</p>
+      <p>Mappers walked the settlements and recorded taps, toilets and waste points. The records are open data on OpenStreetMap, and every dot you see comes from them.</p>
+      <figure class="media">
+        <div class="yt" data-yt="YOWRUo86JEA"><button type="button">Play video: Map Kibera, 2014<br>(loads from YouTube)</button></div>
+        <figcaption>"Map Kibera (Kibera, Nairobi)", FAD Barcelona, 16 June 2014, 6:48. Explains how local youth mapped Kibera from 2009. <a href="https://www.youtube.com/watch?v=YOWRUo86JEA" target="_blank" rel="noopener">Watch on YouTube</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section class="step" data-view="kibera" data-layers="toilets,water">
+    <div class="card">
+      <p class="kicker">2009 to today</p>
+      <h2>What Map Kibera says happened next</h2>
+      <p>In an interview for this project, Map Kibera Trust said the county government and NGOs asked for its water and sanitation maps to see where facilities were concentrated. It reports that the county then built toilets across Kibera, and used its health map to place clinics.</p>
+      <p>The same account describes schools: the map showed about 350 schools where government records listed about 70, and the state created a registration route for them.</p>
+      <div class="chart" role="img" aria-label="Schools in Kibera, government records versus Map Kibera map">
+        <h4>Schools in Kibera (Map Kibera's account)</h4>
+        <div class="r"><span>Government records</span><div class="b"><i style="width:20%"></i></div><span>~70</span></div>
+        <div class="r"><span>Map Kibera map</span><div class="b"><i class="o" style="width:100%"></i></div><span>~350</span></div>
+      </div>
+      <p class="small">These are Map Kibera's own statements. Hagen (2017), a Map Kibera co-founder, reports similar effects in education, security and water. Both are insider accounts and neither is independently verified here.</p>
+    </div>
+  </section>
+
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <p class="kicker">2015 and 2018</p>
+      <h2>Visible does not mean protected</h2>
+      <p>Map Kibera told this project that the map does not protect residents from eviction, and that evictions happen often. Its use is evidence for advocacy, quick mapping of evictions as they happen, and pressure from outside bodies.</p>
+      <p>Map Kibera's own reports show the scale of the risk: in 2015 it expected 47 schools to be affected by railway works, and in July 2018 road demolitions affected about 30,000 families and more than 10 schools. Its mapping helped identify the schools.</p>
+      <p>It also named the main obstacle to keeping the map up to date: no recent funding, and trained mappers who leave for other work. Updating it requires funds and skilled personnel.</p>
+    </div>
+  </section>
+
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <p class="kicker">2026 snapshot</p>
+      <h2>Visible, but usable?</h2>
+      <p>Each badge is a facility someone recorded. Being on the map does not mean a resident can use it.</p>
+      <div class="stats">
+        <div class="stat"><b class="o" data-open="toilets">…</b><span>of <span data-count="toilets">…</span> toilets are recorded as open to the public</span><em><span data-restr="toilets">…</span> private or customers only</em></div>
+        <div class="stat"><b class="o" data-open="water">…</b><span>of <span data-count="water">…</span> water points are recorded as open to the public</span><em><span data-restr="water">…</span> private or restricted</em></div>
+        <div class="stat"><b class="o" data-open="waste">…</b><span>of <span data-count="waste">…</span> waste points are recorded as open to the public</span><em><span data-restr="waste">…</span> private or restricted</em></div>
+      </div>
+      <p>Many points have no access tag at all, so these are minimum counts for open and for restricted. Snapshot exported <span id="exportDate">[date]</span>.</p>
+      <p class="small">Colour shows who can use it. Switch to "What it costs" in the key. Toilets include those in schools, clinics and other buildings.</p>
+    <p class="small"><strong>How to read the map.</strong> The symbol shows the type of facility (drop for water, figures for toilets, bin for waste). Colour shows who can use it or what it costs. Layers, the key and the light and dark theme sit at the top right.</p>
+    </div>
+  </section>
+
+
+  <section class="step" data-view="both" data-layers="toilets,water" data-color="fee">
+    <div class="card">
+      <p class="kicker">2026 snapshot</p>
+      <h2>What it costs to use</h2>
+      <p>Where a fee is recorded, <span data-pay="toilets">…</span> toilets charge and <span data-free="toilets">…</span> are free. For water, <span data-pay="water">…</span> points charge a fee and <span data-free="water">…</span> are recorded as free.</p>
+      <p>Most points carry no fee tag, so this layer shows what mappers noted, and not what residents pay. A toilet that costs a few shillings per visit is a different thing for a household than for a single user.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.3135,36.7875,15" data-ana="walk">
+    <div class="card">
+      <p class="kicker">2026 snapshot · distance</p>
+      <h2>How far is the walk to water?</h2>
+      <p class="btns" id="wtype" role="group" aria-label="Walk to nearest"><button type="button" data-wt="0" aria-pressed="true">Water</button><button type="button" data-wt="1" aria-pressed="false">Toilet</button><button type="button" data-wt="2" aria-pressed="false">Waste</button></p>
+      <p>Each building is coloured by its walk along mapped roads and paths to the nearest <span id="wname">water point that is not recorded as broken</span>. The teal outline marks the dense settlement footprint used for the counts.</p>
+      <p data-w="0">The Sphere humanitarian standard sets 500 m as the maximum distance to water.</p>
+      <p data-w="1" hidden>No distance standard is applied to toilets here. The classes repeat the water bands for comparison. Toilets tagged private, customers only or closed are left out. Cleanliness, safety at night and price are not shown.</p>
+      <p data-w="2" hidden>Only mapped collection and disposal points count. Unmapped dumping sites and collection routes are missing, so these walks can be longer than the real ones.</p>
+      <div class="key"><span><i style="background:#2c7bb6"></i>under 100 m</span><span><i style="background:#abd9e9"></i>100–250 m</span><span><i style="background:#fdae61"></i>250–500 m</span><span><i style="background:#d7191c"></i>over 500 m</span></div>
+      <div class="sbar" id="wbar" aria-label="Kibera buildings by walking distance"><b style="width:79.7%;background:#2c7bb6"></b><b style="width:15.2%;background:#abd9e9"></b><b style="width:3.6%;background:#fdae61"></b><b style="width:1.5%;background:#d7191c"></b></div>
+      <p class="small" id="wdyn">Kibera: 229 of 15,477 buildings (1.5%) are over 500 m from a water point. Median walk 55 m. Mathare: 40 of 4,411 (0.9%), median 53 m.</p>
+      <p data-w="0">Distance is not the main gap here. If only points recorded as working count, 647 Kibera buildings fall in the 250–500 m class and the median walk rises to 65 m. Queue, price and hours are not on the map.</p>
+      <p class="small">Method: my own calculation from OpenStreetMap buildings, paths and facilities (Overpass export, 21 Nov 2026). Unmapped paths are not counted. Boundaries: ward polygons from geoBoundaries (CC BY 4.0), grouped into constituencies with the official IEBC ward list. Standard: Sphere Handbook. © OpenStreetMap contributors (ODbL).</p>
+      <p class="btns"><button type="button" data-fly2="-1.3135,36.7875,15">Kibera</button><button type="button" data-fly2="-1.2635,36.852,16">Mathare</button></p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.3135,36.7875,15" data-ana="fresh">
+    <div class="card">
+      <p class="kicker">2026 snapshot · data currency</p>
+      <h2>How up to date is the data?</h2>
+      <p>Each dot is a mapped facility, coloured by when it was last checked. The date is the survey or check date if one is tagged, and the last edit in OpenStreetMap if not. An edit is not always a visit to the site.</p>
+      <div class="key"><span><i style="background:#0072B2"></i>last 2 years</span><span><i style="background:#E69F00"></i>2 to 5 years</span><span><i style="background:#D55E00"></i>over 5 years</span></div>
+      <p class="btns" id="ftype"><button type="button" data-t="0" aria-pressed="true">Water</button><button type="button" data-t="1" aria-pressed="false">Toilets</button><button type="button" data-t="2" aria-pressed="false">Waste</button></p>
+      <p>In Kibera, 114 of 1,101 water points (10%) were checked in the last two years and 964 (88%) over five years ago. For toilets it is 375 of 1,197 (31%) and 635 (53%). Across all facilities, 503 of 2,501 (20%) are recent.</p>
+      <p>In Mathare, 30 of 214 water points (14%) are recent and 169 (79%) are over five years old. None of the Mathare records carries a check date.</p>
+      <p class="small">A point with an old date may still work, and a recent one may be broken. The date shows how much of the picture is current. Data © OpenStreetMap contributors (ODbL); my own calculation, 21 Nov 2026.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.285,36.79,12" data-compare="1">
+    <div class="card">
+      <p class="kicker">Two Nairobis · distance</p>
+      <h2>Close on the map, far in services</h2>
+      <p>Kibera sits about 6.6 km from the centre of Nairobi, and a few kilometres from suburbs commonly described as higher-income. The dashed lines show straight-line distance. The gap is in what each place can reach.</p>
+      <div class="chart" role="img" aria-label="Share of Nairobi residents and share of land">
+        <h4>Nairobi's poorest 60% of residents</h4>
+        <div class="r"><span>Share of residents</span><div class="b"><i class="o" style="width:60%"></i></div><span>60%</span></div>
+        <div class="r"><span>Share of the city's land</span><div class="b"><i style="width:8.7%"></i></div><span>8.7%</span></div>
+      </div>
+      <p><strong>Key message:</strong> mapping makes this gap measurable.</p>
+      <p><strong>Question:</strong> how many hospitals, pharmacies, schools and toilets can people in each place reach on foot in 15 minutes?</p>
+      <p class="small">Sources: UNEP, Kenya Atlas of Our Changing Environment, p. 151 (the 60% and 8.7% figures, an older estimate); Wikipedia, Kibera (distance from the centre). Click a marker for a postcard. Marker positions are approximate.</p>
+    
+      <figure class="media">
+        <div class="yt" data-yt="nfQO3R-Toi0"><button type="button">Play video: Not Evenly Distributed<br>(loads from YouTube)</button></div>
+        <figcaption>"Not Evenly Distributed | Map Kibera", Map Kibera Trust, Biennale of Sydney, 2016, 5:10. <a href="https://www.youtube.com/watch?v=nfQO3R-Toi0" target="_blank" rel="noopener">Watch on YouTube</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+
+    <section class="step" data-view="africa" data-layers="" data-base="sat" data-fly="-1.316,36.748,12">
+    <div class="card">
+      <p class="kicker">Two Nairobis · water</p>
+      <h2>Next door, a different map</h2>
+      <p>Kibera and Karen are about 9 km apart. Karen sits in Lang'ata constituency, which leads Kenya in households with luxurious homes in the 2019 census.</p>
+      <ul>
+        <li><strong>Water:</strong> a study of Nairobi's piped water found residents of high-income areas were six times, and middle-income residents four times, more likely to receive the WHO-recommended 1,500 litres per person per month.</li>
+        <li><strong>Connections:</strong> high- and middle-income residents mostly have piped water inside the home. Lower-income residents more often use communal taps or vendors.</li>
+        <li><strong>Losses:</strong> about 3.5 billion litres a month are lost to bursts, theft and irregular meters, more than twice what every resident would need to reach 1,500 litres.</li>
+      </ul>
+      <p class="small">Click the markers for postcards. This page's points cover Kibera and Mathare only, because OpenStreetMap records public toilets and taps and richer homes have them indoors, so counts are not comparable. Sources: <a href="https://theconversation.com/a-deep-data-dive-reveals-extent-of-unequal-water-provision-in-nairobi-173258" target="_blank" rel="noopener">The Conversation</a>; <a href="https://www.standardmedia.co.ke/entertainment/news/article/2001362670/census-the-20-constituencies-where-kenyas-wealthiest-live" target="_blank" rel="noopener">The Standard</a> (2019 census). Imagery: Esri, Maxar.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <p class="kicker">Keeping it current</p>
+      <h2>What the map leaves out</h2>
+      <p>It shows facilities only, with no homes and no people. A dot shows that someone recorded a tap or a toilet. It does not show whether water flows today, what it costs or who can use it.</p>
+      <p>Some places may be missing, out of date or untagged, and the same facility may appear twice.</p>
+    </div>
+  </section>
+
+
+
+    <section class="step" data-view="africa" data-layers="" data-fly="-0.6,36.7,7">
+    <div class="card">
+      <p class="kicker">Kenya</p>
+      <h2>Map Kibera beyond Kibera</h2>
+      <p>Map Kibera Trust says it now works across Nairobi and beyond. Click a marker to open a postcard with a key message and a question.</p>
+      <ul>
+        <li><strong>Nairobi:</strong> Kibera, Mathare, Mukuru and Kangemi.</li>
+        <li><strong>Counties:</strong> Baringo and Makueni, where it helped county staff map projects with the World Bank, so residents can see what exists before choosing new projects.</li>
+      </ul>
+      <p class="small">Source: Map Kibera interview, 5 November 2026. Positions are approximate centres.</p>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
+    <div class="card">
+      <p class="kicker">Beyond Kibera</p>
+      <h2>Counter-maps in other African cities</h2>
+      <p>Other cities show the same pattern. A map gets used when an agency already needs the data, and it rarely stops an eviction.</p>
+      <ul>
+        <li><strong>Mathare, Nairobi.</strong> NPR (2013) reported that residents used a community-drawn map to negotiate space for a water line, and that maps can be entered as evidence in court against evictions.</li>
+        <li><strong>Mukuru, Nairobi.</strong> Community mapping of health facilities showed gaps, and the Ministry of Health recruited more community health volunteers for informal settlements.</li>
+        <li><strong>Digital Matatus, Nairobi.</strong> Informal minibus routes were released as open data. The project reports five apps built on it and use by UN-Habitat for transit planning.</li>
+        <li><strong>Ramani Huria, Dar es Salaam.</strong> Residents and students mapped drainage and flood history, and the data fed flood modelling.</li>
+        <li><strong>Makoko, Lagos.</strong> Residents mapped with drones in 2019 hoping to be recognised. No outcome is reported, and 24 waterfront communities had been demolished by January 2020.</li>
+      </ul>
+      <p class="small">These accounts come from the projects themselves and from news and NGO reports, not independent evaluations. Source for Mathare: Warner, NPR Cities Project, 2013.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-1.2864,36.8172,11" data-case="matatu">
+    <div class="card">
+      <p class="kicker">2014 · Nairobi</p>
+      <h2>Digital Matatus</h2>
+      <p>Nairobi's minibus system had no public map. In 2014 University of Nairobi students rode every route with phones and GPS devices, 130 routes in total, and the team released the data in open formats. The map was shared online and on paper.</p>
+      <p class="small casen" style="display:none"></p>
+      <div class="chart" role="img" aria-label="Digital Matatus figures">
+        <div class="r"><span>Routes mapped</span><div class="b"><i style="width:100%"></i></div><span>130</span></div>
+        <div class="r"><span>New routes opened by drivers</span><div class="b"><i class="o" style="width:3.8%"></i></div><span>5</span></div>
+      </div>
+      <p>NOVA reports that matatu drivers opened five new routes in the underserved north, and about 3,000 people had downloaded the map. ITDP used the data to model Nairobi's first bus rapid transit corridor.</p>
+      <figure class="media">
+        <div class="yt" data-yt="j_k6PMnmr9E"><button type="button">Play video: The Digital Matatu story<br>(loads from YouTube)</button></div>
+        <figcaption>Video on the DigitalMatatus project, directed by Solomon Mwendwa, 2015. Source: <a href="https://digitalmatatus.com/post4.html" target="_blank" rel="noopener">digitalmatatus.com</a>. Map and data: Digital Matatus (Columbia, MIT Civic Data Design Lab, University of Nairobi).</figcaption>
+      </figure>
+      <figure class="media" data-img="images/digital_matatus_map.jpg"><img alt="The Digital Matatus transit map of Nairobi" loading="lazy"><figcaption>Digital Matatus map of Nairobi. Image: [add credit and licence].</figcaption></figure>
+      <p class="small">Sources: <a href="https://www.pbs.org/wgbh/nova/article/simple-cartographic-exercises-can-radically-alter-the-real-world" target="_blank" rel="noopener">PBS NOVA</a>; <a href="https://www.itdp.org/new-maps-and-open-data-pave-way-for-nairobi-brt/" target="_blank" rel="noopener">ITDP, March 2014</a>.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="-6.8,39.25,11" data-case="dar">
+    <div class="card">
+      <p class="kicker">2015 · Dar es Salaam, Tanzania</p>
+      <h2>Ramani Huria</h2>
+      <p>Dar es Salaam floods in every rainy season, and many informal settlements were missing from maps. Ramani Huria ("Dar Open Map") began in 2015. It trains university students and residents to map with OpenStreetMap, with the World Bank, GFDRR and the Humanitarian OpenStreetMap Team.</p>
+      <p class="small casen" style="display:none"></p>
+      <div class="chart" role="img" aria-label="Ramani Huria 2.0 first six months">
+        <h4>Ramani Huria 2.0, first six months (from July 2017)</h4>
+        <div class="r"><span>Buildings mapped</span><div class="b"><i style="width:100%"></i></div><span>51,000+</span></div>
+        <div class="r"><span>Community surveys</span><div class="b"><i class="o" style="width:3.9%"></i></div><span>2,000+</span></div>
+      </div>
+      <p>Drainage is fully mapped in 12 wards, and an atlas is in progress for the city's 450 sub-wards. The data feeds flood modelling and is printed for each ward's local government.</p>
+      <figure class="media" data-img="images/ramani_huria.jpg"><img alt="Community mappers in Dar es Salaam" loading="lazy"><figcaption>Ramani Huria mappers. Image: [add credit and licence].</figcaption></figure>
+      <p class="small">Sources: <a href="https://en.wikipedia.org/wiki/Ramani_Huria" target="_blank" rel="noopener">Wikipedia, Ramani Huria</a> (figures from project reports); <a href="https://ramanihuria.org/en/about-us/" target="_blank" rel="noopener">ramanihuria.org</a>. Project figures are self-reported.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="africa" data-layers="" data-fly="6.4962,3.3935,16" data-makoko="1">
+    <div class="card">
+      <p class="kicker">2019 · Lagos, Nigeria</p>
+      <h2>Makoko</h2>
+      <p>Makoko is a waterfront community on the Lagos lagoon with no census and, until 2019, almost nothing on Google Maps. Since September 2019, Code for Africa and the Humanitarian OpenStreetMap Team have trained young residents to map it with drones and phones.</p>
+      <div id="mkctl" style="display:none">
+        <p class="btns"><button type="button" data-mk="0" aria-pressed="false">Official map</button><button type="button" data-mk="1" aria-pressed="true">Mapped by residents</button></p>
+        <div class="key"><span><i style="background:#8c6d46"></i>buildings</span><span><i style="background:#0072B2"></i>school</span><span><i style="background:#CC79A7"></i>worship</span><span><i style="background:#E69F00"></i>market, shop</span><span><i style="background:#D55E00"></i>health</span><span><i style="background:#56B4E9"></i>water</span><span><i style="background:#555"></i>other</span></div>
+        <p class="small" id="mkn"></p>
+      </div>
+      <figure class="ba" data-a="images/makoko_osm.png" data-b="images/makoko_google.png" style="display:none">
+        <div class="baw"><img class="ba-base" alt="Makoko on Google Maps, mostly blank"><div class="ba-top"><img class="ba-over" alt="Makoko on OpenStreetMap, with buildings, canals and named places"></div><div class="ba-line"></div><span class="ba-l" style="left:6px">OpenStreetMap</span><span class="ba-l" style="right:6px">Google Maps</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare OpenStreetMap with Google Maps"></div>
+        <figcaption>Drag the slider to compare Makoko on OpenStreetMap with Google Maps. Images: "Neglected and Unmapped", Mapping Makoko / Code for Africa, 27 May 2020. Map data © OpenStreetMap contributors; tiles courtesy of Humanitarian OpenStreetMap Team.</figcaption>
+      </figure>
+      <div class="chart wide" role="img" aria-label="Places of interest mapped in Makoko by type, 82 in total">
+        <h4>Places of interest mapped in Makoko (82 points)</h4>
+        <div class="r"><span>Boat terminal</span><div class="b"><i style="width:100.0%"></i></div><span>12</span></div>
+        <div class="r"><span>Clean water source</span><div class="b"><i style="width:100.0%"></i></div><span>12</span></div>
+        <div class="r"><span>Factory/industry</span><div class="b"><i style="width:91.7%"></i></div><span>11</span></div>
+        <div class="r"><span>Market</span><div class="b"><i style="width:83.3%"></i></div><span>10</span></div>
+        <div class="r"><span>Church</span><div class="b"><i style="width:75.0%"></i></div><span>9</span></div>
+        <div class="r"><span>School</span><div class="b"><i style="width:75.0%"></i></div><span>9</span></div>
+        <div class="r"><span>Head of community</span><div class="b"><i style="width:66.7%"></i></div><span>8</span></div>
+        <div class="r"><span>Health facility</span><div class="b"><i style="width:33.3%"></i></div><span>4</span></div>
+        <div class="r"><span>Mosque</span><div class="b"><i style="width:25.0%"></i></div><span>3</span></div>
+        <div class="r"><span>Historical site</span><div class="b"><i style="width:16.7%"></i></div><span>2</span></div>
+        <div class="r"><span>Waste dumpsite</span><div class="b"><i style="width:16.7%"></i></div><span>2</span></div>
+      </div>
+      <p>Residents are divided: many hope the map will make the government see them, and some fear it could bring new evictions. Makoko received 72 hours' notice in 2012, and more than 30,000 families were evicted from Otodo Gbame, another Lagos waterfront community. No government response to the map had been reported by May 2020. In the triangle's terms, recognition came first and distribution has not followed.</p>
+      <p class="small">Sources: "Neglected and Unmapped", Mapping Makoko / Code for Africa, 27 May 2020 (<a href="https://pulitzercenter.org/node/18088" target="_blank" rel="noopener">Pulitzer Center</a>); Oluwatosin Adeshokan, <a href="https://www.devex.com/news/mapping-makoko-how-data-could-help-legitimize-nigeria-s-informal-settlements-96793" target="_blank" rel="noopener">Devex</a>, 12 May 2020, and CNN, 26 February 2020 (<a href="https://www.wral.com/how-makoko-nigerias-floating-slum-went-digital-with-new-mapping-project/18976014/" target="_blank" rel="noopener">copy</a>). Chart values are read from the published chart.</p>
+    </div>
+  </section>
+
+
+
+  <section class="step" data-view="africa" data-layers="" data-fly="2,20,3">
+    <div class="card">
+      <p class="kicker">Analysis · four cases</p>
+      <h2>What the cases show</h2>
+      <table>
+        <tr><th>Case</th><th>Recognition</th><th>Distribution</th><th>Procedure</th></tr>
+        <tr><td>Kibera</td><td>Mapped from 2009</td><td>Toilets, clinics, school registration (own account)</td><td>Evictions continue; funding gap</td></tr>
+        <tr><td>Digital Matatus</td><td>130 routes mapped</td><td>Planning data; 5 new routes reported</td><td>System stays informal</td></tr>
+        <tr><td>Ramani Huria</td><td>Wards and drains mapped</td><td>Flood modelling, ward atlases</td><td>Results self-reported</td></tr>
+        <tr><td>Makoko</td><td>Mapped by drone, 2019</td><td>None reported</td><td>Demolition risk remains</td></tr>
+      </table>
+      <p>Across the four cases, mapping delivered recognition quickly. Services followed only where an agency already needed the data, and none of the cases gave residents a say over removal or a funded way to keep the data current.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <p class="kicker">Procedure · who decides</p>
+      <h2>Who decides what is shown</h2>
+      <p>Visibility can bring services and it can bring risk. Berdou (2011) warns that mapping informal facilities can expose them to closure or government action. The TU Delft Q&amp;A made the same point from Fortaleza: some groups want to be seen and others want to be left alone, and the decisive issue is who controls visibility.</p>
+      <p>This map shows public facilities only. It marks no homes and no people.</p>
+    </div>
+  </section>
+
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste" data-color="access">
+    <div class="card">
+      <p class="kicker">Conclusion · evidence</p>
+      <h2>Three tests: recognition, distribution, procedure</h2>
+      <p><strong>Recognition: achieved.</strong> Residents put Kibera and Mathare on the map. About 2,500 facilities are recorded in the two settlements. Map Kibera reports about 350 schools mapped where records listed about 70.</p>
+      <p><strong>Distribution: partial.</strong> Distance is rarely the barrier: 229 of 15,477 Kibera buildings are over 500 m from a recorded water point. Access is the gap. Only <span data-open="toilets">…</span> of <span data-count="toilets">…</span> toilets are recorded as open to the public.</p>
+      <p><strong>Procedure: weak.</strong> Evictions continue, with about 30,000 families affected in July 2018. Updating depends on funding, and 88% of recorded Kibera water points were last checked over five years ago.</p>
+    </div>
+  </section>
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste" data-color="access">
+    <div class="card">
+      <p class="kicker">Conclusion</p>
+      <h2>Visible, necessary, insufficient</h2>
+      <p>Counter-mapping secures the first corner of the triangle. Two things have to follow for it to count as justice:</p>
+      <ol>
+        <li><strong>A service duty that follows the map.</strong> Data tied to budgets, operation and maintenance, in line with the sessions' point that formal voice needs an implementation budget.</li>
+        <li><strong>Residents' control over what is shown and who updates it.</strong> Updating funded as recurring infrastructure, with residents deciding what appears.</li>
+      </ol>
+      <p>Map data decays. A map that is not updated stops describing present conditions, and planners who rely on it allocate services to a settlement that no longer matches the record. Perishability is the third property of visibility, alongside necessity and insufficiency.</p>
+      <p class="small"><strong>Limits.</strong> One OpenStreetMap snapshot (Nov 2026); one organisation interviewed, and its statements are unverified; no resident voices; unmapped paths are not counted in the walking analysis. Case sources are project and news accounts, not independent evaluations.</p>
+    </div>
+  </section>
+
+
+  <section class="step" data-view="both" data-layers="water,toilets,waste">
+    <div class="card">
+      <p class="kicker">Sources</p>
+      <h2>Sources and credits</h2>
+      <ol class="refs">
+        <li>Berdou, E. (2011). <em>Mediating voices and communicating realities</em>. Institute of Development Studies.</li>
+        <li>Digital Matatus (2019). Nairobi GTFS feed. digitalmatatus.com. PBS NOVA; ITDP (2014).</li>
+        <li>Fraser, N. (2009). <em>Scales of Justice: Reimagining Political Space in a Globalizing World</em>. Columbia University Press.</li>
+        <li>Hagen, E. (2010). Putting Nairobi's slums on the map. <em>Development Outreach</em>, 12(1). doi:10.1596/1020-797X_12_1_41</li>
+        <li>Hagen, E. (2017). <em>Open mapping from the ground up: Learning from Map Kibera</em>. Making All Voices Count Research Report. Institute of Development Studies.</li>
+        <li>Harley, J. B. (1989). Deconstructing the map. <em>Cartographica</em>, 26(2), 1–20.</li>
+        <li>Kenya National Bureau of Statistics (2009, 2019). <em>Kenya Population and Housing Census</em>.</li>
+        <li>Republic of Kenya (2012). <em>The National Assembly Constituencies and County Assembly Wards Order, 2012</em> (Legal Notice No. 14 of 2012). Ward-to-constituency list used for the boundaries.</li>
+        <li>Map Kibera Trust. Online interview with the author, 5 November 2026. Figures are the organisation's own.</li>
+        <li>Mapping Makoko / Code for Africa (2020). <em>Neglected and Unmapped</em>. Pulitzer Center, 27 May 2020.</li>
+        <li>OECD/SWAC (2025). <em>Africa's Urbanisation Dynamics 2025</em>, key messages. OECD / Sahel and West Africa Club.</li>
+        <li>OpenStreetMap contributors. Facility, building and path data exported via Overpass, November 2026 (ODbL).</li>
+        <li>Peluso, N. L. (1995). Whose woods are these? Counter-mapping forest territories in Kalimantan, Indonesia. <em>Antipode</em>, 27(4), 383–406.</li>
+        <li>Ramani Huria (n.d.). Project and data pages. ramanihuria.org.</li>
+        <li>Rocco, R., &amp; Newton, C. (2026). Conceptual framework of the Manifesto for the Just City activity. Centre for the Just City, TU Delft. Just City sessions, TU Delft, 2026 (including N. Verloo).</li>
+        <li>Runfola, D., et al. (2020). geoBoundaries: A global database of political administrative boundaries. <em>PLOS ONE</em>, 15(4), e0231866. Kenya ADM3 ward layer, CC BY 4.0.</li>
+        <li>Soja, E. W. (2010). <em>Seeking Spatial Justice</em>. University of Minnesota Press.</li>
+        <li>Sphere Association. <em>The Sphere Handbook</em>: Humanitarian Charter and Minimum Standards in Humanitarian Response.</li>
+        <li>UN (2024). <em>The Sustainable Development Goals Report 2024</em>, Goal 11. United Nations.</li>
+        <li>UN DESA (2025). <em>World Urbanization Prospects 2025</em>. United Nations Department of Economic and Social Affairs.</li>
+        <li>UN-Habitat (2003). <em>The Challenge of Slums: Global Report on Human Settlements 2003</em>. Earthscan.</li>
+        <li>UN-Habitat (2020). <em>The case of Kibera: Informal settlements' vulnerability mapping in Kenya</em>.</li>
+        <li>UN-Habitat (2026). <em>SDG 11 key facts and messages</em>.</li>
+        <li>Warner, G. (2013). Radio report on slum mapping in Nairobi. NPR Cities Project.</li>
+      </ol>
+      <p class="small">Student project, KU Leuven, Individual Portfolio in Sustainable Development. Not an official Map Kibera Trust product.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>
+var CONFIG={exportDate:"5 November 2026"};
+var FILES={
+  water:["data/water_kibera.geojson","data/water_mathare.geojson"],
+  toilets:["data/toilets_kibera.geojson","data/toilets_mathare.geojson"],
+  waste:["data/waste_kibera.geojson","data/waste_mathare.geojson"]
+};
+var COLORS={water:"#0072B2",toilets:"#E69F00",waste:"#CC79A7"};
+var ICON={
+ water:'<svg viewBox="0 0 24 24"><path d="M12 2C9 7 6 10.5 6 14.5a6 6 0 0 0 12 0C18 10.5 15 7 12 2z"/></svg>',
+ toilets:'<svg viewBox="0 0 24 24"><circle cx="7" cy="4.5" r="2"/><path d="M4.5 8.5h5V15H8.5v6.5h-3V15H4.5z"/><circle cx="17" cy="4.5" r="2"/><path d="M17 8.5l3.5 8h-2V21.5h-3V16.5h-2z"/></svg>',
+ waste:'<svg viewBox="0 0 24 24"><path d="M9 3h6l1 2h4v2H4V5h4zM6 9h12l-1 12H7z"/></svg>'};
+var STATUS={working:"#2b8cbe",repair:"#f0a50f",broken:"#e4572e",unknown:"#8a948f"};
+var STATUS_LABEL={working:"Working",repair:"Needs repair",broken:"Broken or closed",unknown:"Not recorded"};
+function status(p){
+  var o=String(p.operational_status||"").toLowerCase(),c=String(p.condition||"").toLowerCase();
+  if(/non|closed|bad|broken|dilapidated/.test(o+" "+c)){return "broken";}
+  if(/maint|repair|construction|poor/.test(o+" "+c)){return "repair";}
+  if(/operational|good|fair/.test(o+" "+c)){return "working";}
+  return "unknown";
+}
+var acc={water:{open:0,restricted:0,unknown:0},toilets:{open:0,restricted:0,unknown:0},waste:{open:0,restricted:0,unknown:0}};
+var fee={water:{pay:0,free:0},toilets:{pay:0,free:0},waste:{pay:0,free:0}};
+var items=[],colorMode="access";
+var PAL={access:{open:"#009E73",restricted:"#D55E00",unknown:"#9a9a9a"},fee:{free:"#0072B2",pay:"#E69F00",unknown:"#9a9a9a"}};
+var LAB={access:{open:"Recorded as open to the public",restricted:"Private, customers only or no access",unknown:"No access recorded"},fee:{free:"Free",pay:"Charges a fee",unknown:"No fee recorded"}};
+function accessClass(p){var a=String(p.access||"").toLowerCase();if(!a){return "unknown";}return (a==="yes"||a==="permissive"||a==="public")?"open":"restricted";}
+function feeClass(p){var f=String(p.fee||"").toLowerCase();if(!f){return "unknown";}return (f==="no")?"free":"pay";}
+function colorFor(ac,fe){return colorMode==="access"?PAL.access[ac]:PAL.fee[fe];}
+function glyCol(c){var h=c.replace("#","");if(h.length!==6){return "#fff";}var r=parseInt(h.substr(0,2),16),g=parseInt(h.substr(2,2),16),b=parseInt(h.substr(4,2),16);return (0.299*r+0.587*g+0.114*b)>165?"#14212a":"#fff";}
+function mkIcon(type,col){return L.divIcon({className:"",iconSize:[24,24],html:'<span class="mk '+type+'" style="--c:'+col+';color:'+glyCol(col)+'">'+ICON[type]+'</span>'});}
+document.querySelectorAll("[data-gly]").forEach(function(e){e.innerHTML=ICON[e.dataset.gly];});
+function drawKey(){var h="";Object.keys(PAL[colorMode]).forEach(function(k){h+='<span class="row"><span class="sw" style="background:'+PAL[colorMode][k]+'"></span>'+LAB[colorMode][k]+'</span>';});document.getElementById("key").innerHTML=h;}
+function recolor(){items.forEach(function(i){i.m.setIcon(mkIcon(i.type,colorFor(i.ac,i.fe)));});drawKey();document.querySelectorAll("[data-color]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.color===colorMode?"true":"false");});}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-color]");if(b){colorMode=b.dataset.color;recolor();}});
+drawKey();
+var NAMES={water:"Water point",toilets:"Toilet",waste:"Waste point"};
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.getElementById("exportDate").textContent=CONFIG.exportDate;
+
+var map=L.map("map",{zoomControl:false}).setView([-1.3135,36.7875],15);
+map.createPane("bldPane").style.zIndex=405;map.createPane("roadPane").style.zIndex=410;map.createPane("admPane").style.zIndex=415;map.createPane("labelPane").style.zIndex=420;map.getPane("labelPane").style.pointerEvents="none";
+var rb=L.canvas({pane:"bldPane",padding:.5}),rr=L.canvas({pane:"roadPane",padding:.5});
+L.control.zoom({position:"bottomright"}).addTo(map);
+var base={
+ map:L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,className:"osm-tiles",attribution:"&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors"}),
+ sat:L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:"Imagery &copy; Esri, Maxar, Earthstar Geographics"})};
+var labels=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",{pane:"labelPane",maxZoom:19,attribution:"Labels &copy; Esri"});
+var userBase="sat",curBase="";
+function setBase(k){if(k===curBase){return;}curBase=k;Object.keys(base).forEach(function(n){if(n===k){base[n].addTo(map);}else{map.removeLayer(base[n]);}});
+  if(k==="sat"){labels.addTo(map);}else{map.removeLayer(labels);}if(window.restyleVec){restyleVec();}
+  document.querySelectorAll("[data-base]").forEach(function(x){x.setAttribute("aria-pressed",x.dataset.base===k?"true":"false");});
+  document.getElementById("yearbox").style.display=(k==="sat")?"":"none";if(k==="sat"){loadYears();}}
+var latestSat=base.sat,yearsLoaded=false,WB="https://s3-us-west-2.amazonaws.com/config.maptiles.arcgis.com/waybackconfig.json";
+function swapSat(layer){var on=(curBase==="sat");if(on){map.removeLayer(base.sat);}base.sat=layer;if(on){layer.addTo(map);}}
+function loadYears(){if(yearsLoaded){return;}yearsLoaded=true;var note=document.getElementById("yearnote"),sel=document.getElementById("yearsel");
+  fetch(WB).then(function(r){return r.json();}).then(function(cfg){var best={};
+    Object.keys(cfg).forEach(function(k){var it=cfg[k],m=/(\d{4})-(\d{2})-(\d{2})/.exec(it.itemTitle||"");if(!m||!it.itemURL){return;}var d=m[0],y=m[1];if(!best[y]||d>best[y].d){best[y]={d:d,url:it.itemURL};}});
+    Object.keys(best).sort().reverse().forEach(function(y){var o=document.createElement("option");o.value=y;o.textContent=y;sel.appendChild(o);});
+    sel.addEventListener("change",function(){if(sel.value==="latest"){swapSat(latestSat);note.textContent="";return;}
+      var b=best[sel.value],u=b.url.replace("{level}","{z}").replace("{row}","{y}").replace("{col}","{x}");
+      swapSat(L.tileLayer(u,{maxZoom:19,maxNativeZoom:18,attribution:"Imagery &copy; Esri, Maxar, Earthstar Geographics; Esri Wayback"}));
+      note.textContent="Esri Wayback release of "+b.d+". The photo itself may be older. Where a year has no image, tiles stay blank.";});
+  }).catch(function(){document.getElementById("yearbox").style.display="none";});}
+document.querySelectorAll("[data-base]").forEach(function(btn){btn.addEventListener("click",function(){userBase=btn.dataset.base;setBase(userBase);});});
+
+var groups={water:L.layerGroup(),toilets:L.layerGroup(),waste:L.layerGroup(),adm:L.layerGroup(),bld:L.layerGroup(),roads:L.layerGroup(),gb:L.layerGroup()};
+var counts={water:0,toilets:0,waste:0};
+var bounds={kibera:L.latLngBounds([]),mathare:L.latLngBounds([]),both:L.latLngBounds([])};
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function popup(type,f){
+  var p=f.properties||{},h="<strong>"+NAMES[type]+"</strong><br>Status: "+STATUS_LABEL[status(p)];
+  ["name","operator","access","fee","operational_status"].forEach(function(k){
+    if(p[k]){h+="<br>"+k.replace("_"," ")+": "+esc(p[k]);}});
+  var id=f.id||p["@id"];
+  if(id&&String(id).indexOf("/")>0){h+='<br><a target="_blank" rel="noopener" href="https://www.openstreetmap.org/'+esc(id)+'">View on OpenStreetMap</a>';}
+  return h;
+}
+function load(type,url,area){
+  return fetch(url).then(function(r){return r.json();}).then(function(data){
+    (data.features||[]).forEach(function(f){
+      if(!f.geometry){return;}
+      var ll=f.geometry.type==="Point"?L.latLng(f.geometry.coordinates[1],f.geometry.coordinates[0]):L.geoJSON(f).getBounds().getCenter();
+      var pr=f.properties||{},ac=accessClass(pr),fe=feeClass(pr);
+      acc[type][ac]++;if(fe==='pay'||fe==='free'){fee[type][fe]++;}
+      var m=L.marker(ll,{icon:mkIcon(type,colorFor(ac,fe))}).bindPopup(popup(type,f)).addTo(groups[type]);
+      items.push({m:m,type:type,ac:ac,fe:fe});
+      counts[type]++;bounds[area].extend(ll);bounds.both.extend(ll);
+    });
+  }).catch(function(){console.warn("Could not load "+url);});
+}
+var jobs=[];
+Object.keys(FILES).forEach(function(t){
+  jobs.push(load(t,FILES[t][0],"kibera"));
+  jobs.push(load(t,FILES[t][1],"mathare"));
+});
+Promise.all(jobs).then(function(){
+  Object.keys(counts).forEach(function(t){
+    document.querySelectorAll('[data-count="'+t+'"]').forEach(function(el){el.textContent=counts[t].toLocaleString("en");});
+  });
+  Object.keys(fee).forEach(function(t){["pay","free"].forEach(function(k){
+    document.querySelectorAll('[data-'+k+'="'+t+'"]').forEach(function(el){el.textContent=fee[t][k].toLocaleString("en");});});});
+  Object.keys(acc).forEach(function(t){
+    document.querySelectorAll('[data-open="'+t+'"]').forEach(function(el){el.textContent=acc[t].open.toLocaleString("en");});
+    document.querySelectorAll('[data-restr="'+t+'"]').forEach(function(el){el.textContent=acc[t].restricted.toLocaleString("en");});
+  });
+  mask=L.rectangle(bounds.kibera.pad(0.15),{color:"#555",weight:1,dashArray:"5 4",fillColor:"#e3e3e3",fillOpacity:.93,interactive:false}).bindTooltip("Blank on official maps before 2009 (illustration)",{permanent:true,direction:"center",className:"cityl"});
+  if(current){go(current);}
+});
+
+
+var cityGroup=L.layerGroup(),cityOn=false,nbo=[],afr=[];
+var FILES={"Kibera":"Kibera_aerial_view_western_part.jpg","Kibera, 2009":"Kibera_aerial_view_western_part.jpg","Rocinha":"1_rocinha_favela_closeup.JPG","Camps near Goma":"Displaced_people_set_camp_in_Goma_outskirts_(7703445526).jpg","Makoko":"Aerial-shot-of-makoko-community-in-lagos-2.jpg","Makoko, 2019":"Aerial-shot-of-makoko-community-in-lagos-2.jpg","Dar es Salaam":"Sewage_in_the_street_in_Tandale,_Dar_es_Salaam_(3233303875).jpg","Dar es Salaam, 2015":"Sewage_in_the_street_in_Tandale,_Dar_es_Salaam_(3233303875).jpg"};
+function pc(t,m,q,src){var f=FILES[t],im="";
+ if(f){var page="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(f);
+  im='<figure style="margin:0 0 6px"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(f)+'?width=300" alt="Photo of '+t+'" loading="lazy" onerror="this.parentNode.style.display=\'none\'"><figcaption><small>Photo: <a href="'+page+'" target="_blank" rel="noopener">Wikimedia Commons</a> (author and licence on the file page)</small></figcaption></figure>';}
+ return '<div class="pc"><b>'+t+'</b>'+im+'<p>'+m+'</p>'+(q?'<p class="q">Question: '+q+'</p>':'')+'<small>'+src+'</small></div>';}
+var PLACES=[
+ {n:"Nairobi settlements",ll:[-1.29,36.82],g:"afr",h:pc("Nairobi: four mapped settlements","Map Kibera Trust says it has mapped Kibera, Mathare, Mukuru and Kangemi. Zoom in to see each one.","","Map Kibera interview, 5 Nov 2026")},
+ {n:"Kibera",ll:[-1.3135,36.7875],g:"nbo",h:pc("Kibera, 2009","Residents drew the first map of a place that was a blank spot on government maps.","Who acts on the data once it exists?","Map Kibera interview, 5 Nov 2026")},
+ {n:"Karen",ll:[-1.3190,36.7090],g:"nbo",h:pc("Karen, Lang'ata constituency","Lang'ata constituency leads Kenya in households with luxurious homes (2019 census, via The Standard). Karen is in Lang'ata.","","The Standard, 2020; KNBS 2019 census")},
+ {n:"Mathare",ll:[-1.2600,36.8590],g:"nbo",h:pc("Mathare","Water points, toilets and waste points in this story map include Mathare.","","OpenStreetMap, exported 5 Nov 2026")},
+ {n:"Mukuru",ll:[-1.3150,36.8650],g:"nbo",h:pc("Mukuru","UN-Habitat was Map Kibera's first partner for water and sanitation mapping in Mukuru. A 2023 to 2024 survey covered over 2,000 households and drainage sites.","Who keeps a survey current after the funding ends?","Map Kibera interview; RESET, Aug 2025")},
+ {n:"Kangemi",ll:[-1.2667,36.7500],g:"nbo",h:pc("Kangemi","Map Kibera describes Kangemi as its most recent informal-settlement mapping.","","Map Kibera interview, 5 Nov 2026")},
+ {n:"Baringo County",ll:[0.4919,35.7430],g:"afr",h:pc("Baringo County","With the World Bank, Map Kibera helped county staff map county projects for participatory budgeting.","","Map Kibera interview, 5 Nov 2026")},
+ {n:"Makueni County",ll:[-1.8040,37.6200],g:"afr",h:pc("Makueni County","Another county where Map Kibera helped staff map projects, so residents could see what already exists before choosing new ones.","","Map Kibera interview, 5 Nov 2026")},
+ {n:"Dar es Salaam",ll:[-6.7924,39.2083],g:"afr",h:pc("Dar es Salaam, 2015","Residents and students mapped drainage in flood-prone wards.","","Ramani Huria project pages")},
+ {n:"Makoko, Lagos",ll:[6.4950,3.3930],g:"afr",h:pc("Makoko, 2019","Residents mapped with drones to be recognised. No outcome was reported yet.","How long should a community wait for a result?","CNN, 26 Feb 2020")}
+];
+PLACES.forEach(function(c){
+  var m=L.circleMarker(c.ll,{radius:7,color:"#fff",weight:2,fillColor:(c.n==="Karen"?"#0072B2":"#D55E00"),fillOpacity:1}).bindTooltip(c.n,{permanent:true,direction:"right",className:"cityl",offset:[8,0]}).bindPopup(c.h,{maxWidth:260});
+  if(c.g==="nbo"){nbo.push(m);}else if(c.n==="Nairobi settlements"){m.nb=true;afr.push(m);}else{afr.push(m);}
+  if(c.g==="afr"&&c.n!=="Nairobi settlements"){m.always=true;}});
+function syncCities(){
+  var z=map.getZoom();
+  nbo.forEach(function(m){if(cityOn&&z>=10){m.addTo(map);}else{map.removeLayer(m);}});
+  afr.forEach(function(m){var hide=m.nb&&z>=10;if(cityOn&&!hide){m.addTo(map);}else{map.removeLayer(m);}});
+}
+map.on("zoomend",syncCities);
+document.querySelectorAll("[data-yt]").forEach(function(d){d.querySelector("button").addEventListener("click",function(){
+  d.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+d.dataset.yt+'?autoplay=1" title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';});});
+document.querySelectorAll("figure[data-img]").forEach(function(f){var im=f.querySelector("img");f.style.display="none";
+  im.onload=function(){f.style.display="";};im.src=f.dataset.img;});
+
+var compareGroup=L.layerGroup(),KIB=[-1.3135,36.7875];
+var RICH=[{"n": "Lavington", "ll": [-1.28, 36.77], "d": 4.2}, {"n": "Kilimani", "ll": [-1.29, 36.787], "d": 2.6}, {"n": "Karen", "ll": [-1.319, 36.709], "d": 8.7}, {"n": "Muthaiga", "ll": [-1.256, 36.83], "d": 7.9}, {"n": "Runda", "ll": [-1.21, 36.804], "d": 11.7}];
+RICH.forEach(function(r){
+  L.polyline([KIB,r.ll],{color:"#555",weight:1.5,dashArray:"5 5"}).addTo(compareGroup);
+  if(r.n==="Karen"){return;}
+  L.circleMarker(r.ll,{radius:7,color:"#fff",weight:2,fillColor:"#0072B2",fillOpacity:1}).bindTooltip(r.n+" · "+r.d+" km",{permanent:true,direction:(r.n==="Muthaiga"?"left":"right"),className:"cityl",offset:[(r.n==="Muthaiga"?-8:8),0]}).bindPopup(pc(r.n,"Commonly described as a higher-income suburb, about "+r.d+" km in a straight line from Kibera.","","Distance calculated from approximate centre points")).addTo(compareGroup);});
+
+var GROUPS=[["Introduction",["An urbanising world","Growth ahead of housing","Slums across the world","Kibera: large, and hard to count","Maps are not neutral","Who gets left out","A spatial justice lens"]],
+["Kibera's story",["A blank spot on the map","Residents drew their own map","What Map Kibera says happened next","Visible does not mean protected"]],
+["2026 snapshot",["Visible, but usable?","What it costs to use","How far is the walk to water?","How up to date is the data?","Close on the map, far in services","Next door, a different map","What the map leaves out"]],
+["Beyond Kibera",["Map Kibera beyond Kibera","Counter-maps in other African cities","Digital Matatus","Ramani Huria","Makoko"]],
+["Analysis",["What the cases show","Who decides what is shown"]],
+["Conclusion",["Three tests: recognition, distribution, procedure","Visible, necessary, insufficient"]],
+["Sources",["Sources and credits"]]];
+(function(){var nav=document.getElementById("tabs"),first={};
+ var steps=[].slice.call(document.querySelectorAll("section.step"));
+ steps.forEach(function(st){var h=st.querySelector("h2");if(!h)return;GROUPS.forEach(function(g,i){if(g[1].indexOf(h.textContent)>-1){st.dataset.grp=i;if(!(i in first))first[i]=st;}});});
+ GROUPS.forEach(function(g,i){if(!(i in first))return;var a=document.createElement("a");a.href="#";a.textContent=g[0];a.dataset.i=i;
+  a.addEventListener("click",function(e){e.preventDefault();first[i].scrollIntoView({behavior:"smooth"});});nav.appendChild(a);});
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.target.dataset.grp!==undefined){[].forEach.call(nav.children,function(a){a.classList.toggle("on",a.dataset.i===e.target.dataset.grp);});}});},{rootMargin:"-45% 0px -45% 0px"});
+ steps.forEach(function(st){io.observe(st);});
+})();
+
+var worldGroup=L.layerGroup();
+[["Kibera, Nairobi",-1.3135,36.7875,"Kibera","A blank spot on government maps until residents mapped it in 2009.","Who acts on the data once it exists?","Map Kibera interview, 5 Nov 2026"],
+ ["Rocinha, Rio de Janeiro",-22.9858,-43.2481,"Rocinha","Google Maps showed about 3 streets where satellite imagery showed about 10,000.","What gets planned for a place that looks empty?","Reuters/WEF, 2015"],
+ ["Goma camps, DR Congo",-1.6585,29.2200,"Camps near Goma","MSF says there are often no maps of displacement camps. Volunteers marked over 65,000 shelters in 2023.","","MSF, 9 Aug 2023"],
+ ["Makoko, Lagos",6.4950,3.3930,"Makoko","Residents mapped with drones in 2019 to be recognised.","How long should a community wait for a result?","CNN, 26 Feb 2020"],
+ ["Dar es Salaam",-6.7924,39.2083,"Dar es Salaam","Residents and students mapped flood-prone wards from 2015.","","Ramani Huria project pages"]
+].forEach(function(c){L.circleMarker([c[1],c[2]],{radius:7,color:"#fff",weight:2,fillColor:"#D55E00",fillOpacity:1}).bindTooltip(c[0],{direction:"top",className:"cityl"}).bindPopup(pc(c[3],c[4],c[5],c[6]),{maxWidth:260}).addTo(worldGroup);});
+
+document.querySelectorAll("figure.ba").forEach(function(f){var A=new Image(),B=new Image(),n=0;
+  function ok(){n++;if(n<2)return;f.style.display="";var st=document.querySelector('figure.media[data-img="images/kibera_blank_map.png"]');if(st){st.setAttribute("data-hide","1");st.style.display="none";st.querySelector("img").onload=null;}
+   f.querySelector(".ba-base").src=B.src;f.querySelector(".ba-over").src=A.src;
+   var top=f.querySelector(".ba-top"),line=f.querySelector(".ba-line"),r=f.querySelector("input");
+   function set(){top.style.clipPath="inset(0 "+(100-r.value)+"% 0 0)";line.style.left=r.value+"%";}r.addEventListener("input",set);set();}
+  A.onload=ok;B.onload=ok;A.src=f.dataset.a;B.src=f.dataset.b;});
+
+var cv=L.canvas({padding:.5}),walkGroup=L.layerGroup(),freshGroup=L.layerGroup(),FG=[L.layerGroup(),L.layerGroup(),L.layerGroup()],anaLoaded=false,
+ WC=["#2c7bb6","#abd9e9","#fdae61","#d7191c"],FC=["#0072B2","#E69F00","#D55E00"],TN=["Water point","Toilet","Waste point"],AG=["checked in the last 2 years","checked 2 to 5 years ago","last checked over 5 years ago"];
+function loadAna(cb){if(anaLoaded){cb();return;}anaLoaded=true;
+ ["kibera","mathare"].forEach(function(a){fetch("data/analysis_"+a+".json").then(function(r){return r.json();}).then(function(d){
+  d.fac.forEach(function(f){L.circleMarker([f[0],f[1]],{renderer:cv,radius:4,color:"#fff",weight:.6,fillColor:FC[f[3]],fillOpacity:.95}).bindTooltip(TN[f[2]]+", "+AG[f[3]]+(f[4]?" (check date tagged)":" (last edit date)")).addTo(FG[f[2]]);});
+  d.outline.forEach(function(r){L.polygon(r,{color:"#4de1c1",weight:2,fill:false,dashArray:"7 4",interactive:false,pane:"admPane"}).addTo(groups.adm);});
+  cb();}).catch(function(){anaLoaded=false;});});}
+function syncAna(){var cur=current&&current.dataset.ana;
+ if(cur==="walk"){walkGroup.addTo(map);}else{map.removeLayer(walkGroup);}
+ FG.forEach(function(g,i){var b=document.querySelector('#ftype [data-t="'+i+'"]');if(cur==="fresh"&&b&&b.getAttribute("aria-pressed")==="true"){g.addTo(map);}else{map.removeLayer(g);}});}
+document.querySelectorAll("#ftype button").forEach(function(b){b.addEventListener("click",function(){b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true");syncAna();});});
+document.querySelectorAll("[data-fly2]").forEach(function(b){b.addEventListener("click",function(){var f=b.dataset.fly2.split(",").map(Number);var p=L.latLng(f[0],f[1]);if(window.innerWidth>760){p=map.unproject(map.project(p,f[2]).subtract([230,0]),f[2]);}map.flyTo(p,f[2],{duration:1.2});});});
+
+var makokoGroup=L.layerGroup(),mkLoaded=0,mkOn=1,MKC=function(t){var a=t.amenity||"",sh=t.shop;if(a==="school"||a==="kindergarten"||a==="college")return"#0072B2";if(a==="place_of_worship")return"#CC79A7";if(a==="marketplace"||sh)return"#E69F00";if(/clinic|hospital|pharmacy|doctors|health/.test(a)||t.healthcare)return"#D55E00";if(a==="drinking_water"||a==="water_point"||t.man_made==="water_tap"||t.man_made==="water_well")return"#56B4E9";return"#555";};
+function loadMakoko(){if(mkLoaded)return;mkLoaded=1;
+ Promise.all([fetch("data/makoko_buildings.geojson").then(function(r){if(!r.ok)throw 0;return r.json();}),fetch("data/makoko_places.geojson").then(function(r){return r.ok?r.json():{features:[]};}).catch(function(){return{features:[]};})]).then(function(d){
+  var nb=0,np=0;
+  d[0].features.forEach(function(f){if(f.geometry&&f.geometry.type==="Polygon"){L.polygon(f.geometry.coordinates[0].map(function(c){return[c[1],c[0]];}),{renderer:cv,color:"#6b5230",weight:.4,fillColor:"#8c6d46",fillOpacity:.75,interactive:false}).addTo(makokoGroup);nb++;}});
+  d[1].features.forEach(function(f){var t=f.properties||{};if(!f.geometry||f.geometry.type!=="Point")return;if(!(t.amenity||t.shop||t.healthcare||t.man_made==="water_tap"))return;var c=f.geometry.coordinates;
+   L.circleMarker([c[1],c[0]],{radius:5,color:"#fff",weight:1,fillColor:MKC(t),fillOpacity:1}).bindTooltip((t.name?t.name+" · ":"")+(t.amenity||t.shop||t.healthcare||"place").replace(/_/g," ")).addTo(makokoGroup);np++;});
+  document.getElementById("mkctl").style.display="";document.getElementById("mkn").textContent=nb.toLocaleString()+" buildings and "+np+" named or tagged places in OpenStreetMap, exported Nov 2026. © OpenStreetMap contributors.";
+  syncMk();}).catch(function(){mkLoaded=0;});}
+function syncMk(){var on=current&&current.dataset.makoko&&mkOn;if(on){makokoGroup.addTo(map);}else{map.removeLayer(makokoGroup);}}
+document.querySelectorAll("[data-mk]").forEach(function(b){b.addEventListener("click",function(){mkOn=+b.dataset.mk;document.querySelectorAll("[data-mk]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});syncMk();});});
+
+var CASES={dar:[["data/dar_buildings.geojson","b"],["data/dar_drains.geojson","l"]],matatu:[["data/matatu_routes.geojson","m"]]},caseG={},caseState={};
+function loadCase(k,el){if(caseState[k]){syncCase();return;}caseState[k]=1;var g=L.layerGroup();caseG[k]=g;var bb=L.latLngBounds([]),cnt=[];
+ Promise.all(CASES[k].map(function(f){return fetch(f[0]).then(function(r){if(!r.ok)throw 0;return r.json();});})).then(function(ds){
+  ds.forEach(function(d,i){var t=CASES[k][i][1],n=0;
+   var gj=L.geoJSON(d,{renderer:cv,interactive:false,filter:function(x){return x.geometry&&/Polygon|LineString/.test(x.geometry.type);},
+    style:function(){return t==="b"?{color:"#6b5230",weight:.3,fillColor:"#8c6d46",fillOpacity:.7}:t==="l"?{color:"#0072B2",weight:1.6,opacity:.9}:{color:"#D55E00",weight:1.6,opacity:.55};}});
+   gj.eachLayer(function(){n++;});gj.addTo(g);bb.extend(gj.getBounds());cnt.push(n.toLocaleString()+(t==="b"?" buildings":t==="l"?" drains and watercourses":" route shapes"));});
+  var note=document.querySelector('[data-case="'+k+'"] .casen');if(note){note.textContent="On the map: "+cnt.join(", ")+(k==="matatu"?" (2019 GTFS feed, Digital Matatus)":" (OpenStreetMap, exported Nov 2026)")+". "+(k==="dar"?"Brown is buildings, blue is drains and watercourses.":"");note.style.display="";}
+  caseB=caseB||{};caseB[k]=bb;syncCase();fitCase();}).catch(function(){caseState[k]=0;});}
+var caseB={};
+function fitCase(){var k=current&&current.dataset.case;if(!k||!caseB[k]||!caseB[k].isValid())return;var pad=window.innerWidth>760?[[460,40],[40,40]]:[[20,20],[20,260]];map.fitBounds(caseB[k],{paddingTopLeft:pad[0],paddingBottomRight:pad[1],animate:!reduce});}
+function syncCase(){var k=current&&current.dataset.case;Object.keys(caseG).forEach(function(x){if(x===k){caseG[x].addTo(map);}else{map.removeLayer(caseG[x]);}});}
+
+var kalGroup=L.layerGroup();L.circleMarker([0.3,113.5],{radius:7,color:"#fff",weight:2,fillColor:"#D55E00",fillOpacity:1}).bindTooltip("Kalimantan, Indonesia",{permanent:true,direction:"right",className:"cityl",offset:[8,0]}).bindPopup('<div class="pc"><b>Kalimantan, Indonesia</b><p>Peluso (1995) studied village counter-maps of forest territory made to answer state forest maps that left village land out.</p><small>Peluso (1995), Antipode 27(4)</small></div>',{maxWidth:260}).addTo(kalGroup);
+
+/* built environment, boundaries, theme */
+var BC=["#2c7bb6","#abd9e9","#fdae61","#d7191c"],WN=["water","toilets","waste"],WTX=["water point that is not recorded as broken","toilet not tagged private, customers only or closed","waste point"],wtype=0,
+ bldP=[],roadL=[],admL=[],spotP=null,LSTAT=null,LDp=null;
+function dec(a){var o=[],la=0,lo=0;for(var i=1;i<a.length;i+=2){la+=a[i];lo+=a[i+1];o.push([la/1e5,lo/1e5]);}return o;}
+function bcls(code){return [code%4,Math.floor(code/4)%4,Math.floor(code/16)%4][wtype];}
+function darkTheme(){return document.documentElement.getAttribute("data-theme")==="dark";}
+function lightBg(){return curBase==="sat"||darkTheme();}
+function rstyle(t){var l=lightBg();
+ if(t===0){return{color:l?"#ffb347":"#c76a00",weight:3,opacity:.95};}
+ if(t===1){return{color:l?"#ffffff":"#5c6b75",weight:1.6,opacity:.85};}
+ return{color:l?"#ffe9a8":"#7a5f00",weight:1.1,opacity:.95,dashArray:"3 3"};}
+function astyle(k){var l=lightBg();
+ if(k==="c"){return{color:l?"#ffe08a":"#8a6500",weight:2.4,fill:false,dashArray:"9 5",opacity:.95};}
+ return{color:l?"#ffffff":"#2b3a44",weight:1.3,fill:false,dashArray:"2 4",opacity:.9};}
+function restyleVec(){roadL.forEach(function(r){r.l.setStyle(rstyle(r.t));});admL.forEach(function(a){a.l.setStyle(astyle(a.k));});
+ if(spotP){spotP.setStyle({fillOpacity:darkTheme()?.5:.34});}}
+function restyleBld(){bldP.forEach(function(b){b.l.setStyle({fillColor:BC[bcls(b.c)]});});}
+function loadLayers(){if(LDp){return LDp;}
+ var J=function(u){return fetch(u).then(function(r){if(!r.ok){throw 0;}return r.json();});};
+ LDp=Promise.all([J("data/layers_kibera.json"),J("data/layers_mathare.json"),J("data/admin_boundaries.json")]).then(function(d){
+  LSTAT={kibera:d[0].s,mathare:d[1].s};
+  [d[0],d[1]].forEach(function(a){
+   a.b.forEach(function(r){var l=L.polygon(dec(r),{renderer:rb,stroke:true,color:"#0b1b24",weight:.3,opacity:.5,fillColor:BC[bcls(r[0])],fillOpacity:.88,interactive:false});bldP.push({l:l,c:r[0]});l.addTo(groups.bld);});
+   a.r.forEach(function(r){var t=r[0],l=L.polyline(dec(r),Object.assign({renderer:rr,interactive:false},rstyle(t)));roadL.push({l:l,t:t});l.addTo(groups.roads);});});
+  var adm=d[2];
+  spotP=L.polygon([[[-85,-180],[-85,180],[85,180],[85,-180]]].concat(adm.spot),{pane:"admPane",stroke:false,fillColor:"#000",fillOpacity:.34,interactive:false}).addTo(groups.adm);
+  [["constituency","c"],["ward","w"]].forEach(function(lv){adm[lv[0]].forEach(function(u){
+   var l=L.polygon(u.rings,Object.assign({pane:"admPane",interactive:false},astyle(lv[1]))).addTo(groups.adm);admL.push({l:l,k:lv[1]});
+   L.circleMarker(u.lab,{pane:"admPane",radius:0,stroke:false,fill:false,interactive:false}).bindTooltip(lv[1]==="c"?u.name+" constituency":u.name+" ward",{permanent:true,direction:"center",className:"admlab "+lv[1],pane:"labelPane"}).addTo(groups.adm);});});
+  restyleVec();walkNote();
+ }).catch(function(){LDp=null;});
+ return LDp;}
+function walkNote(){if(!LSTAT){return;}var h=[],k=WN[wtype],nm={kibera:"Kibera",mathare:"Mathare"};
+ ["kibera","mathare"].forEach(function(a){var q=LSTAT[a][k],n=q[0]+q[1]+q[2]+q[3];h.push(nm[a]+": "+q[3].toLocaleString("en")+" of "+n.toLocaleString("en")+" buildings ("+(100*q[3]/n).toFixed(1)+"%) are over 500 m from the nearest "+(k==="toilets"?"toilet":k==="waste"?"waste point":"water point")+". Median walk "+q[4]+" m.");});
+ var el=document.getElementById("wdyn");if(el){el.textContent=h.join(" ");}
+ var q=LSTAT.kibera[k],n=q[0]+q[1]+q[2]+q[3],bar=document.getElementById("wbar");
+ if(bar){[].forEach.call(bar.children,function(b,i){b.style.width=(100*q[i]/n).toFixed(1)+"%";});}}
+function setWT(i){wtype=i;document.querySelectorAll("[data-wt]").forEach(function(b){b.setAttribute("aria-pressed",+b.dataset.wt===i?"true":"false");});
+ var n=document.getElementById("wname");if(n){n.textContent=WTX[i];}
+ document.querySelectorAll("[data-w]").forEach(function(e){e.hidden=(+e.dataset.w!==i);});
+ restyleBld();walkNote();if(current&&current.dataset.ana==="walk"){manual={};syncGroups();}}
+document.querySelectorAll("[data-wt]").forEach(function(b){b.addEventListener("click",function(){setWT(+b.dataset.wt);});});
+/* optional Google Open Buildings outline, loaded only if data/google_buildings.geojson exists */
+var gbLoaded=false;
+fetch("data/google_buildings.geojson",{method:"HEAD"}).then(function(r){if(r.ok){document.getElementById("gbrow").hidden=false;}}).catch(function(){});
+function loadGb(){if(gbLoaded){return;}gbLoaded=true;fetch("data/google_buildings.geojson").then(function(r){return r.json();}).then(function(d){
+ L.geoJSON(d,{renderer:rb,interactive:false,filter:function(f){return f.geometry&&/Polygon/.test(f.geometry.type);},style:function(){return{color:"#00e5ff",weight:.8,fill:false,opacity:.9};}}).addTo(groups.gb);}).catch(function(){gbLoaded=false;});}
+/* theme and layers panel */
+function setTheme(t,keep){document.documentElement.setAttribute("data-theme",t);if(!keep){try{localStorage.setItem("theme",t);}catch(e){}}
+ document.getElementById("themebtn").setAttribute("aria-label",t==="dark"?"Switch to light theme":"Switch to dark theme");restyleVec();}
+document.getElementById("themebtn").addEventListener("click",function(){setTheme(darkTheme()?"light":"dark");});
+setTheme(darkTheme()?"dark":"light",true);
+var lpanel=document.getElementById("legend"),lbtn=document.getElementById("layersbtn");
+function openPanel(o){lpanel.hidden=!o;lbtn.setAttribute("aria-expanded",o?"true":"false");}
+lbtn.addEventListener("click",function(){openPanel(lpanel.hidden);});
+openPanel(window.innerWidth>760);
+function zcls(){var z=map.getZoom(),c=document.getElementById("map").classList;c.toggle("zlow",z<12);c.toggle("zw",z<14);c.toggle("zsm",z<15);c.toggle("zmd",z>=15&&z<16);}
+map.on("zoomend",zcls);zcls();
+var current=null,manual={},mask=null;
+function wantLayers(el){var s=(el.dataset.layers||"").split(",").filter(Boolean),a=el.dataset.ana;
+ if(s.length||a){s.push("adm");}
+ if(a==="walk"){s.push("bld","roads");if(s.indexOf(WN[wtype])<0){s.push(WN[wtype]);}}
+ return s;}
+function syncGroups(){var el=current;if(!el){return;}var show=wantLayers(el);
+ if(show.indexOf("bld")>-1||show.indexOf("adm")>-1||manual.bld||manual.adm||manual.roads){loadLayers();}
+ Object.keys(groups).forEach(function(t){var on=(manual[t]===undefined)?show.indexOf(t)>-1:manual[t];
+  var cb=document.querySelector('[data-layer="'+t+'"]');if(cb){cb.checked=on;}
+  if(on){groups[t].addTo(map);}else{map.removeLayer(groups[t]);}});
+ document.getElementById("mapctl").classList.toggle("nolayers",!(show.length>0||el.dataset.ana));}
+function go(el){
+  current=el;
+  if(el.dataset.color&&el.dataset.color!==colorMode){colorMode=el.dataset.color;recolor();}
+  syncGroups();
+  if(mask){if(el.dataset.mask){mask.addTo(map);}else{map.removeLayer(mask);}}
+  setBase(el.dataset.base||userBase);
+  if(el.dataset.world){worldGroup.addTo(map);}else{map.removeLayer(worldGroup);}
+  if(el.dataset.compare){compareGroup.addTo(map);}else{map.removeLayer(compareGroup);}
+  if(el.dataset.kal){kalGroup.addTo(map);}else{map.removeLayer(kalGroup);}
+  if(el.dataset.case){loadCase(el.dataset.case,el);}
+  syncCase();
+  if(el.dataset.makoko){loadMakoko();}
+  syncMk();
+  if(el.dataset.ana){loadAna(syncAna);}
+  syncAna();
+  if(el.dataset.fly){
+    cityOn=!el.dataset.world;syncCities();
+    var f=el.dataset.fly.split(",").map(Number),z=f[2],p=L.latLng(f[0],f[1]);
+    if(window.innerWidth>760){p=map.unproject(map.project(p,z).subtract([230,0]),z);}
+    if(reduce){map.setView(p,z,{animate:false});}else{map.flyTo(p,z,{duration:1.6});}
+    return;
+  }
+  cityOn=false;syncCities();
+  var b=bounds[el.dataset.view];
+  var pad=window.innerWidth>760?[[460,40],[40,40]]:[[20,20],[20,260]];
+  if(b&&b.isValid()){map.fitBounds(b,{paddingTopLeft:pad[0],paddingBottomRight:pad[1],animate:!reduce});}
+}
+document.querySelectorAll("[data-layer]").forEach(function(box){
+  box.addEventListener("change",function(){
+    var t=box.dataset.layer;manual[t]=box.checked;
+    if(box.checked&&(t==="bld"||t==="roads"||t==="adm")){loadLayers();}if(box.checked&&t==="gb"){loadGb();}
+    if(box.checked){groups[t].addTo(map);}else{map.removeLayer(groups[t]);}
+  });
+});
+setBase(userBase);
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){manual={};go(e.target);}});
+},{threshold:.6});
+document.querySelectorAll(".step").forEach(function(s){io.observe(s);});
+</script>
+</body>
+</html>
